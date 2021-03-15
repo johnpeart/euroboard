@@ -1,0 +1,34 @@
+// Grid containers
+
+.container {
+	
+	display: 			block;
+	position: 			relative;
+	
+	padding-left: 		$container-padding;
+	padding-right: 		$container-padding;
+	padding-top: 		0;
+	padding-bottom: 	0;
+	
+	width: 100%;
+		
+	margin-left: auto;
+	margin-right: auto;
+	
+	@include md {
+		padding-left: 		$container-padding * 2;
+		padding-right: 		$container-padding * 2;
+	}
+	
+	@include lg {
+		padding-left: 		$container-padding * 3;
+		padding-right: 		$container-padding * 3;
+	}
+	
+	@include xl {
+		padding-left: 		$container-padding * 4;
+		padding-right: 		$container-padding * 4;
+	}
+
+}
+

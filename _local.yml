@@ -1,0 +1,66 @@
+# Site settings
+
+title: "Localboard"
+subtitle: "Eurovision 2021"
+
+description: "A digital scoreboard that you can use at home as you watch the Eurovision Song Contest 2021."
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://localhost:4000"
+author: "John Peart"
+
+# Images and assets
+image-path: "/assets/images"
+css-path: "/assets/styles"
+js-path: "/assets/scripts"
+
+social-media-image: "/assets/images/site/social-media.png"
+
+theme-colour: "#009fe3"
+
+favicon: "/favicon.ico"
+favicon-svg: "/assets/images/site/favicon.svg"
+favicon-pinned-svg: "/assets/images/site/favicon-pinned-svg.svg"
+favicon-large-png: "/assets/images/site/favicon-large-png.png"
+
+# Social settings
+twitter-url: "https://twitter.com/johnpeart" # Twitter handle i.e. joebloggs
+twitter-handle: "johnpeart" # Twitter handle i.e. joebloggs
+
+mastodon-url: "https://mastodon.social/@johnpeart"
+mastodon-handle: "johnpeart@mastodon.social"
+
+github-url:  "https://github.com/johnpeart"
+github-handle:  "johnpeart"
+
+analytics: false
+
+# Site header
+
+header: true
+
+# Collections
+
+collections:
+    scoreboards:
+        output: true
+        permalink: /:path/scoreboard
+        defaults:
+            values:
+                layout: scoreboard
+    votes:
+        output: true
+        permalink: /:path/vote
+        defaults:
+            values:
+                layout: vote
+
+# Plugins and build settings
+
+markdown: kramdown
+future: false
+sass:
+    sass_dir: _sass
+
+
+

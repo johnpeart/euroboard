@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+{% assign event = page.path | remove: ".md" | remove: "_votes/" %}
+{% assign running-order = event | append: "-running-order" %}
+{% assign entries = site.data.entries | sort: running-order %}
+		
+{% include loader.html %}
+
+{% include header.html %}
+
+<main id="content" class="vote">
+	
+	<ul id="vote--list" class="{{ event }}">
+		
+		{% for entry in entries %}
+		{% if entry.[event] == "TRUE" %}
+			
+			<li id="{{ entry.country | append: '-' | append: event | slugify }}" class="scoreboard--list--entry">
+				<span class="running-order">{{ entry.[running-order] | prepend: "#" }}</span>
+				<span class="country">{{ entry.country }}</span>
+				<button class="button vote one" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 1)">1</button>
+				<button class="button vote two" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 2)">2</button>
+				<button class="button vote three" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 3)">3</button>
+				<button class="button vote four" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 4)">4</button>
+				<button class="button vote five" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 5)">5</button>
+				<button class="button vote six" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 6)">6</button>
+				<button class="button vote seven" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 7)">7</button>
+				<button class="button vote eight" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 8)">8</button>
+				<button class="button vote ten" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 10)">10</button>
+				<button class="button vote twelve" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 12)">12</button>
+			</li>
+		{% endif %}		
+		{% endfor %}
+		
+	</ul>
+
+</main>
+
+{% include footer.html %}

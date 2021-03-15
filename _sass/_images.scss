@@ -1,0 +1,116 @@
+// Images, figures, etc
+
+p > img {
+		
+	@include xs {
+		width: 				100%;
+		max-width: 			100%;
+		margin-top: 			$p-font-size-base / 2;
+	}
+		
+	@include sm {
+		width: 				100%;
+		max-width: 			100%;
+		margin-top: 			$p-font-size-base / 2;
+	}
+	
+	@include md {
+		width: 			$md - 66px;
+		position: 		relative;
+		left: 			0;
+		right:			0;
+		margin-left: 	-65px;
+		margin-right: 	-65px;
+	}
+	
+	@include lg {
+		width: 			$lg - 50px;
+		position: 		relative;
+		left: 			0;
+		right:			0;
+		margin-left: 	-90px;
+		margin-right: 	-90px;
+	}
+	
+	@include xl {
+		width: 			$xl - 100px;
+		position: 		relative;
+		left: 			0%;
+		right:			0%;
+		margin-left: 	-115px;
+		margin-right: 	-115px;
+	}
+}
+
+figure.image {
+	
+	box-sizing: 		content-box;
+	
+	background:		$gray-200;
+	color:			$body-color;
+	outline: 		20px solid $gray-200;
+	
+	@include dark-mode {
+		background:		$gray-700;
+		color:			$body-color-dark-mode;
+		outline: 		20px solid $gray-700;
+	}
+	
+	margin:			($p-font-size-base * 2) 0;
+	
+	@include xs {
+		margin:			($p-font-size-base-xs * 2) 0;
+	}
+	@include sm {
+		margin:			($p-font-size-base-sm * 2) 0;
+	}
+	@include md {
+		margin:			($p-font-size-base-md * 2) 0;
+	}
+	@include lg {
+		margin:			($p-font-size-base-lg * 2) 0;
+	}
+	@include xl {
+		margin:			($p-font-size-base-xl * 2) 0;
+	}
+	
+	img {
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	figcaption {
+		font-size: 			$p-font-size-base * 0.8;
+		line-height: 		$p-line-height-base;
+		margin-bottom: 		$p-margin-bottom;
+		
+		@include xs {
+			font-size: 		$p-font-size-base-xs * 0.8;
+			line-height: 	$p-line-height-base-xs;
+			margin-bottom: 	$p-margin-bottom-xs;
+		}
+		@include sm {
+			font-size: 		$p-font-size-base-sm * 0.8;
+			line-height: 	$p-line-height-base-sm;
+			margin-bottom: 	$p-margin-bottom-sm;
+		}
+		@include md {
+			font-size: 		$p-font-size-base-md * 0.8;
+			line-height: 	$p-line-height-base-md;
+			margin-bottom: 	$p-margin-bottom-md;
+		}
+		@include lg {
+			font-size: 		$p-font-size-base-lg * 0.8;
+			line-height: 	$p-line-height-base-lg;
+			margin-bottom: 	$p-margin-bottom-lg;
+		}
+		@include xl {
+			font-size: 		$p-font-size-base-xl * 0.8;
+			line-height: 	$p-line-height-base-xl;
+			margin-bottom: 	$p-margin-bottom-xl;
+		}
+		
+		font-weight:			$p-font-weight;
+	}
+	
+}

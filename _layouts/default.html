@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body id="{{ page.layout | slugify }}"{% if page.theme %} class="theme-{{ page.theme | slugify }}"{% endif %}>
+	  
+  	{% include skiplink.html %}
+
+  	{{ content }}
+    
+    {% include analytics.html %}
+    
+    {% if page.layout == "scoreboard" or page.layout == "vote" %}
+      {% include firebase.html %}
+    {% endif %}
+
+  </body>
+
+</html>
+

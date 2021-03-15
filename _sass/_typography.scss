@@ -1,0 +1,875 @@
+// Typography
+
+a {
+	
+	display: 				inline;
+	
+	color: 					$link-color;
+	text-decoration: 		$link-text-decoration;
+	text-decoration-skip: 	ink;
+	text-decoration-skip-ink: auto;
+	
+	outline: 				$link-outline;
+	font-weight: 			inherit;
+	
+	
+	/* Text and background color for dark mode */
+	@include dark-mode {
+		color: 					$link-color-dark-mode;
+	}
+	
+	&:hover {
+		color: 					$link-hover-color;
+		text-decoration: 		$link-text-decoration-hover;
+		text-decoration-skip: 	ink;
+		text-decoration-skip-ink: auto;
+		
+		/* Text and background color for dark mode */
+		@include dark-mode {
+			color: 					$link-hover-color-dark-mode;
+		}
+		
+		z-index: 999;
+	}
+	
+	&:focus {
+		background: 				$cyan;
+		color: 					   	$link-focus-color;
+		text-decoration: 			$link-text-decoration-focus;
+		text-decoration-skip: 	ink;
+		text-decoration-skip-ink: auto;
+		
+		/* Text and background color for dark mode */
+		@include dark-mode {
+			color: 					$link-focus-color-dark-mode;
+		}
+		
+		z-index: 999;
+		
+	}
+	
+	&:focus:hover {
+		background: $body-background-dark-mode;
+		color: $cyan;
+		@include dark-mode {
+			background: $body-background;
+			color: $cyan;
+		}
+		
+		z-index: 999;
+	}
+	
+}
+
+h1 {
+	
+	@include xs {
+		font-size: 		$h1-font-size-base-xs;
+		line-height: 	$h1-line-height-base-xs;
+		padding-top: 	$h1-padding-top-xs;
+		padding-bottom: $h1-padding-bottom-xs;
+	}
+	@include sm {
+		font-size: 		$h1-font-size-base-sm;
+		line-height: 	$h1-line-height-base-sm;
+		padding-top: 	$h1-padding-top-sm;
+		padding-bottom: 	$h1-padding-bottom-sm;
+	}
+	@include md {
+		font-size: 		$h1-font-size-base-md;
+		line-height: 	$h1-line-height-base-md;
+		padding-top: 	$h1-padding-top-md;
+		padding-bottom: 	$h1-padding-bottom-md;
+	}
+	@include lg {
+		font-size: 		$h1-font-size-base-lg;
+		line-height: 	$h1-line-height-base-lg;
+		padding-top: 	$h1-padding-top-lg;
+		padding-bottom: 	$h1-padding-bottom-lg;
+	}
+	@include xl {
+		font-size: 		$h1-font-size-base-xl;
+		line-height: 	$h1-line-height-base-xl;
+		padding-top: 	$h1-padding-top-xl;
+		padding-bottom: 	$h1-padding-bottom-xl;
+	}
+	
+	font-weight:			$h1-font-weight;
+	
+}
+
+h2 {
+	
+	@include xs {
+		font-size: 		$h2-font-size-base-xs;
+		line-height: 	$h2-line-height-base-xs;
+		padding-top: 	$h2-padding-top-xs;
+		padding-bottom: 	$h2-padding-bottom-xs;
+	}
+	@include sm {
+		font-size: 		$h2-font-size-base-sm;
+		line-height: 	$h2-line-height-base-sm;
+		padding-top: 		$h2-padding-top-sm;
+		padding-bottom: 	$h2-padding-bottom-sm;
+	}
+	@include md {
+		font-size: 		$h2-font-size-base-md;
+		line-height: 	$h2-line-height-base-md;
+		padding-top: 		$h2-padding-top-md;
+		padding-bottom: 	$h2-padding-bottom-md;
+	}
+	@include lg {
+		font-size: 		$h2-font-size-base-lg;
+		line-height: 	$h2-line-height-base-lg;
+		padding-top: 		$h2-padding-top-lg;
+		padding-bottom: 	$h2-padding-bottom-lg;
+	}
+	@include xl {
+		font-size: 		$h2-font-size-base-xl;
+		line-height: 	$h2-line-height-base-xl;
+		padding-top: 		$h2-padding-top-xl;
+		padding-bottom: 	$h2-padding-bottom-xl;
+	}
+	
+	font-weight:			$h2-font-weight;
+	font-style: 			$h2-font-style;
+	text-align: 			$h2-text-align;
+	text-decoration: 	$h2-text-decoration;
+	text-transform: 		$h2-text-transform;
+	
+}
+
+h3 {
+	
+	@include xs {
+		font-size: 		$h3-font-size-base-xs;
+		line-height: 	$h3-line-height-base-xs;
+		padding-top: 		$h3-padding-top-xs;
+		padding-bottom: 	$h3-padding-bottom-xs;
+	}
+	@include sm {
+		font-size: 		$h3-font-size-base-sm;
+		line-height: 	$h3-line-height-base-sm;
+		padding-top: 		$h3-padding-top-sm;
+		padding-bottom: 	$h3-padding-bottom-sm;
+	}
+	@include md {
+		font-size: 		$h3-font-size-base-md;
+		line-height: 	$h3-line-height-base-md;
+		padding-top: 		$h3-padding-top-md;
+		padding-bottom: 	$h3-padding-bottom-md;
+	}
+	@include lg {
+		font-size: 		$h3-font-size-base-lg;
+		line-height: 	$h3-line-height-base-lg;
+		padding-top: 		$h3-padding-top-lg;
+		padding-bottom: 	$h3-padding-bottom-lg;
+	}
+	@include xl {
+		font-size: 		$h3-font-size-base-xl;
+		line-height: 	$h3-line-height-base-xl;
+		padding-top: 		$h3-padding-top-xl;
+		padding-bottom: 	$h3-padding-bottom-xl;
+	}
+	
+	font-weight:			$h3-font-weight;
+	font-style: 			$h3-font-style; 
+	text-align: 			$h3-text-align;		
+	text-decoration: 	$h3-text-decoration;
+	text-transform: 		$h3-text-transform;
+		
+}
+
+h2 + h3 {
+	
+	@include xs {
+		padding-top: 0 !important;
+	}
+	@include sm {
+		padding-top: 0 !important;
+	}
+	@include md {
+		padding-top: 0 !important;
+	}
+	@include lg {
+		padding-top: 0 !important;
+	}
+	@include xl {
+		padding-top: 0 !important;
+	}
+
+}
+
+h4 {
+	
+	@include xs {
+		font-size: 		$h4-font-size-base-xs;
+		line-height: 	$h4-line-height-base-xs;
+		padding-top: 		$h4-padding-top-xs;
+		padding-bottom: 	$h4-padding-bottom-xs;
+	}
+	@include sm {
+		font-size: 		$h4-font-size-base-sm;
+		line-height: 	$h4-line-height-base-sm;
+		padding-top: 		$h4-padding-top-sm;
+		padding-bottom: 	$h4-padding-bottom-sm;
+	}
+	@include md {
+		font-size: 		$h4-font-size-base-md;
+		line-height: 	$h4-line-height-base-md;
+		padding-top: 		$h4-padding-top-md;
+		padding-bottom: 	$h4-padding-bottom-md;
+	}
+	@include lg {
+		font-size: 		$h4-font-size-base-lg;
+		line-height: 	$h4-line-height-base-lg;
+		padding-top: 		$h4-padding-top-lg;
+		padding-bottom: 	$h4-padding-bottom-lg;
+	}
+	@include xl {
+		font-size: 		$h4-font-size-base-xl;
+		line-height: 	$h4-line-height-base-xl;
+		padding-top: 		$h4-padding-top-xl;
+		padding-bottom: 	$h4-padding-bottom-xl;
+	}
+	
+	font-weight:			$h4-font-weight;
+	font-style: 			$h4-font-style; 
+	text-align: 			$h4-text-align;		
+	text-decoration: 	$h4-text-decoration;
+	text-transform: 		$h4-text-transform;
+	
+}
+
+h3 + h4 {
+	
+	margin: 0;
+	
+	@include xs {
+		padding-top: 0 !important;
+	}
+	@include sm {
+		padding-top: 0 !important;
+	}
+	@include md {
+		padding-top: 0 !important;
+	}
+	@include lg {
+		padding-top: 0 !important;
+	}
+	@include xl {
+		padding-top: 0 !important;
+	}
+	
+}
+
+h5 {
+	
+	@include xs {
+		font-size: 		$h5-font-size-base-xs;
+		line-height: 	$h5-line-height-base-xs;
+		padding-top: 		$h5-padding-bottom-xs;
+		padding-bottom: 	$h5-padding-bottom-xs;
+	}
+	@include sm {
+		font-size: 		$h5-font-size-base-sm;
+		line-height: 	$h5-line-height-base-sm;
+		padding-top: 		$h5-padding-bottom-sm;
+		padding-bottom: 	$h5-padding-bottom-sm;
+	}
+	@include md {
+		font-size: 		$h5-font-size-base-md;
+		line-height: 	$h5-line-height-base-md;
+		padding-top: 		$h5-padding-bottom-md;
+		padding-bottom: 	$h5-padding-bottom-md;
+	}
+	@include lg {
+		font-size: 		$h5-font-size-base-lg;
+		line-height: 	$h5-line-height-base-lg;
+		padding-top: 		$h5-padding-bottom-lg;
+		padding-bottom: 	$h5-padding-bottom-lg;
+	}
+	@include xl {
+		font-size: 		$h5-font-size-base-xl;
+		line-height: 	$h5-line-height-base-xl;
+		padding-top: 		$h5-padding-bottom-xl;
+		padding-bottom: 	$h5-padding-bottom-xl;
+	}
+	
+	font-weight:			$h5-font-weight;
+	
+}
+
+p,dt,dd {
+	
+	font-size: 			$p-font-size-base;
+	line-height: 		$p-line-height-base;
+	padding-bottom: 	$p-padding-bottom;
+	
+	@include xs {
+		font-size: 		$p-font-size-base-xs;
+		line-height: 	$p-line-height-base-xs;
+		padding-bottom: 	$p-padding-bottom-xs;
+	}
+	@include sm {
+		font-size: 		$p-font-size-base-sm;
+		line-height: 	$p-line-height-base-sm;
+		padding-bottom: 	$p-padding-bottom-sm;
+	}
+	@include md {
+		font-size: 		$p-font-size-base-md;
+		line-height: 	$p-line-height-base-md;
+		padding-bottom: 	$p-padding-bottom-md;
+	}
+	@include lg {
+		font-size: 		$p-font-size-base-lg;
+		line-height: 	$p-line-height-base-lg;
+		padding-bottom: $p-padding-bottom-lg;
+	}
+	@include xl {
+		font-size: 		$p-font-size-base-xl;
+		line-height: 	$p-line-height-base-xl;
+		padding-bottom: $p-padding-bottom-xl;
+	}
+	
+	font-weight:			$p-font-weight;
+	
+	&.lead {
+			
+			padding-bottom: 	0;			
+			font-weight:		bold;
+	}
+
+	span.small-caps {
+		font-variant: small-caps !important;
+		font-size: 		120%;
+	}
+	
+}
+
+dt {
+	padding-bottom: 0;
+}
+
+sup {
+	font-feature-settings:		$sup-font-feature-settings;
+    text-decoration: none;
+    margin-left: 2px;
+    
+    a {
+	    text-decoration: none;
+	    
+	    &:hover {
+			text-decoration: none;
+		}
+	    &:focus {
+		    text-decoration: $link-text-decoration-focus;
+	    }
+    }
+}
+	
+strong, b,dt {
+	font-weight: 	bold;
+}
+
+em, i {
+	font-style: 	italic;
+}
+
+u {
+	text-decoration: underline;
+}
+
+center {
+	text-align: center;
+}
+
+li {
+	
+	font-size: 		$p-font-size-base;
+	line-height: 	$p-line-height-base;
+	
+	@include xs {
+		font-size: 		$p-font-size-base-xs;
+		line-height: 	$p-line-height-base-xs;
+	}
+	@include sm {
+		font-size: 		$p-font-size-base-sm;
+		line-height: 	$p-line-height-base-sm;
+	}
+	@include md {
+		font-size: 		$p-font-size-base-md;
+		line-height: 	$p-line-height-base-md;
+	}
+	@include lg {
+		font-size: 		$p-font-size-base-lg;
+		line-height: 	$p-line-height-base-lg;
+	}
+	@include xl {
+		font-size: 		$p-font-size-base-xl;
+		line-height: 	$p-line-height-base-xl;
+	}
+	
+	font-weight:		$p-font-weight;
+	
+}
+
+ul {
+	
+	padding-left: $p-font-size-base * 1.5;
+	
+	@include md-up {
+		padding-left: 0;
+	}
+	
+	@include xs {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-xs;
+	}
+	
+	@include sm {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-sm;
+	}
+	
+	@include md {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-md;
+	}
+	
+	@include lg {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-lg;
+	}
+	
+	@include xl {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-xl;
+	}
+	
+	list-style: none;
+	
+}
+
+ol {
+	
+	padding-left: $p-font-size-base * 2;
+	
+	@include md-up {
+		padding-left: 0;
+	}
+	
+	@include xs {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-xs;
+	}
+	
+	@include sm {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-sm;
+	}
+	
+	@include md {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-md;
+	}
+	
+	@include lg {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-lg;
+	}
+	
+	@include xl {
+		padding-top: 		0;
+		padding-bottom: 	$p-font-size-base-xl;
+	}
+		
+	list-style: decimal;
+}
+
+p, li, td  {
+	
+	> kbd,
+	> code {
+	
+		font-size: 		inherit;
+		font-family: 	$font-family-monospace;
+		font-weight: 	normal;
+		color:			$code-color;
+		background: 	$code-background;
+		border-radius: 	$code-border-radius;
+		padding:		$code-padding;
+		
+		@include dark-mode {
+			color: 			$code-color-dark-mode;
+			background: 	$code-background-dark-mode;
+		}
+		
+	}
+	
+}
+
+blockquote {
+			
+	background: 			$blockquote-background;
+	
+	/* Text and background color for dark mode */
+	@include dark-mode {
+	    background: 		$blockquote-background-dark-mode;
+	}
+	
+	padding: 			20px;
+	
+	margin-top: 		0;
+	    
+    @include xs {	    
+		margin-bottom: 	$p-margin-bottom-xs * 1.5;
+	}
+	@include sm {	    
+		margin-bottom: 	$p-margin-bottom-sm * 1.5;
+	}
+	@include md {	    
+		margin-bottom: 	$p-margin-bottom-md * 1.5;
+	}
+	@include lg {	    
+		margin-bottom: 	$p-margin-bottom-lg * 1.5;
+	}
+	@include xl {	    
+		margin-bottom: 	$p-margin-bottom-xl * 1.5;
+	}
+			
+	
+	p {		
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+	
+	code, kbd {
+		color: $blockquote-code-color;
+		/* Text and background color for dark mode */
+		@include dark-mode {
+		    color: $blockquote-code-color-dark-mode;
+		}
+	}
+	
+	ul {	
+		padding-left: $p-font-size-base * 1.5;
+	}
+	
+	ol {		
+		padding-left: $p-font-size-base * 2.5;
+		
+		&:last-child {
+			padding-bottom: 0;
+		}
+		
+	}
+	
+	p ~ ol, 
+	p ~ ul {
+		margin-top: -1 * $p-font-size-base;
+		padding-bottom: 0.5 * $p-font-size-base;
+	}
+	
+}
+
+pre {
+	
+	display: 			block;
+	position: 			relative;
+	
+	font-family: 		$font-family-monospace;
+	
+	overflow-x: 		scroll;
+	
+	background:			$code-background;
+	padding: 			$p-font-size-base;
+			
+	@include dark-mode {
+		color: 			$code-color-dark-mode;
+		background: 	$code-background-dark-mode;
+	}
+	
+	margin-bottom: 	$p-padding-bottom;
+	
+	@include xs {
+		margin-bottom: 	$p-padding-bottom-xs;
+	}
+	@include sm {
+		margin-bottom: 	$p-padding-bottom-sm;
+	}
+	@include md {
+		margin-bottom: 	$p-padding-bottom-md;
+	}
+	@include lg {
+		margin-bottom: $p-padding-bottom-lg;
+	}
+	@include xl {
+		margin-bottom: $p-padding-bottom-xl;
+	}
+	
+	code {	
+		
+		@include xs {
+			font-size: 		$p-font-size-base-xs;
+			line-height: 	$p-line-height-base-xs;
+		}
+		@include sm {
+			font-size: 		$p-font-size-base-sm;
+			line-height: 	$p-line-height-base-sm;
+		}
+		@include md {
+			font-size: 		$p-font-size-base-md;
+			line-height: 	$p-line-height-base-md;
+		}
+		@include lg {
+			font-size: 		$p-font-size-base-lg;
+			line-height: 	$p-line-height-base-lg;
+		}
+		@include xl {
+			font-size: 		$p-font-size-base-xl;
+			line-height: 	$p-line-height-base-xl;
+		}
+		
+		background: 	none;		
+		
+		
+		.hll { background-color: $gray-700 }
+		.c { color: $gray-600; font-style: italic } /* Comment */
+		.err { color: $red; background-color: #e3d2d2 } /* Error */
+		.g { color: $gray-800 } /* Generic */
+		.k { color: darken($green, 10%); font-weight: bold } /* Keyword */
+		.l { color: $gray-800 } /* Literal */
+		.n { color: $gray-800 } /* Name */
+		.o { color: $gray-800 } /* Operator */
+		.x { color: $gray-800 } /* Other */
+		.p { color: $gray-800 } /* Punctuation */
+		.cm { color: $gray-600; font-style: italic } /* Comment.Multiline */
+		.cp { color: $red; font-weight: bold } /* Comment.Preproc */
+		.c1 { color: $gray-600; font-style: italic } /* Comment.Single */
+		.cs { color: $red; font-weight: bold; background-color: #520000 } /* Comment.Special */
+		.gd { color: $red } /* Generic.Deleted */
+		.ge { color: $gray-800; font-style: italic } /* Generic.Emph */
+		.gr { color: $red } /* Generic.Error */
+		.gh { color: $white; font-weight: bold } /* Generic.Heading */
+		.gi { color: $red } /* Generic.Inserted */
+		.go { color: $gray-400 } /* Generic.Output */
+		.gp { color: $gray-400 } /* Generic.Prompt */
+		.gs { color: $gray-800; font-weight: bold } /* Generic.Strong */
+		.gu { color: $white; text-decoration: underline } /* Generic.Subheading */
+		.gt { color: $red } /* Generic.Traceback */
+		.kc { color: darken($green, 10%); font-weight: bold } /* Keyword.Constant */
+		.kd { color: darken($green, 10%); font-weight: bold } /* Keyword.Declaration */
+		.kn { color: darken($green, 10%); font-weight: bold } /* Keyword.Namespace */
+		.kp { color: darken($green, 10%) } /* Keyword.Pseudo */
+		.kr { color: darken($green, 10%); font-weight: bold } /* Keyword.Reserved */
+		.kt { color: darken($green, 10%); font-weight: bold } /* Keyword.Type */
+		.ld { color: $gray-800 } /* Literal.Date */
+		.m { color: $blue } /* Literal.Number */
+		.s { color: $orange } /* Literal.String */
+		.na { color: $gray-800 } /* Name.Attribute */
+		.nb { color: $cyan } /* Name.Builtin */
+		.nc { color: $blue; text-decoration: underline } /* Name.Class */
+		.no { color: $cyan } /* Name.Constant */
+		.nd { color: $orange } /* Name.Decorator */
+		.ni { color: $gray-800 } /* Name.Entity */
+		.ne { color: $gray-400 } /* Name.Exception */
+		.nf { color: $blue } /* Name.Function */
+		.nl { color: $gray-800 } /* Name.Label */
+		.nn { color: $blue; text-decoration: underline } /* Name.Namespace */
+		.nx { color: $gray-800 } /* Name.Other */
+		.py { color: $gray-800 } /* Name.Property */
+		.nt { color: darken($green, 10%); font-weight: bold } /* Name.Tag */
+		.nv { color: $cyan } /* Name.Variable */
+		.ow { color: darken($green, 10%); font-weight: bold } /* Operator.Word */
+		.w { color: $gray-600 } /* Text.Whitespace */
+		.mf { color: $blue } /* Literal.Number.Float */
+		.mh { color: $blue } /* Literal.Number.Hex */
+		.mi { color: $blue } /* Literal.Number.Integer */
+		.mo { color: $blue } /* Literal.Number.Oct */
+		.sb { color: $orange } /* Literal.String.Backtick */
+		.sc { color: $orange } /* Literal.String.Char */
+		.sd { color: $orange } /* Literal.String.Doc */
+		.s2 { color: $orange } /* Literal.String.Double */
+		.se { color: $orange } /* Literal.String.Escape */
+		.sh { color: $orange } /* Literal.String.Heredoc */
+		.si { color: $orange } /* Literal.String.Interpol */
+		.sx { color: $orange } /* Literal.String.Other */
+		.sr { color: $orange } /* Literal.String.Regex */
+		.s1 { color: $orange } /* Literal.String.Single */
+		.ss { color: $orange } /* Literal.String.Symbol */
+		.bp { color: $cyan } /* Name.Builtin.Pseudo */
+		.vc { color: $cyan } /* Name.Variable.Class */
+		.vg { color: $cyan } /* Name.Variable.Global */
+		.vi { color: $cyan } /* Name.Variable.Instance */
+		.il { color: $blue } /* Literal.Number.Integer.Long */
+		
+		
+		@include dark-mode { 
+			.hll { background-color: $gray-200 }
+			.c { color:  $gray-300; font-style: italic } /* Comment */
+			.err { color: lighten($red, 30%); background-color: #e3d2d2 } /* Error */
+			.g { color:  $gray-200 } /* Generic */
+			.k { color: lighten($green, 30%); font-weight: bold } /* Keyword */
+			.l { color:  $gray-200 } /* Literal */
+			.n { color:  $gray-200 } /* Name */
+			.o { color:  $gray-200 } /* Operator */
+			.x { color:  $gray-200 } /* Other */
+			.p { color:  $gray-200 } /* Punctuation */
+			.cm { color:  $gray-300; font-style: italic } /* Comment.Multiline */
+			.cp { color: lighten($red, 30%); font-weight: bold } /* Comment.Preproc */
+			.c1 { color:  $gray-300; font-style: italic } /* Comment.Single */
+			.cs { color: lighten($red, 30%); font-weight: bold; background-color: #520000 } /* Comment.Special */
+			.gd { color: lighten($red, 30%) } /* Generic.Deleted */
+			.ge { color:  $gray-200; font-style: italic } /* Generic.Emph */
+			.gr { color: lighten($red, 30%) } /* Generic.Error */
+			.gh { color: $white; font-weight: bold } /* Generic.Heading */
+			.gi { color: lighten($red, 30%) } /* Generic.Inserted */
+			.go { color: $gray-400 } /* Generic.Output */
+			.gp { color: $gray-400 } /* Generic.Prompt */
+			.gs { color:  $gray-200; font-weight: bold } /* Generic.Strong */
+			.gu { color: $white; text-decoration: underline } /* Generic.Subheading */
+			.gt { color: lighten($red, 30%) } /* Generic.Traceback */
+			.kc { color: lighten($green, 30%); font-weight: bold } /* Keyword.Constant */
+			.kd { color: lighten($green, 30%); font-weight: bold } /* Keyword.Declaration */
+			.kn { color: lighten($green, 30%); font-weight: bold } /* Keyword.Namespace */
+			.kp { color: lighten($green, 30%) } /* Keyword.Pseudo */
+			.kr { color: lighten($green, 30%); font-weight: bold } /* Keyword.Reserved */
+			.kt { color: lighten($green, 30%); font-weight: bold } /* Keyword.Type */
+			.ld { color:  $gray-200 } /* Literal.Date */
+			.m { color: lighten($blue, 30%) } /* Literal.Number */
+			.s { color: lighten($orange, 20%) } /* Literal.String */
+			.na { color:  $gray-200 } /* Name.Attribute */
+			.nb { color: lighten($cyan, 30%) } /* Name.Builtin */
+			.nc { color: lighten($blue, 30%); text-decoration: underline } /* Name.Class */
+			.no { color: lighten($cyan, 30%) } /* Name.Constant */
+			.nd { color: lighten($orange, 20%) } /* Name.Decorator */
+			.ni { color:  $gray-200 } /* Name.Entity */
+			.ne { color: $gray-400 } /* Name.Exception */
+			.nf { color: lighten($blue, 30%) } /* Name.Function */
+			.nl { color:  $gray-200 } /* Name.Label */
+			.nn { color: lighten($blue, 30%); text-decoration: underline } /* Name.Namespace */
+			.nx { color:  $gray-200 } /* Name.Other */
+			.py { color:  $gray-200 } /* Name.Property */
+			.nt { color: lighten($green, 30%); font-weight: bold } /* Name.Tag */
+			.nv { color: lighten($cyan, 30%) } /* Name.Variable */
+			.ow { color: lighten($green, 30%); font-weight: bold } /* Operator.Word */
+			.w { color:  $gray-300 } /* Text.Whitespace */
+			.mf { color: lighten(lighten($blue, 30%), 30%) } /* Literal.Number.Float */
+			.mh { color: lighten(lighten($blue, 30%), 30%) } /* Literal.Number.Hex */
+			.mi { color: lighten($blue, 30%) } /* Literal.Number.Integer */
+			.mo { color: lighten($blue, 30%) } /* Literal.Number.Oct */
+			.sb { color: lighten(lighten($orange, 20%), 30%) } /* Literal.String.Backtick */
+			.sc { color: lighten($orange, 20%) } /* Literal.String.Char */
+			.sd { color: lighten($orange, 20%) } /* Literal.String.Doc */
+			.s2 { color: lighten($orange, 20%) } /* Literal.String.Double */
+			.se { color: lighten($orange, 20%) } /* Literal.String.Escape */
+			.sh { color: lighten($orange, 20%) } /* Literal.String.Heredoc */
+			.si { color: lighten($orange, 20%) } /* Literal.String.Interpol */
+			.sx { color: lighten($orange, 20%) } /* Literal.String.Other */
+			.sr { color: lighten($orange, 20%) } /* Literal.String.Regex */
+			.s1 { color: lighten($orange, 20%) } /* Literal.String.Single */
+			.ss { color: lighten($orange, 20%) } /* Literal.String.Symbol */
+			.bp { color: lighten($cyan, 30%) } /* Name.Builtin.Pseudo */
+			.vc { color: lighten($cyan, 30%) } /* Name.Variable.Class */
+			.vg { color: lighten($cyan, 30%) } /* Name.Variable.Global */
+			.vi { color: lighten($cyan, 30%) } /* Name.Variable.Instance */
+			.il { color: lighten($blue, 30%) } /* Literal.Number.Integer.Long */
+		}
+		
+	}
+}
+
+table {
+	width: 100%;
+		
+	@include xs {
+		font-size: 		$p-font-size-base-xs;
+		line-height: 	$p-line-height-base-xs;
+		margin-bottom: 	$p-margin-bottom-xs;
+	}
+	@include sm {
+		font-size: 		$p-font-size-base-sm;
+		line-height: 	$p-line-height-base-sm;
+		margin-bottom: 	$p-margin-bottom-sm;
+	}
+	@include md {
+		font-size: 		$p-font-size-base-md;
+		line-height: 	$p-line-height-base-md;
+		margin-bottom: 	$p-margin-bottom-md;
+	}
+	@include lg {
+		font-size: 		$p-font-size-base-lg;
+		line-height: 	$p-line-height-base-lg;
+		margin-bottom: 	$p-margin-bottom-lg;
+	}
+	@include xl {
+		font-size: 		$p-font-size-base-xl;
+		line-height: 	$p-line-height-base-xl;
+		margin-bottom: 	$p-margin-bottom-xl;
+	}
+	
+    border-collapse: collapse;
+
+    margin-bottom: 20px;
+	     	
+	thead {
+		@extend strong;
+		text-align: left;
+		border-bottom: 1px solid $black;
+		/* Text and background color for dark mode */
+		@include dark-mode {
+			border-bottom: 1px solid $white !important;
+		}			
+	}
+	
+	tfoot {
+		@extend strong;
+		text-align: left;
+		border-top: 1px solid $black;
+		/* Text and background color for dark mode */
+		@include dark-mode {
+			border-top: 1px solid $white;
+		}
+	}
+	
+	tr {
+		border-bottom: 1px solid $gray-200;
+
+		&:last-child {
+			border-bottom: none !important;
+		}
+	}
+	
+	th, td {
+    	padding: 5px 10px;
+		vertical-align: top;
+		
+		border-left: 1px solid $gray-200;
+		@include dark-mode {
+			border-left: 1px solid $gray-800;
+		}
+		
+		&:first-child {
+			border-left: none;
+		}
+	}
+}
+
+a.reversefootnote {
+	text-decoration: none;
+	font-family: $font-family-sans-serif !important;
+}
+
+
+
+
+
+
+
+
+

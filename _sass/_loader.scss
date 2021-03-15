@@ -1,0 +1,116 @@
+section#loading-screen {
+	
+	display: block;
+	position: fixed;
+	
+	width: 100vw;
+	height: 100vh;
+	
+	z-index: 100000;
+	overflow: hidden;
+	
+	top: 0;
+	
+	opacity: 1;
+	
+	background: $body-background;
+	@include dark-mode {
+		background: $body-background-dark-mode;
+	}
+	
+	&.fade-out {
+		-webkit-animation: fade-out 1s ease-in forwards;
+		-moz-animation: fade-out 1s ease-in forwards;
+		animation: fade-out 1s ease-in forwards;
+	}
+	
+	div.loader {
+		
+		&.hidden {
+			display: none !important;
+		}
+		
+		&.background {
+			
+			display: block;
+			position: absolute;
+			
+			width: 100vw;
+			height: 100vh;
+			
+			&.grow {
+				-webkit-animation: grow 1s ease-in-out forwards;
+				-moz-animation: grow 1s ease-in-out forwards;
+				animation: grow 1s ease-in-out forwards;
+			}
+			
+			&.shrink {
+				-webkit-animation: shirnk 1s ease-in-out forwards;
+				-moz-animation: shrink 1s ease-in-out forwards;
+				animation: shrink 1s ease-in-out forwards;
+				
+				transform: scale(0);
+			}
+			
+		}
+		
+		&.ring {
+			
+			display: block;
+			position: absolute;
+			
+			@include landscape {
+				width: 		100vw;
+				height: 	100vw;
+				
+				top: calc(50vh - (/* height */100vw / 2));
+				left: calc(50vw - (/* width */100vw / 2));
+			}
+			
+			@include portrait {
+				width: 		100vh;
+				height: 	100vh;
+				
+				top: calc(50vh - (/* height */100vh / 2));
+				left: calc(50vw - (/* width */100vh / 2));
+			}
+			
+		}
+					
+		&.outer {
+			background: url('../images/loader/outer.svg');
+			
+			background-size: 100vw;
+			background-position: center;
+			background-repeat: no-repeat;
+			
+			-webkit-animation:spin 45s linear infinite;
+			-moz-animation:spin 45s linear infinite;
+			animation: spin 45s linear infinite;
+		}
+		&.middle {
+			background: url('../images/loader/middle.svg');
+			
+			background-size: 66vw;
+			background-position: center;
+			background-repeat: no-repeat;
+			
+			-webkit-animation:spin 30s linear infinite reverse;
+			-moz-animation:spin 30s linear infinite reverse;
+			animation: spin 30s linear infinite reverse;				
+		}
+		&.inner {
+			background: url('../images/loader/inner.svg');
+			
+			background-size: 33vw;
+			background-position: center;
+			background-repeat: no-repeat;
+			
+			-webkit-animation: spin 15s linear infinite;
+			-moz-animation:spin 15s linear infinite;
+			animation: spin 15s linear infinite;
+		}
+		
+	}
+	
+}

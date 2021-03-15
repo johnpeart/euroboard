@@ -1,0 +1,409 @@
+// App styles
+
+body#scoreboard {
+		
+	main.scoreboard {
+		
+		ul#scoreboard--list {
+			
+			display: grid;
+			position: relative;
+			
+			margin: 0;
+			
+			@include xs {
+				padding: 10px;
+				grid-gap: 10px;
+			}
+			@include sm-up {
+				padding: 15px;
+				grid-gap: 15px;
+			}
+			@include lg-up {
+				padding: 20px;
+				grid-gap: 20px;
+			}
+			
+			&.semi-final-one,
+			&.semi-final-two {
+				
+				@include xs {
+					grid-template-rows: repeat(17, minmax(100px, auto));
+					grid-template-columns: 1fr;		
+				}
+				
+				@include sm {
+					grid-template-rows: repeat(9, minmax(100px, auto));
+					grid-template-columns: 1fr 1fr;		
+				}
+				
+				@include md-up {
+					grid-template-rows: repeat(6, minmax(100px, auto));
+					grid-template-columns: 1fr 1fr 1fr;		
+				}
+				
+				@include xl {
+					grid-template-rows: repeat(5, minmax(100px, auto));
+					grid-template-columns: 1fr 1fr 1fr 1fr;		
+				}
+				
+			}
+			
+			&.grand-final,
+			&.faux-final {
+				
+				@include xs {
+					grid-template-rows: repeat(26, minmax(100px, auto));
+					grid-template-columns: 1fr;		
+				}
+				
+				@include sm {
+					grid-template-rows: repeat(13, minmax(100px, auto));
+					grid-template-columns: 1fr 1fr;		
+				}
+				
+				@include md-up {
+					grid-template-rows: repeat(9, minmax(100px, auto));
+					grid-template-columns: 1fr 1fr 1fr;		
+				}
+				
+				@include xl {
+					grid-template-rows: repeat(7, minmax(100px, auto));
+					grid-template-columns: 1fr 1fr 1fr 1fr;		
+				}
+				
+			}
+			
+		}
+		
+		li.scoreboard--list--entry {
+			
+			display: grid;
+			
+			grid-template-rows: 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: 	"pos  		score"
+									"country 	score";
+			
+			
+			@include xs {
+				padding: 10px;
+			}
+			@include sm-up {
+				padding: 15px;
+			}
+			
+			background: $gray-200;
+			@include dark-mode {
+				background: $gray-800;
+			}
+			
+			border-radius: 10px;
+			
+			span.running-order {
+				grid-area: pos;
+				align-self: flex-start;
+			}
+			span.country {
+				grid-area: country;
+				align-self: flex-end;
+			}
+			span.score {
+				grid-area: score;
+				align-self: flex-end;
+				justify-self: flex-end;
+				
+				
+				
+			}
+			
+		}
+		
+	}
+		
+}
+
+// App styles
+
+body#vote {
+	
+	header#vote--header {
+		
+		display: grid;
+		position: relative;
+		
+		@include supports-sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+			
+			z-index: 99;
+		}
+		
+		width: 100%;
+		justify-content: center;
+		align-content: center;
+		
+		@include xs {
+			min-height: 100vh;
+		}
+		@include sm-up {
+			min-height: 50vh;
+		}
+		
+		background: $gray-200;
+		@include dark-mode {
+			background: $true-black;
+		}
+		
+		text-align: center;
+		
+		p.lead {
+			font-size: 		$p-font-size-base * 1.5;
+			line-height: 	$p-line-height-base * 1.5;
+			padding-bottom: 	$p-padding-bottom * 1.5;
+			
+			@include xs {
+				font-size: 		$p-font-size-base-xs * 1.1;
+				line-height: 	$p-line-height-base-xs;
+				padding-bottom: 	$p-padding-bottom-xs * 1.5;
+			}
+			@include sm {
+				font-size: 		$p-font-size-base-sm * 1.25;
+				line-height: 	$p-line-height-base-sm * 1.1;
+				padding-bottom: 	$p-padding-bottom-sm * 1.5;
+			}
+			@include md {
+				font-size: 		$p-font-size-base-md * 1.25;
+				line-height: 	$p-line-height-base-md * 1.1;
+				padding-bottom: 	$p-padding-bottom-md * 1.5;
+			}
+			@include lg {
+				font-size: 		$p-font-size-base-lg * 1.25;
+				line-height: 	$p-line-height-base-lg * 1.1;
+				padding-bottom: 	$p-padding-bottom-lg * 1.5;
+			}
+			@include xl {
+				font-size: 		$p-font-size-base-xl * 1.25;
+				line-height: 	$p-line-height-base-xl * 1.1;
+				padding-bottom: 	$p-padding-bottom-xl * 1.5;
+			}
+			
+			font-weight:		bold;
+		}
+		
+		p.down-arrow {
+			@include xs {
+				margin-top: 10vh;
+			}
+			@include sm-up {
+				display: none !important;
+			}
+		}
+	}
+		
+	main.vote {
+		
+		ul#vote--list {
+			
+			display: grid;
+			position: relative;
+			
+			margin: 0;
+			
+			width: 100%;			
+			max-width: 1200px;
+			
+			justify-self: center;
+			
+			@include xs {
+				padding: 10px;
+				grid-gap: 30px;
+			}
+			@include sm-up {
+				padding: 15px;
+				grid-gap: 15px;
+			}
+			@include lg-up {
+				padding: 20px;
+				grid-gap: 20px;
+			}
+			
+			&.semi-final-one,
+			&.semi-final-two {
+				
+				grid-template-rows: repeat(17, minmax(200px, auto));
+				grid-template-columns: 1fr;		
+				
+			}
+			
+			&.grand-final,
+			&.faux-final {
+				
+				grid-template-rows: repeat(26, minmax(200px, auto));
+				grid-template-columns: 1fr;
+				
+			}
+			
+		}
+		
+		li.scoreboard--list--entry {
+			
+			display: grid;
+			
+			@include xs {
+				grid-template-rows: auto auto repeat(5, 1fr);
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-areas: 	"pos pos"
+										"country country"
+										"one two"
+										"three four"
+										"five six"
+										"seven eight"
+										"ten twelve";
+				
+				grid-gap: 2px;
+			}
+			@include sm-up {
+				grid-template-rows: repeat(2, 1fr);
+				grid-template-columns: minmax(250px, 30%) repeat(5, 1fr);
+				grid-template-areas: 	"pos  		one two three four five"
+										"country 	six seven eight ten twelve";
+										
+				grid-gap: 2px;
+			}
+			@include lg-up {
+				grid-template-rows: repeat(2, 1fr);
+				grid-template-columns: minmax(250px, 50%) repeat(5, 1fr);
+				grid-template-areas: 	"pos  		one two three four five"
+										"country 	six seven eight ten twelve";
+																
+				grid-gap: 2px;
+			}
+			
+			
+			@include xs {
+				padding: 10px;
+			}
+			@include sm-up {
+				padding: 15px;
+			}
+			
+			background: $gray-200;
+			@include dark-mode {
+				background: $gray-800;
+			}
+			
+			border-radius: 15px;
+			
+			span.running-order {
+				grid-area: pos;
+				align-self: flex-start;
+			}
+			span.country {
+				grid-area: country;
+				align-self: flex-end;
+			}
+			
+			button {
+				min-height: 75px;
+				min-width: unset;
+				margin: 0;
+				
+				&.one {
+					@include xs {
+						border-radius: 10px 0 0 0;
+					}
+					@include sm-up {
+						border-radius: 10px 0 0 0;
+					}
+				}
+				
+				&.two {
+					@include xs {
+						border-radius: 0 10px 0 0;
+					}
+					@include sm-up {
+						border-radius: 0;
+					}
+				}
+				
+				&.three {
+					@include xs {
+						border-radius: 0;
+					}
+					@include sm-up {
+						border-radius: 0;
+					}
+				}
+				
+				&.four {
+					@include xs {
+						border-radius: 0;
+					}
+					@include sm-up {
+						border-radius: 0;
+					}
+				}
+				
+				&.five {
+					@include xs {
+						border-radius: 0;
+					}
+					@include sm-up {
+						border-radius: 0 10px 0 0;
+					}
+				}
+				
+				&.six {
+					@include xs {
+						border-radius: 0;
+					}
+					@include sm-up {
+						border-radius: 0 0 0 10px;
+					}
+				}
+				
+				&.seven {
+					@include xs {
+						border-radius: 0;
+					}
+					@include sm-up {
+						border-radius: 0;
+					}
+				}
+				
+				&.eight {
+					@include xs {
+						border-radius: 0;
+					}
+					@include sm-up {
+						border-radius: 0;
+					}
+				}
+				
+				&.ten {
+					@include xs {
+						border-radius: 0 0 0 10px;
+					}
+					@include sm-up {
+						border-radius: 0;
+					}
+				}
+				
+				&.twelve {
+					@include xs {
+						border-radius: 0 0 10px 0;
+					}
+					@include sm-up {
+						border-radius: 0 0 10px 0;
+					}
+				}
+				
+			}
+			
+		}
+		
+	}
+		
+}

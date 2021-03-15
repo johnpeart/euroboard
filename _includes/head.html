@@ -1,0 +1,53 @@
+<head prefix="og: http://ogp.me/ns#">
+	
+	{% include head/about.html %}
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.title | strip_html | strip_newlines | truncate: 200 }}{% endif %}</title>
+	
+	<!-- Short description of the page (limit to 150 characters) -->
+	<!-- In *some* situations this description is used as a part of the snippet shown in the search results. -->
+	<meta name="description" content="{{ site.description | strip_html }}" />
+	<meta name="author" content="{{ site.author }}" />
+	
+	<!-- Control the behavior of search engine crawling and indexing -->
+	<meta name="robots" content="index,follow"><!-- All Search Engines -->
+	<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+	
+	<!-- Base URLS, duplicate URLs and feeds -->
+	<meta name="url" content="{{ site.url | append: site.baseurl }}">
+	<base href="{{ site.url | append: site.baseurl | append: page.url }}">
+	<!-- Links to top level resource in an hierarchical structure -->
+	<link rel="index" href="{{ site.url | append: site.baseurl }}">
+	<link rel="canonical" href="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
+	<link rel="alternate" href="{{ site.url | append: site.baseurl | append: '/feed.xml' }}" type="application/rss+xml" title="{{ site.title }}">
+	<!-- Links to a document that describes a collection of records, documents, or other materials of historical interest. -->
+	<link rel="archives" href="{{ site.url | append: site.baseurl | append: '/archives' }}">
+	
+	<!-- Gives information about the author -->
+	{% include head/rel-me.html %}
+	
+	<!-- Facebook Open Graph settings -->
+	{% include head/facebook-opengraph.html %}
+	
+	<!-- Twitter Cards settings -->
+	{% include head/twitter-cards.html %}
+	
+	<!-- Schema.org settings -->
+	{% include head/schema-org.html %}
+	
+	<!-- Favicons -->
+	<!-- Place favicon.ico in the root directory - no tag necessary -->
+	<meta name="theme-color" content="{{ site.theme-colour }}">
+	<link rel="icon" href="{{ site.url | append: site.baseurl | append: site.favicon-svg }}">
+	<link rel="mask-icon" href="{{ site.url | append: site.baseurl | append: site.favicon-pinned-svg }}" color="{{ site.theme-colour }}">
+	<link rel="apple-touch-icon" href="{{ site.url | append: site.baseurl | append: site.favicon-large-png }}">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="{{ site.url | append: site.baseurl | append: site.asset-path | append: site.css-path | append: '/styles.css' }}">
+
+</head>

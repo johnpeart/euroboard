@@ -1,0 +1,81 @@
+// Global styles
+
+@at-root {
+	@-ms-viewport { 
+		width: device-width;
+	} // stylelint-disable-line at-rule-no-vendor-prefix
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  
+  min-height: 101vh;
+}
+
+html,
+body {
+	
+	position: 				relative;
+		
+	margin: 				0;
+	padding: 				0;
+	
+	font-family: 			$font-family-sans-serif;
+	font-kerning: 			auto;
+	letter-spacing: 		normal;
+
+	box-sizing: border-box;
+
+    color: $body-color;
+	background: $body-background;
+	
+	/* Text and background color for dark mode */
+	@include dark-mode {
+	    color: $body-color-dark-mode;
+	    background: $body-background-dark-mode;
+	}
+	
+}
+
+main {
+	
+	@include xs {
+		min-height: 100vh;
+	}
+	@include sm {
+		min-height: 100vh;
+	}
+	@include md {
+		min-height: 100vh;
+	}
+	@include lg {
+		min-height: 100vh;
+	}
+	@include xl {
+		min-height: 100vh;
+	}
+	
+	&#content {
+		
+		display: grid;
+		position: relative;
+		
+		@include supports-sticky {
+			z-index: 100;
+		}
+		
+		background: $body-background;
+		@include dark-mode {
+			background: $body-background-dark-mode;
+		}
+		
+	}
+		
+}

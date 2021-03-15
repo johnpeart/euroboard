@@ -1,0 +1,34 @@
+---
+---
+{
+	  "rules": {
+		"semi-final-one": {
+			{% for entry in site.data.entries %}{% if entry.semi-final-one == "TRUE" %}
+			{{ entry.code | append: '"' | prepend: '"' }}: {
+					".read": true,
+					".write": true,
+				},{% endif %}{% endfor %}
+		},
+		"semi-final-two": {
+			{% for entry in site.data.entries %}{% if entry.semi-final-two == "TRUE" %}
+			{{ entry.code | append: '"' | prepend: '"' }}: {
+					".read": true,
+					".write": true,
+				},{% endif %}{% endfor %}
+		},
+		"grand-final": {
+			{% for entry in site.data.entries %}{% if entry.grand-final == "TRUE" %}
+			{{ entry.code | append: '"' | prepend: '"' }}: {
+					".read": true,
+					".write": true,
+				},{% endif %}{% endfor %}
+		},
+		"faux-final": {
+			{% for entry in site.data.entries %}{% if entry.faux-final == "TRUE" %}
+			{{ entry.code | append: '"' | prepend: '"' }}: {
+					".read": true,
+					".write": true,
+				},{% endif %}{% endfor %}
+		}
+	}
+}

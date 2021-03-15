@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+				
+	<section id="page-content">
+
+		<h1 class="page-title">{{ page.title | smartify }}</h1>
+
+		{{ content }}
+							
+	</section>
+	
+</main>
+
+{% include footer.html %}

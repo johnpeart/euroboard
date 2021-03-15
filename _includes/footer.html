@@ -1,0 +1,35 @@
+<footer id="site-footer">
+	
+	<div class="container footer">
+
+		<aside id="footer--wordmark">
+			
+			<p class="footer--wordmark">John Peart</p>
+			<p><a href="//johnpe.art/" class="footer--site-link">johnpe.art</a></p>
+			
+		</aside>
+		
+		<nav id="footer--links">
+			
+			<ul>
+				{% if site.data.footer-menu %}
+					{% for item in site.data.footer-menu %}
+					<li><a href="{{ item.link }}" class="footer--nav-link" title="Visit the {{ item.label }} page">{{ item.label }}</a></li>
+					{% endfor %}
+				{% else %}
+					<li><a href="//johnpe.art/about" class="footer--nav-link" title="Visit the About me page">About me</a></li>
+					<li><a href="//johnpe.art/writing" class="footer--nav-link" title="Visit the Writing page">Writing</a></li>
+					<li><a href="//photos.johnpe.art" class="footer--nav-link" title="Visit the Photos pages">Photos</a></li>
+					<li><a href="//podcast.johnpe.art" class="footer--nav-link" title="Visit the Podcasts page">Podcasts</a></li>
+					<li><a href="//goals.johnpe.art" class="footer--nav-link" title="Visit the Goals pages">Goals</a></li>
+					<li><a href="//projects.johnpe.art" class="footer--nav-link" title="Visit the Projects page">Projects</a></li>
+					<li><a href="//manuals.johnpe.art" class="footer--nav-link" title="Visit the manuals Manuals for my projects">Manuals</a></li>
+					<li><a href="//wishlist.johnpe.art" class="footer--nav-link" title="See my wishlist">Wishlist</a></li>
+				{% endif %}
+			</ul>
+			
+		</nav>
+	
+	</div>
+	
+</footer>

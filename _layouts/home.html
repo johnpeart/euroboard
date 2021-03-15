@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<main id="content" class="container">
+	
+	<section id="home--welcome">
+	
+		<h1>Welcome to the {{ site.title }}.</h1>
+		<p class="lead">{{ site.description }}</p>
+	
+		<p>Cheer on for your favourite entry using the <em>Vote</em> page for each event, and see what everyone things live on the <em>Scoreboard</em>.</p>
+		
+		<p>For the best results, show the <em>Scoreboard</em> on a separate TV or monitor, and use your phone or tablet to <em>Vote</em>.</p>
+		
+		<p><strong>Having fun?</strong> Let me know! Tweet me <a href="https://twitter.com/johnpeart">@johnpeart</a>.</p>
+		
+	</section>
+	
+	<nav id="home--menu">
+		
+		<ul id="home--menu--list">
+			
+			<li class="home--menu--list-item">
+				<a href="/semi-final-one/scoreboard" title="Load the Semi-final 1 scoreboard" class="left">
+					<span class="home--menu--list-item--event">Semi-final 1</span>
+					<span class="home--menu--list-item--type">Scoreboard</span>
+				</a>
+			</li>
+			
+			<li class="home--menu--list-item">
+				<a href="/semi-final-one/vote" title="Vote in Semi-final 1" class="right">
+					<span class="home--menu--list-item--type">Vote</span>
+				</a>
+			</li>
+			
+			<li class="home--menu--list-item">
+				<a href="/semi-final-two/scoreboard" title="Load the Semi-final 2 scoreboard" class="left">
+					<span class="home--menu--list-item--event">Semi-final 2</span>
+					<span class="home--menu--list-item--type">Scoreboard</span>
+				</a>
+			</li>
+			
+			<li class="home--menu--list-item">
+				<a href="/semi-final-two/vote" title="Vote in Semi-final 2" class="right">
+					<span class="home--menu--list-item--type">Vote</span>
+				</a>
+			</li>
+			
+			<li class="home--menu--list-item">
+				<a href="/grand-final/scoreboard" title="Load the Grand Final scoreboard" class="left">
+					<span class="home--menu--list-item--event">Grand final</span>
+					<span class="home--menu--list-item--type">Scoreboard</span>
+				</a>
+			</li>
+			
+			<li class="home--menu--list-item">
+				<a href="/grand-final/vote" title="Vote in the Grand Final" class="right">
+					<span class="home--menu--list-item--type">Vote</span>
+				</a>
+			</li>
+			
+		</ul>
+		
+	</nav>
+
+</main>
+
+{% include footer.html %}

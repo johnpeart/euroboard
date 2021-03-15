@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% assign path = page.path | remove: ".md" | remove: "_scoreboards/" %}
+{% assign running-order = path | append: "-running-order" %}
+{% assign entries = site.data.entries | sort: running-order %}
+		
+{% include loader.html %}
+			
+<main id="content" class="scoreboard">
+	
+	<ul id="scoreboard--list" class="{{ path }}">
+		
+		{% for entry in entries %}
+		{% if entry.[path] == "TRUE" %}
+			
+			<li id="{{ entry.code }}" class="scoreboard--list--entry">
+				<span class="running-order">{{ entry.[running-order] | prepend: "#" }}</span>
+				<span class="country">{{ entry.country }}</span>
+				<span id="score-{{ entry.code }}" class="score">??</span>
+			</li>
+		{% endif %}		
+		{% endfor %}
+		
+	</ul>
+
+</main>
+
+{% include footer.html %}

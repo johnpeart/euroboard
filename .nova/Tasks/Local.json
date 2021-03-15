@@ -1,0 +1,18 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "jekyll clean\njekyll build"
+    },
+    "clean" : {
+      "enabled" : true,
+      "script" : "jekyll clean"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "jekyll serve --config _local.yml"
+    }
+  },
+  "identifier" : "AD887031-AB1C-4101-8128-81596E39F449",
+  "openLogOnRun" : "start"
+}

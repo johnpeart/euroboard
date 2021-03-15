@@ -1,0 +1,98 @@
+// Mixins
+
+// Animations
+
+/* Animation Keyframes*/
+
+@-moz-keyframes spin { 
+	100% { 
+		-moz-transform: rotate(360deg); 
+	} 
+}
+@-webkit-keyframes spin { 
+	100% { 
+		-webkit-transform: rotate(360deg); 
+	} 
+}
+@keyframes spin { 
+	100% { 
+		transform: rotate(360deg); 
+	} 
+}
+
+
+
+@-moz-keyframes grow { 
+	0% {
+		-moz-transform: scale(0);
+	}
+	100% {
+		-moz-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes grow { 
+	0% {
+		-webkit-transform: scale(0);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+@-keyframes grow { 
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@-moz-keyframes shrink { 
+	0% {
+		-moz-transform: scale(1);
+	}
+	100% {
+		-moz-transform: scale(0);
+	}
+}
+
+@-webkit-keyframes shrink { 
+	0% {
+		-webkit-transform: scale(1);
+	}
+	100% {
+		-webkit-transform: scale(0);
+	}
+}
+
+@-keyframes shrink { 
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+
+
+@-moz-keyframes fade-out { 
+	100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes fade-out { 
+	100% {
+		opacity: 0;
+	}
+}
+
+@-keyframes fade-out { 
+	100% {
+		opacity: 0;
+	}
+}
+
