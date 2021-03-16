@@ -80,12 +80,12 @@ $blockquote-background-dark-mode:		$gray-700;
 
 // DEFAULT TEXT SIZES & SPACING
 
-$p-font-size-base:					22px;
+$p-font-size-base:					18px;
 $p-font-size-base-xs:				$p-font-size-base;
-$p-font-size-base-sm:				22px;
-$p-font-size-base-md:				22px;
-$p-font-size-base-lg:				26px;
-$p-font-size-base-xl:				30px;
+$p-font-size-base-sm:				20px;
+$p-font-size-base-md:				20px;
+$p-font-size-base-lg:				22px;
+$p-font-size-base-xl:				24px;
 
 $p-line-height-base:					$p-font-size-base + ($p-font-size-base / 4);
 $p-line-height-base-xs:				$p-line-height-base;
@@ -463,7 +463,7 @@ $xs: 	 							0;
 $sm: 	 							600px;
 $md: 	 							766px;
 $lg: 	 							1000px;
-$xl: 	 							1200px;
+$xl: 	 							1900px;
 
 
 // Grid containers

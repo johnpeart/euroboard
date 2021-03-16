@@ -67,9 +67,7 @@ main {
 		display: grid;
 		position: relative;
 		
-		@include supports-sticky {
-			z-index: 100;
-		}
+		z-index: 100;
 		
 		background: $body-background;
 		@include dark-mode {

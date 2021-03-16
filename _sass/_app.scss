@@ -1,6 +1,75 @@
 // App styles
 
 body#scoreboard {
+	
+	header#scoreboard--header {
+		
+		display: grid;
+		position: relative;
+		
+		z-index: 100;
+		
+		width: 100%;
+		justify-content: center;
+		align-content: center;
+		
+		@include xs {
+			min-height: 100vh;
+		}
+		@include sm-up {
+			min-height: 50vh;
+		}
+		
+		background: $gray-200;
+		@include dark-mode {
+			background: $true-black;
+		}
+		
+		text-align: center;
+		
+		p.lead {
+			font-size: 		$p-font-size-base * 1.5;
+			line-height: 	$p-line-height-base * 1.5;
+			padding-bottom: 	$p-padding-bottom * 1.5;
+			
+			@include xs {
+				font-size: 		$p-font-size-base-xs * 1.1;
+				line-height: 	$p-line-height-base-xs;
+				padding-bottom: 	$p-padding-bottom-xs * 1.5;
+			}
+			@include sm {
+				font-size: 		$p-font-size-base-sm * 1.25;
+				line-height: 	$p-line-height-base-sm * 1.1;
+				padding-bottom: 	$p-padding-bottom-sm * 1.5;
+			}
+			@include md {
+				font-size: 		$p-font-size-base-md * 1.25;
+				line-height: 	$p-line-height-base-md * 1.1;
+				padding-bottom: 	$p-padding-bottom-md * 1.5;
+			}
+			@include lg {
+				font-size: 		$p-font-size-base-lg * 1.25;
+				line-height: 	$p-line-height-base-lg * 1.1;
+				padding-bottom: 	$p-padding-bottom-lg * 1.5;
+			}
+			@include xl {
+				font-size: 		$p-font-size-base-xl * 1.25;
+				line-height: 	$p-line-height-base-xl * 1.1;
+				padding-bottom: 	$p-padding-bottom-xl * 1.5;
+			}
+			
+			font-weight:		bold;
+		}
+		
+		p.down-arrow {
+			@include xs {
+				margin-top: 10vh;
+			}
+			@include sm-up {
+				display: none !important;
+			}
+		}
+	}
 		
 	main.scoreboard {
 		
@@ -13,65 +82,20 @@ body#scoreboard {
 			
 			@include xs {
 				padding: 10px;
+				grid-template-columns: 1fr;		
 				grid-gap: 10px;
 			}
 			@include sm-up {
 				padding: 15px;
-				grid-gap: 15px;
+				grid-template-columns: 1fr 1fr;		
+				grid-gap: 15px;	
 			}
 			@include lg-up {
 				padding: 20px;
-				grid-gap: 20px;
+				grid-template-columns: 1fr 1fr 1fr;		
 			}
-			
-			&.semi-final-one,
-			&.semi-final-two {
-				
-				@include xs {
-					grid-template-rows: repeat(17, minmax(100px, auto));
-					grid-template-columns: 1fr;		
-				}
-				
-				@include sm {
-					grid-template-rows: repeat(9, minmax(100px, auto));
-					grid-template-columns: 1fr 1fr;		
-				}
-				
-				@include md-up {
-					grid-template-rows: repeat(6, minmax(100px, auto));
-					grid-template-columns: 1fr 1fr 1fr;		
-				}
-				
-				@include xl {
-					grid-template-rows: repeat(5, minmax(100px, auto));
-					grid-template-columns: 1fr 1fr 1fr 1fr;		
-				}
-				
-			}
-			
-			&.grand-final,
-			&.faux-final {
-				
-				@include xs {
-					grid-template-rows: repeat(26, minmax(100px, auto));
-					grid-template-columns: 1fr;		
-				}
-				
-				@include sm {
-					grid-template-rows: repeat(13, minmax(100px, auto));
-					grid-template-columns: 1fr 1fr;		
-				}
-				
-				@include md-up {
-					grid-template-rows: repeat(9, minmax(100px, auto));
-					grid-template-columns: 1fr 1fr 1fr;		
-				}
-				
-				@include xl {
-					grid-template-rows: repeat(7, minmax(100px, auto));
-					grid-template-columns: 1fr 1fr 1fr 1fr;		
-				}
-				
+			@include xl {
+				grid-template-columns: 1fr 1fr 1fr 1fr;		
 			}
 			
 		}
@@ -80,9 +104,9 @@ body#scoreboard {
 			
 			display: grid;
 			
-			grid-template-rows: 1fr 1fr;
-			grid-template-columns: 1fr 1fr;
-			grid-template-areas: 	"pos  		score"
+			grid-template-rows: auto auto;
+			grid-template-columns: auto auto;
+			grid-template-areas: 	"pos  		pos"
 									"country 	score";
 			
 			
@@ -98,20 +122,92 @@ body#scoreboard {
 				background: $gray-800;
 			}
 			
+			&.now-playing {
+				background: $cyan;
+				
+				span {
+					color: $white !important;
+				}
+			}
+			
 			border-radius: 10px;
 			
 			span.running-order {
 				grid-area: pos;
 				align-self: flex-start;
+				
+				padding-bottom: 15px;
+				
+				line-height: 	1;
+				
+				color: $gray-600;
+				@include dark-mode {
+					color: $gray-500;
+				}
+				
+				@include xs {
+					font-size: 20px;
+				}
+				@include sm {
+					font-size: 20px;
+				}
+				@include md {
+					font-size: 15px;
+				}
+				@include lg {
+					font-size: 20px;
+				}
+				@include xl {
+					font-size: 25px;
+				}
+				
 			}
 			span.country {
 				grid-area: country;
 				align-self: flex-end;
+				
+				line-height: 	1;
+				
+				@include xs {
+					font-size: 20px;
+				}
+				@include sm {
+					font-size: 20px;
+				}
+				@include md {
+					font-size: 20px;
+				}
+				@include lg {
+					font-size: 20px;
+				}
+				@include xl {
+					font-size: 30px;
+				}
+				
 			}
 			span.score {
 				grid-area: score;
 				align-self: flex-end;
 				justify-self: flex-end;
+				
+				font-weight: bold;
+				line-height: 	1;
+				
+				@include xs {
+					font-size: 30px;
+				}
+				@include sm {
+					font-size: 30px;
+				}
+				@include md {
+					font-size: 30px;
+				}
+				@include lg {
+					font-size: 35px;
+				}
+				@include xl {
+					font-size: 45px;
+				}
 				
 				
 				
@@ -132,13 +228,7 @@ body#vote {
 		display: grid;
 		position: relative;
 		
-		@include supports-sticky {
-			position: -webkit-sticky;
-			position: sticky;
-			top: 0;
-			
-			z-index: 99;
-		}
+		z-index: 100;
 		
 		width: 100%;
 		justify-content: center;
@@ -299,10 +389,52 @@ body#vote {
 			span.running-order {
 				grid-area: pos;
 				align-self: flex-start;
+				
+				color: $gray-600;
+				@include dark-mode {
+					color: $gray-500;
+				}
+				
+				line-height: 	1;
+				
+				@include xs {
+					font-size: 20px;
+				}
+				@include sm {
+					font-size: 20px;
+				}
+				@include md {
+					font-size: 30px;
+				}
+				@include lg {
+					font-size: 30px;
+				}
+				@include xl {
+					font-size: 30px;
+				}
 			}
 			span.country {
 				grid-area: country;
 				align-self: flex-end;
+				
+				line-height: 	1;
+				
+				@include xs {
+					padding: 20px 0;
+					font-size: 25px;
+				}
+				@include sm {
+					font-size: 25px;
+				}
+				@include md {
+					font-size: 25px;
+				}
+				@include lg {
+					font-size: 35px;
+				}
+				@include xl {
+					font-size: 40px;
+				}
 			}
 			
 			button {
@@ -402,6 +534,100 @@ body#vote {
 				
 			}
 			
+		}
+		
+	}
+		
+}
+
+// App styles
+
+body#admin {
+	
+	header#admin--header {
+		
+		display: grid;
+		position: relative;
+		
+		z-index: 100;
+		
+		width: 100%;
+		justify-content: center;
+		align-content: center;
+		
+		@include xs {
+			min-height: 100vh;
+		}
+		@include sm-up {
+			min-height: 50vh;
+		}
+		
+		background: $gray-200;
+		@include dark-mode {
+			background: $true-black;
+		}
+		
+		text-align: center;
+		
+		p.lead {
+			font-size: 		$p-font-size-base * 1.5;
+			line-height: 	$p-line-height-base * 1.5;
+			padding-bottom: 	$p-padding-bottom * 1.5;
+			
+			@include xs {
+				font-size: 		$p-font-size-base-xs * 1.1;
+				line-height: 	$p-line-height-base-xs;
+				padding-bottom: 	$p-padding-bottom-xs * 1.5;
+			}
+			@include sm {
+				font-size: 		$p-font-size-base-sm * 1.25;
+				line-height: 	$p-line-height-base-sm * 1.1;
+				padding-bottom: 	$p-padding-bottom-sm * 1.5;
+			}
+			@include md {
+				font-size: 		$p-font-size-base-md * 1.25;
+				line-height: 	$p-line-height-base-md * 1.1;
+				padding-bottom: 	$p-padding-bottom-md * 1.5;
+			}
+			@include lg {
+				font-size: 		$p-font-size-base-lg * 1.25;
+				line-height: 	$p-line-height-base-lg * 1.1;
+				padding-bottom: 	$p-padding-bottom-lg * 1.5;
+			}
+			@include xl {
+				font-size: 		$p-font-size-base-xl * 1.25;
+				line-height: 	$p-line-height-base-xl * 1.1;
+				padding-bottom: 	$p-padding-bottom-xl * 1.5;
+			}
+			
+			font-weight:		bold;
+		}
+		
+		p.down-arrow {
+			@include xs {
+				margin-top: 10vh;
+			}
+			@include sm-up {
+				display: none !important;
+			}
+		}
+	}
+		
+	main.admin {
+		
+		fieldset#optionsNowPlaying {
+			ul {
+				display: grid;
+				@include xs {
+					grid-template-columns: auto;
+				}
+				@include sm-up {
+					grid-template-columns: auto auto;
+				}
+				@include xl-up {
+					grid-template-columns: auto auto auto;
+				}
+			}
 		}
 		
 	}

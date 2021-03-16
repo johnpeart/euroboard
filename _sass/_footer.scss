@@ -5,14 +5,6 @@ footer#site-footer {
 	display: 		block;	
 	position: 		relative;
 	
-	@include supports-sticky {
-		position: -webkit-sticky;
-		position: sticky;
-		bottom: 0;
-		
-		z-index: 1;
-	}
-	
 	@include xs {
 		padding-top: 			$footer-padding-top-xs * 5;
 		padding-bottom: 		$footer-padding-bottom-xs * 4;
