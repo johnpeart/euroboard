@@ -11,7 +11,7 @@
     
     {% include analytics.html %}
     
-    {% if page.layout == "scoreboard" or page.layout == "vote" %}
+    {% if page.layout == "scoreboard" or page.layout == "vote" or page.layout == "admin" %}
       {% include firebase.html %}
     {% endif %}
 

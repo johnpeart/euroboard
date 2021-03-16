@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+{% assign event = page.path | remove: ".html" | remove: "_admin/" %}
+{% assign running-order = event | append: "-running-order" %}
+{% assign entries = site.data.entries | sort: running-order %}
+		
+{% include loader.html %}
+
+{% include header.html %}
+			
+<main id="content" class="admin container">
+	
+	<fieldset id="optionsNowPlaying">
+
+		<legend>Now playing</legend>
+
+		<ul>
+	
+			<li class="radio-input">
+				<input type="radio" onchange="setNowPlaying('{{ event }}');" name="radioNowPlaying" id="nowPlayingNull" value="null">
+				<label for="nowPlayingNull">Nothing</label>
+				<span class="label-hint">Nothing playing</span>
+			</li>		
+			{% for entry in entries %}
+			{% if entry.[event] == "TRUE" %}
+			<li class="radio-input">
+				<input type="radio" onchange="setNowPlaying('{{ event }}');" name="radioNowPlaying" id="nowPlaying{{ entry.code }}" value="{{ entry.code }}">
+				<label for="nowPlaying{{ entry.code }}">{{ entry.country }}</label>
+				<span class="label-hint">{{ entry.[running-order] | append: " #" | append: entry.code }}</span>
+			</li>
+			{% endif %}		
+			{% endfor %}
+		</ul>
+
+	</fieldset>
+
+</main>
+
+{% include footer.html %}

@@ -2,18 +2,20 @@
 layout: default
 ---
 
-{% assign path = page.path | remove: ".md" | remove: "_scoreboards/" %}
-{% assign running-order = path | append: "-running-order" %}
+{% assign event = page.path | remove: ".md" | remove: "_scoreboards/" %}
+{% assign running-order = event | append: "-running-order" %}
 {% assign entries = site.data.entries | sort: running-order %}
 		
 {% include loader.html %}
+
+{% include header.html %}
 			
 <main id="content" class="scoreboard">
 	
-	<ul id="scoreboard--list" class="{{ path }}">
+	<ul id="scoreboard--list" class="{{ event }}">
 		
 		{% for entry in entries %}
-		{% if entry.[path] == "TRUE" %}
+		{% if entry.[event] == "TRUE" %}
 			
 			<li id="{{ entry.code }}" class="scoreboard--list--entry">
 				<span class="running-order">{{ entry.[running-order] | prepend: "#" }}</span>
