@@ -102,7 +102,7 @@ function stopLoader() {
 }
 
 function checkNowPlaying(event, country) {
-	var currentEntry = firebase.database().ref('/' + event + '/' + country + '/now-playing');
+	var currentEntry = database.ref('/' + event + '/' + country + '/now-playing');
 	var uiEntry = document.getElementById(country);
 	
 	currentEntry.on('value', (snapshot) => {
@@ -126,8 +126,17 @@ function checkScores(event, countries) {
 	}
 }
 
+function checkTopRankedScores(event) {
+	var scoresRef = database.ref("scores");
+	scoresRef.orderByValue().limitToLast(3).on("value", function(snapshot) {
+	  snapshot.forEach(function(data) {
+		console.log("The " + data.key + " score is " + data.val());
+	  });
+	});
+}
+
 function checkScore(event, country) {
-	var currentScore = firebase.database().ref('/' + event + '/' + country + '/vote');
+	var currentScore = database.ref('/' + event + '/' + country + '/vote');
 	var uiScore = document.getElementById("score-" + country);
 	
 	currentScore.on('value', (snapshot) => {
@@ -148,7 +157,7 @@ function checkScore(event, country) {
 function submitVote(event, country, vote) {
 	
 	// Get the current score for the country
-	var countryScore = firebase.database().ref('/' + event + '/' + country + '/vote');
+	var countryScore = database.ref('/' + event + '/' + country + '/vote');
 	var points = parseInt(vote);
 	var uiVoteButtons = document.getElementsByName("vote-" + country);
 	
@@ -171,7 +180,7 @@ function setNowPlaying(event) {
 		if (radios[i].checked) {
 			// do whatever you want with the checked box
 			var country = radios[i].value;
-			var nowPlaying = firebase.database().ref('/' + event + '/' + country + '/now-playing');
+			var nowPlaying = database.ref('/' + event + '/' + country + '/now-playing');
 			
 			nowPlaying.transaction(
 				function() {
@@ -183,7 +192,7 @@ function setNowPlaying(event) {
 			
 			// do whatever you want with the unchecked box
 			var country = radios[i].value;
-			var nowPlaying = firebase.database().ref('/' + event + '/' + country + '/now-playing');
+			var nowPlaying = database.ref('/' + event + '/' + country + '/now-playing');
 			
 			nowPlaying.transaction(
 				function() {
