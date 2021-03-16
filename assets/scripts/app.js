@@ -49,7 +49,7 @@ window.onload = function() {
 		// Show the animation to hide the UI
 		startLoader();
 
-		getAllData(event);
+		checkScores(event);
 		
 		// Show the UI
 		stopLoader();
@@ -110,46 +110,38 @@ function checkNowPlaying(event, country) {
 		const data = snapshot.val();
 		if (data == true) {
 			uiEntry.classList.add("now-playing");
-			console.log('▶️ Now playing: ' + country);
 		} else {
 			uiEntry.classList.remove("now-playing");
 		}
+		
+		console.log('▶️ Now playing: ' + country);
 	  
 	});
 	
 }
 
-function getAllData(event, countries) {
+function checkScores(event, countries) {
 	console.log("⏰ Checking scores...")
-	var allData = []
-	
 	for (i = 0; i < entries.length; i++) {
-		
-		var country = entries[i];
-		
-		getVoteData(event, country)
-		console.log('✅ Score for ' + country + ' changed. New score: ' + data);
-		allData.push([country, votes]);
-	
-		checkNowPlaying(event, country);
-		
+		checkScore(event, entries[i]);
 	}
-	
-	console.log(allData);
 }
 
-function checkScores(event, country, arr) {
+function checkScore(event, country) {
+	var currentScore = firebase.database().ref('/' + event + '/' + country + '/vote');
+	var uiScore = document.getElementById("score-" + country);
 	
-	
-	
-}
-
-function getVoteData(event, country) {
-	var score = firebase.database().ref('/' + event + '/' + country + '/vote');
-	score.on('value', (snapshot) => {
-		const votes = snapshot.val();
-		return votes;
+	currentScore.on('value', (snapshot) => {
+				
+		const data = snapshot.val();
+		uiScore.innerHTML = data;
+		
+		console.log('✅ Score for ' + country + ' changed. New score: ' + data);
+	  
 	});
+	
+	checkNowPlaying(event, country);
+	
 }
 
 // When this call is triggered, it will update the score for the country, 
