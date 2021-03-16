@@ -54,6 +54,12 @@ collections:
         defaults:
             values:
                 layout: vote
+    admin:
+        output: true
+        permalink: /:path/admin
+        defaults:
+            values:
+                layout: admin
 
 # Plugins and build settings
 
