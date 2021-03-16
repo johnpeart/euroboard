@@ -27,34 +27,39 @@ var loadingScreen = document.getElementById("loading-screen");
 var loader = document.getElementById("loader");
 
 window.onload = function() {
+	
+	if(window.location.pathname.indexOf("semi-final-one") != -1) {
+		event = "semi-final-one";
+		entries = entriesSemiFinal1;
+	} else if(window.location.pathname.indexOf("semi-final-two") != -1) {
+		event = "semi-final-two";
+		entries = entriesSemiFinal2;
+	} else if(window.location.pathname.indexOf("grand-final") != -1) {
+		event = "grand-final";
+		entries = entriesGrandFinal;
+	} else {
+		event = "faux-final";
+		entries = entriesFauxFinal;
+	}
+	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
 		
 		console.log("Retrieve initial data...");
 		
 		// Show the animation to hide the UI
 		startLoader();
-		
-		// checkScores("faux-final", "AUS");
-		// checkScores("faux-final", "FRA");
-		// checkScores("faux-final", "GBR");
-		if(window.location.pathname.indexOf("semi-final-one") != -1) {
-			event = "semi-final-one";
-			entries = entriesSemiFinal1;
-		}
-		if(window.location.pathname.indexOf("semi-final-two") != -1) {
-			event = "semi-final-two";
-			entries = entriesSemiFinal2;
-		}
-		if(window.location.pathname.indexOf("grand-final") != -1) {
-			event = "grand-final";
-			entries = entriesGrandFinal;
-		}
-		if(window.location.pathname.indexOf("faux-final") != -1) {
-			event = "faux-final";
-			entries = entriesFauxFinal;
-		}
 
-		checkScores(event, entries);
+		checkScores(event);
+		
+		// Show the UI
+		stopLoader();
+		
+	} else if (window.location.pathname.indexOf("admin") != -1) {
+		
+		console.log("Loading page...");
+		
+		// Show the animation to hide the UI
+		startLoader();
 		
 		// Show the UI
 		stopLoader();
@@ -94,7 +99,24 @@ function stopLoader() {
 	setTimeout(fadeElement, 500, loadingScreen);
 	setTimeout(removeElement, 1000, loadingScreen);
 	
-	console.log("✅ Loading screen stopped.");
+}
+
+function checkNowPlaying(event, country) {
+	var currentEntry = firebase.database().ref('/' + event + '/' + country + '/now-playing');
+	var uiEntry = document.getElementById(country);
+	
+	currentEntry.on('value', (snapshot) => {
+				
+		const data = snapshot.val();
+		if (data == true) {
+			uiEntry.classList.add("now-playing");
+		} else {
+			uiEntry.classList.remove("now-playing");
+		}
+		
+		console.log('▶️ Now playing: ' + country);
+	  
+	});
 	
 }
 
@@ -103,7 +125,6 @@ function checkScores(event, countries) {
 	for (i = 0; i < entries.length; i++) {
 		checkScore(event, entries[i]);
 	}
-	console.log("✅ Scores checked.")
 }
 
 function checkScore(event, country) {
@@ -111,17 +132,15 @@ function checkScore(event, country) {
 	var uiScore = document.getElementById("score-" + country);
 	
 	currentScore.on('value', (snapshot) => {
-		
-		console.group("Checking scores for " + country);
-		console.log('⏰ Attempting to get score for ' + country)
-		
+				
 		const data = snapshot.val();
 		uiScore.innerHTML = data;
 		
 		console.log('✅ Score for ' + country + ' changed. New score: ' + data);
-		console.groupEnd();
 	  
 	});
+	
+	checkNowPlaying(event, country);
 	
 }
 
@@ -131,7 +150,6 @@ function submitVote(event, country, vote) {
 	
 	// Get the current score for the country
 	var countryScore = firebase.database().ref('/' + event + '/' + country + '/vote');
-	var countryCount = firebase.database().ref('/' + event + '/' + country + '/count');
 	var points = parseInt(vote);
 	var uiVoteButtons = document.getElementsByName("vote-" + country);
 	
@@ -140,13 +158,40 @@ function submitVote(event, country, vote) {
 			return score + points;
 		}
 	)
-	countryCount.transaction(
-		function(count) {
-			return count + 1;
-		}
-	)
 	
 	for (i = 0; i < uiVoteButtons.length; i++) {
 		uiVoteButtons[i].disabled = true;
 	}
+}
+
+function setNowPlaying(event) {
+	
+	// Get the current score for the country
+	var radios = document.getElementsByName('radioNowPlaying');
+	for (var i = 0, length = radios.length; i < length; i++) {
+		if (radios[i].checked) {
+			// do whatever you want with the checked box
+			var country = radios[i].value;
+			var nowPlaying = firebase.database().ref('/' + event + '/' + country + '/now-playing');
+			
+			nowPlaying.transaction(
+				function() {
+					return true;
+				}
+			)
+			
+		} else {
+			
+			// do whatever you want with the unchecked box
+			var country = radios[i].value;
+			var nowPlaying = firebase.database().ref('/' + event + '/' + country + '/now-playing');
+			
+			nowPlaying.transaction(
+				function() {
+					return false;
+				}
+			)
+		}
+	}
+	
 }
