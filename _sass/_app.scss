@@ -106,7 +106,7 @@ body#scoreboard {
 			
 			grid-template-rows: auto auto;
 			grid-template-columns: auto auto;
-			grid-template-areas: 	"pos  		pos"
+			grid-template-areas: 	"pos  		nowplaying"
 									"country 	score";
 			
 			
@@ -122,15 +122,75 @@ body#scoreboard {
 				background: $gray-800;
 			}
 			
-			&.now-playing {
-				background: $cyan;
-				
-				span {
-					color: $white !important;
+			border-radius: 10px;
+			
+			
+			&[data-nowplaying='true'] {				
+				span.now-playing {
+					display: block;
 				}
 			}
-			
-			border-radius: 10px;
+			&[data-nowplaying='false'] {				
+				span.now-playing {
+					display: none;
+				}
+			}
+			&[data-leaderboard='1'],
+			&[data-leaderboard='2'],
+			&[data-leaderboard='3'] {
+				&::after {
+					display: block;
+					grid-area: pos;
+					align-self: flex-start;
+					
+					padding-bottom: 15px;
+					
+					line-height: 	1;
+					
+					color: $black;
+					@include dark-mode {
+						color: $white;
+					}
+					@include xs {
+						font-size: 20px;
+					}
+					@include sm {
+						font-size: 20px;
+					}
+					@include md {
+						font-size: 15px;
+					}
+					@include lg {
+						font-size: 20px;
+					}
+					@include xl {
+						font-size: 25px;
+					}
+				}
+				span.running-order {
+					display: none !important;
+				}
+				
+				
+			}
+			&[data-leaderboard='1'] {
+				background: #AF9500 !important;
+				&::after {
+					content: "1st place";
+				}
+			}
+			&[data-leaderboard='2'] {
+				background: #6C6C6C !important;
+				&::after {
+					content: "2nd place";
+				}
+			}
+			&[data-leaderboard='3'] {
+				background: #6A3805 !important;
+				&::after {
+					content: "3rd place";
+				}
+			}
 			
 			span.running-order {
 				grid-area: pos;
@@ -161,6 +221,11 @@ body#scoreboard {
 					font-size: 25px;
 				}
 				
+			}
+			span.now-playing {
+				grid-area: nowplaying;
+				align-self: flex-start;
+				justify-self: flex-end;
 			}
 			span.country {
 				grid-area: country;

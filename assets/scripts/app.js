@@ -42,37 +42,16 @@ window.onload = function() {
 		entries = entriesFauxFinal;
 	}
 	
+	// Show the animation to hide the UI
+	startLoader();
+	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
-		
-		console.log("Retrieve initial data...");
-		
-		// Show the animation to hide the UI
-		startLoader();
-
-		checkScores(event);
-		
-		// Show the UI
-		stopLoader();
-		
-	} else if (window.location.pathname.indexOf("admin") != -1) {
-		
-		console.log("Loading page...");
-		
-		// Show the animation to hide the UI
-		startLoader();
-		
-		// Show the UI
-		stopLoader();
-		
-	} else {
-		console.log("Loading page...");
-		
-		// Show the animation to hide the UI
-		startLoader();
-		
-		// Show the UI
-		setTimeout(stopLoader, 1000);
+		checkScores(event, entries)
+		setInterval(checkTopScore, 6000, event, entries)		
 	}
+
+	// Show the UI
+	setTimeout(stopLoader, 2000);
 }
 
 function fadeElement(el) {
@@ -101,6 +80,10 @@ function stopLoader() {
 	
 }
 
+function failLoader() {
+	alert('failed')
+}
+
 function checkNowPlaying(event, country) {
 	var currentEntry = database.ref('/' + event + '/' + country + '/now-playing');
 	var uiEntry = document.getElementById(country);
@@ -109,37 +92,66 @@ function checkNowPlaying(event, country) {
 				
 		const data = snapshot.val();
 		if (data == true) {
-			uiEntry.classList.add("now-playing");
+			uiEntry.dataset.nowplaying = true;
 			console.log('▶️ Now playing: ' + country);
 		} else {
-			uiEntry.classList.remove("now-playing");
+			uiEntry.dataset.nowplaying = false;
 		}
 		
 	});
 	
 }
 
-function checkScores(event, countries) {
+async function checkScores(event, countries) {
 	console.log("⏰ Checking scores...")
+
 	for (i = 0; i < entries.length; i++) {
-		checkScore(event, entries[i]);
-	}
+		
+		let country = entries[i];
+		let currentScore = database.ref('/' + event + '/' + country + '/vote');
+		let uiScore = document.getElementById("score-" + country);
+		
+		currentScore.on('value', (snapshot) => {
+			const data = snapshot.val();
+			uiScore.innerHTML = data;
+			console.log('✅ Score for ' + country + ' changed. New score: ' + data);			
+		})
+		
+		checkNowPlaying(event, country);
+		
+	};
+
 }
 
-function checkScore(event, country) {
-	var currentScore = database.ref('/' + event + '/' + country + '/vote');
-	var uiScore = document.getElementById("score-" + country);
+function checkTopScore(event, countries) {
+	let allScores = new Array()
 	
-	currentScore.on('value', (snapshot) => {
-				
-		const data = snapshot.val();
-		uiScore.innerHTML = data;
-		
-		console.log('✅ Score for ' + country + ' changed. New score: ' + data);
-	  
-	});
+	for (i = 0; i < entries.length; i++) {
+		let country = entries[i];	
+		let score = document.getElementById("score-" + country).innerText;
+		allScores.push([country, score])
+	}
 	
-	checkNowPlaying(event, country);
+	allScores.sort((a,b) => b[1] - a[1]);
+	
+	if (allScores[0] == 0 && allScores[1] == 0 && allScores[2] == 0 ) {
+		console.group("Leaderboard");
+			console.log("🥇🥈🥉 There aren't enough votes yet...")
+			console.info("Scores will update once at least 3 contestants have a non-zero score")
+		console.groupEnd();
+	} else {
+
+		var uiEntry = document.getElementsByClassName("scoreboard--list--entry");
+
+		console.group("Top scorers");
+		for (i = 0; i < uiEntry.length; i++) {
+			let rank = i + 1;
+			console.log("🥇 " + allScores[i][0] + " – " + allScores[i][1] + " points")
+			document.getElementById(allScores[i][0]).dataset.leaderboard = rank;
+		}
+		console.groupEnd();
+
+	}
 	
 }
 
@@ -157,6 +169,7 @@ function submitVote(event, country, vote) {
 			return score + points;
 		}
 	)
+	
 	
 	for (i = 0; i < uiVoteButtons.length; i++) {
 		uiVoteButtons[i].disabled = true;
