@@ -110,12 +110,11 @@ function checkNowPlaying(event, country) {
 		const data = snapshot.val();
 		if (data == true) {
 			uiEntry.classList.add("now-playing");
+			console.log('▶️ Now playing: ' + country);
 		} else {
 			uiEntry.classList.remove("now-playing");
 		}
 		
-		console.log('▶️ Now playing: ' + country);
-	  
 	});
 	
 }

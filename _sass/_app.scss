@@ -618,14 +618,20 @@ body#admin {
 		fieldset#optionsNowPlaying {
 			ul {
 				display: grid;
+				padding: 0;
+				
+				
 				@include xs {
 					grid-template-columns: auto;
 				}
 				@include sm-up {
 					grid-template-columns: auto auto;
 				}
-				@include xl-up {
+				@include md-up {
 					grid-template-columns: auto auto auto;
+				}
+				@include xl-up {
+					grid-template-columns: auto auto auto auto;
 				}
 			}
 		}
