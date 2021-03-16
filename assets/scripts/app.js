@@ -126,15 +126,6 @@ function checkScores(event, countries) {
 	}
 }
 
-function checkTopRankedScores(event) {
-	var scoresRef = database.ref("scores");
-	scoresRef.orderByValue().limitToLast(3).on("value", function(snapshot) {
-	  snapshot.forEach(function(data) {
-		console.log("The " + data.key + " score is " + data.val());
-	  });
-	});
-}
-
 function checkScore(event, country) {
 	var currentScore = database.ref('/' + event + '/' + country + '/vote');
 	var uiScore = document.getElementById("score-" + country);
