@@ -20,10 +20,7 @@ body#scoreboard {
 			min-height: 50vh;
 		}
 		
-		background: $gray-200;
-		@include dark-mode {
-			background: $true-black;
-		}
+		@include toggleLightDark(background, $gray-200, $true-black);
 		
 		text-align: center;
 		
@@ -117,10 +114,8 @@ body#scoreboard {
 				padding: 15px;
 			}
 			
-			background: $gray-200;
-			@include dark-mode {
-				background: $gray-800;
-			}
+			@include toggleLightDark(background, $gray-200, $gray-800);
+
 			
 			border-radius: 10px;
 			
@@ -147,10 +142,8 @@ body#scoreboard {
 					
 					line-height: 	1;
 					
-					color: $black;
-					@include dark-mode {
-						color: $white;
-					}
+					@include toggleLightDark(color, $black, $white);
+					
 					@include xs {
 						font-size: 20px;
 					}
@@ -174,19 +167,19 @@ body#scoreboard {
 				
 			}
 			&[data-leaderboard='1'] {
-				background: #AF9500 !important;
+				@include toggleLightDark(background, $gold, $gold);
 				&::after {
 					content: "1st place";
 				}
 			}
 			&[data-leaderboard='2'] {
-				background: #6C6C6C !important;
+				@include toggleLightDark(background, $silver, $silver);
 				&::after {
 					content: "2nd place";
 				}
 			}
 			&[data-leaderboard='3'] {
-				background: #6A3805 !important;
+				@include toggleLightDark(background, $bronze, $bronze);
 				&::after {
 					content: "3rd place";
 				}
@@ -200,10 +193,8 @@ body#scoreboard {
 				
 				line-height: 	1;
 				
-				color: $gray-600;
-				@include dark-mode {
-					color: $gray-500;
-				}
+				@include toggleLightDark(color, $gray-600, $gray-500);
+
 				
 				@include xs {
 					font-size: 20px;
@@ -306,10 +297,7 @@ body#vote {
 			min-height: 50vh;
 		}
 		
-		background: $gray-200;
-		@include dark-mode {
-			background: $true-black;
-		}
+		@include toggleLightDark(background, $gray-200, $true-black);
 		
 		text-align: center;
 		
@@ -442,12 +430,9 @@ body#vote {
 			}
 			@include sm-up {
 				padding: 15px;
-			}
+			}		
 			
-			background: $gray-200;
-			@include dark-mode {
-				background: $gray-800;
-			}
+			@include toggleLightDark(background, $gray-200, $gray-800);
 			
 			border-radius: 15px;
 			
@@ -455,10 +440,7 @@ body#vote {
 				grid-area: pos;
 				align-self: flex-start;
 				
-				color: $gray-600;
-				@include dark-mode {
-					color: $gray-500;
-				}
+				@include toggleLightDark(color, $gray-600, $gray-500);
 				
 				line-height: 	1;
 				
@@ -627,10 +609,7 @@ body#admin {
 			min-height: 50vh;
 		}
 		
-		background: $gray-200;
-		@include dark-mode {
-			background: $true-black;
-		}
+		@include toggleLightDark(background, $gray-200, $true-black);
 		
 		text-align: center;
 		

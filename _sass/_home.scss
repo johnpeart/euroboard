@@ -158,6 +158,9 @@ body#home {
 					color: 		$white;
 				}
 				
+				@include toggleLightDark(background, $gray-200, $gray-800);
+				@include toggleLightDark(color, $black, $white);
+
 				@include xs {
 					&.left {
 						border-radius: 		15px 15px 0 0;
@@ -182,27 +185,21 @@ body#home {
 				text-decoration: none;
 				
 				&:hover {
-					background: $gray-700;
-					color: $white;
-					@include dark-mode {
-						background: $gray-700;
-						color: $white;
-					}
+					@include toggleLightDark(background, $cyan, $cyan);
+					@include toggleLightDark(color, $white, $white);
 					cursor: pointer;
 					
 					z-index: 999;
 				}
 				&:focus {
 					background: $yellow;
-					color: $black !important;
+					@include toggleLightDark(color, $black, $black);
+					
 					outline: 5px solid $yellow;
 					outline-offset: 2px;
 					border-radius: 0 !important;
 					cursor: pointer;
 					text-decoration: none;
-					@include dark-mode {
-						color: $black;
-					}
 					
 					z-index: 999;
 				}

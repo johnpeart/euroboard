@@ -4,7 +4,7 @@ a {
 	
 	display: 				inline;
 	
-	color: 					$link-color;
+	@include toggleLightDark(color, $link-color, $link-color-dark-mode);
 	text-decoration: 		$link-text-decoration;
 	text-decoration-skip: 	ink;
 	text-decoration-skip-ink: auto;
@@ -12,49 +12,29 @@ a {
 	outline: 				$link-outline;
 	font-weight: 			inherit;
 	
-	
-	/* Text and background color for dark mode */
-	@include dark-mode {
-		color: 					$link-color-dark-mode;
-	}
-	
 	&:hover {
-		color: 					$link-hover-color;
+		@include toggleLightDark(color, $link-hover-color, $link-hover-color-dark-mode);
 		text-decoration: 		$link-text-decoration-hover;
 		text-decoration-skip: 	ink;
 		text-decoration-skip-ink: auto;
-		
-		/* Text and background color for dark mode */
-		@include dark-mode {
-			color: 					$link-hover-color-dark-mode;
-		}
 		
 		z-index: 999;
 	}
 	
 	&:focus {
 		background: 				$cyan;
-		color: 					   	$link-focus-color;
+		@include toggleLightDark(color, $link-focus-color, $link-focus-color-dark-mode);
 		text-decoration: 			$link-text-decoration-focus;
 		text-decoration-skip: 	ink;
 		text-decoration-skip-ink: auto;
-		
-		/* Text and background color for dark mode */
-		@include dark-mode {
-			color: 					$link-focus-color-dark-mode;
-		}
-		
+
 		z-index: 999;
 		
 	}
 	
 	&:focus:hover {
-		background: $body-background-dark-mode;
-		color: $cyan;
-		@include dark-mode {
-			background: $body-background;
-			color: $cyan;
-		}
+		@include toggleLightDark(color, $cyan, $cyan);
+		@include toggleLightDark(background, $body-background-dark-mode, $body-background);
 		
 		z-index: 999;
 	}
@@ -495,15 +475,11 @@ p, li, td  {
 		font-size: 		inherit;
 		font-family: 	$font-family-monospace;
 		font-weight: 	normal;
-		color:			$code-color;
-		background: 	$code-background;
 		border-radius: 	$code-border-radius;
 		padding:		$code-padding;
 		
-		@include dark-mode {
-			color: 			$code-color-dark-mode;
-			background: 	$code-background-dark-mode;
-		}
+		@include toggleLightDark(color, $code-color, $code-color-dark-mode);
+		@include toggleLightDark(background, $code-background, $code-background-dark-mode);
 		
 	}
 	
@@ -511,12 +487,8 @@ p, li, td  {
 
 blockquote {
 			
-	background: 			$blockquote-background;
 	
-	/* Text and background color for dark mode */
-	@include dark-mode {
-	    background: 		$blockquote-background-dark-mode;
-	}
+	@include toggleLightDark(background, $blockquote-background, $blockquote-background-dark-mode);
 	
 	padding: 			20px;
 	
@@ -549,11 +521,7 @@ blockquote {
 	}
 	
 	code, kbd {
-		color: $blockquote-code-color;
-		/* Text and background color for dark mode */
-		@include dark-mode {
-		    color: $blockquote-code-color-dark-mode;
-		}
+		@include toggleLightDark(color, $blockquote-code-color, $blockquote-code-color-dark-mode);
 	}
 	
 	ul {	
@@ -585,14 +553,10 @@ pre {
 	font-family: 		$font-family-monospace;
 	
 	overflow-x: 		scroll;
-	
-	background:			$code-background;
 	padding: 			$p-font-size-base;
-			
-	@include dark-mode {
-		color: 			$code-color-dark-mode;
-		background: 	$code-background-dark-mode;
-	}
+				
+	@include toggleLightDark(color, $code-color, $code-color-dark-mode);
+	@include toggleLightDark(background, $code-background, $code-background-dark-mode);
 	
 	margin-bottom: 	$p-padding-bottom;
 	
@@ -820,21 +784,14 @@ table {
 	thead {
 		@extend strong;
 		text-align: left;
-		border-bottom: 1px solid $black;
-		/* Text and background color for dark mode */
-		@include dark-mode {
-			border-bottom: 1px solid $white !important;
-		}			
+		
+		@include toggleLightDark(border-bottom, 1px solid $black, 1px solid $white !important);		
 	}
 	
 	tfoot {
 		@extend strong;
 		text-align: left;
-		border-top: 1px solid $black;
-		/* Text and background color for dark mode */
-		@include dark-mode {
-			border-top: 1px solid $white;
-		}
+		@include toggleLightDark(border-top, 1px solid $black, 1px solid $white !important);	
 	}
 	
 	tr {
@@ -848,11 +805,7 @@ table {
 	th, td {
     	padding: 5px 10px;
 		vertical-align: top;
-		
-		border-left: 1px solid $gray-200;
-		@include dark-mode {
-			border-left: 1px solid $gray-800;
-		}
+		@include toggleLightDark(border-left, 1px solid $gray-200, 1px solid $gray-800 !important);	
 		
 		&:first-child {
 			border-left: none;

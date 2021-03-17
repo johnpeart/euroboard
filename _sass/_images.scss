@@ -46,15 +46,9 @@ figure.image {
 	
 	box-sizing: 		content-box;
 	
-	background:		$gray-200;
-	color:			$body-color;
-	outline: 		20px solid $gray-200;
-	
-	@include dark-mode {
-		background:		$gray-700;
-		color:			$body-color-dark-mode;
-		outline: 		20px solid $gray-700;
-	}
+	@include toggleLightDark(background, $gray-200, $gray-700);
+	@include toggleLightDark(color, $body-color, $body-color-dark-mode);
+	@include toggleLightDark(outline, 20px solid $gray-200, 20px solid $gray-700);
 	
 	margin:			($p-font-size-base * 2) 0;
 	

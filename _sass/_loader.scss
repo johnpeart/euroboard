@@ -13,10 +13,7 @@ section#loading-screen {
 	
 	opacity: 1;
 	
-	background: $body-background;
-	@include dark-mode {
-		background: $body-background-dark-mode;
-	}
+	@include toggleLightDark(background, $body-background, $body-background-dark-mode)
 	
 	&.fade-out {
 		-webkit-animation: fade-out 1s ease-in forwards;

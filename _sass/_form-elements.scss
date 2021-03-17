@@ -32,12 +32,8 @@ a.button {
 	text-decoration: none;
 	
 	&:hover {
-		background: $white;
-		color: $black;
-		@include dark-mode {
-			background: $black;
-			color: $white;
-		}
+		@include toggleLightDark(color, $black, $white);
+		@include toggleLightDark(background, $white, $black);
 		cursor: pointer;
 		
 		z-index: 999;
@@ -45,14 +41,11 @@ a.button {
 
 	&:focus {
 		background: $yellow;
-		color: $black;
+		@include toggleLightDark(color, $black, $black);
 		outline: 5px solid $yellow;
 		outline-offset: 2px;
 		border-radius: 0 !important;
 		cursor: pointer;
-		@include dark-mode {
-			color: $black;
-		}
 		
 		z-index: 999;
 	}
@@ -65,12 +58,8 @@ a.button {
 	
 	&:disabled,
 	&[disabled] {
-		background: $gray-300 !important;
-		color: $gray-500 !important;
-		@include dark-mode {
-			background: $gray-700 !important;
-			color: $gray-600 !important;
-		}
+		@include toggleLightDark(background, $gray-300 !important, $gray-700 !important);
+		@include toggleLightDark(color, $gray-500 !important, $gray-600 !important);
 	}
 
 	&:last-child,
@@ -120,10 +109,7 @@ label {
 
 .label-hint {
 	@extend p;
-	color:  $gray-600;
-	@include dark-mode {
-		color: $gray-300;
-	}
+	@include toggleLightDark(color, $gray-600, $gray-300);
 	padding-bottom: 0;
 	display: block;
 }
@@ -138,16 +124,12 @@ textarea {
 	margin-top: 15px;
 	padding: $input-padding;
 
-	border: $border-width-form-element solid $input-border-color;
+	border: $border-width-form-element solid;
 	border-radius: 0;
 
-	background: $true-white;
-	color:      $black;
-	@include dark-mode {
-		background: $gray-900;
-		color:      $white;
-		border-color: $true-black;
-	}
+	@include toggleLightDark(background, $true-white, $gray-900);
+	@include toggleLightDark(color, $black, $white);
+	@include toggleLightDark(border-color, $input-border-color, $true-black);
 
 	// Disable inner shadow and remove rounded corners
 	-webkit-appearance: none;
@@ -156,12 +138,9 @@ textarea {
 	&:focus {
 		outline: $border-width-form-element solid $input-focus-color;
 		outline-offset: 0;
-		box-shadow: inset 0 0 0 $border-focus-width;
-		@include dark-mode {
-			background: $gray-900;
-			border-color: $true-black;
-		box-shadow: inset 0 0 0 $border-focus-width $true-black;
-		}
+		@include toggleLightDark(background, inherit, $gray-900);
+		@include toggleLightDark(border-color, inherit, $true-black);
+		@include toggleLightDark(box-shadow, inset 0 0 0 $border-focus-width, inset 0 0 0 $border-focus-width $true-black);
 	}
 
 	&:invalid {
@@ -170,14 +149,8 @@ textarea {
 
 	&:hover {
 		box-shadow: 0 0 0 3px $cyan;
-		background: $gray-200;
-		@include dark-mode {
-			border-width: 3px;
-			background: $gray-200;
-			@include dark-mode {
-				background: $gray-800;
-			}
-		}
+		@include toggleLightDark(background, $gray-200, $gray-800);
+		@include toggleLightDark(border-width, inherit, 3px);
 	}
 
 }
@@ -224,10 +197,7 @@ input[type="radio"] {
 			width: $radios-size;
 			height: $radios-size;
 
-			border: 2px solid $black;
-			@include dark-mode {
-				border: 3px solid $white;
-			}
+			@include toggleLightDark(border, 2px solid $black, 3px solid $white);
 			border-radius: 50%;
 			background: transparent;
 		}
@@ -242,13 +212,12 @@ input[type="radio"] {
 			width: 0;
 			height: 0;
 
-			border: 10px solid $cyan;
-			@include dark-mode {
-				border-color: $cyan;
-			}
+			border: 10px solid;
 			border-radius: 50%;
 			opacity: 0;
-			background: $black;
+			
+			@include toggleLightDark(border-color, $cyan, $cyan);
+			@include toggleLightDark(background, $black, $black);
 		}
 	
 	}
@@ -259,13 +228,9 @@ input[type="radio"] {
 	}
 
 	&:hover + label::before {
-		border-width: 2px;
 		box-shadow: 0 0 0 3px $cyan;
-		background: $gray-200;
-		@include dark-mode {
-			border-width: 3px;
-			background: $gray-700;
-		}
+		@include toggleLightDark(border-width, 3px, 3px);
+		@include toggleLightDark(background, $gray-200, $gray-700);
 	}
 
 	&:checked + label::after {

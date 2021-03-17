@@ -26,10 +26,7 @@ footer#site-footer {
 		padding-bottom: 		$footer-padding-bottom-xl * 4;
 	}
 	
-	background: $gray-200;
-	@include dark-mode {
-		background: $true-black;
-	}
+	@include toggleLightDark(background, $gray-200, $true-black);
 
 	div.footer {
 		
@@ -86,14 +83,9 @@ footer#site-footer {
 			}
 			
 			a.footer--site-link {
-					
-				color:			$footer-color;
 				
-				/* Text and background color for dark mode */
-				@include dark-mode {
-				    color: 		$footer-color-dark-mode;
-				}
-	
+				@include toggleLightDark(color, $footer-color, $footer-color-dark-mode);	
+
 				text-decoration: 		$footer-text-decoration;
 			
 				&:hover{
@@ -198,12 +190,7 @@ footer#site-footer {
 			
 			a.footer--nav-link {
 					
-				color:			$footer-nav-color;
-				
-				/* Text and background color for dark mode */
-				@include dark-mode {
-					color: 		$footer-nav-color-dark-mode;
-				}
+				@include toggleLightDark(color, $footer-nav-color, $footer-nav-color-dark-mode);
 		
 				text-decoration: 		$footer-text-decoration;
 			

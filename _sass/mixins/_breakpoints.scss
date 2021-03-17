@@ -10,6 +10,25 @@
   xl: 1200px
 ); */
 
+@mixin landscape {
+	
+	@media (orientation: landscape) {
+		
+		@content;
+		
+	}
+	
+}
+
+@mixin portrait {
+	
+	@media (orientation: portrait) {
+		
+		@content;
+		
+	}
+	
+}
 
 // BREAKPOINT ONLY 
 
