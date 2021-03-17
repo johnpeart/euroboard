@@ -18,7 +18,7 @@ layout: default
 		{% if entry.[event] == "TRUE" %}
 			
 			<li id="{{ entry.code }}" class="scoreboard--list--entry" data-runningorder="{{ entry.[running-order] }}" data-leaderboard="" data-nowplaying="false">
-				<span class="running-order">{{ entry.[running-order] | prepend: "#" }}</span>
+				<span class="running-order">{{ entry.[running-order] | append: " #" | append: entry.code }}</span>
 				<span class="now-playing">Now playing</span>
 				<span class="country">{{ entry.country }}</span>
 				<span id="score-{{ entry.code }}" class="score">??</span>

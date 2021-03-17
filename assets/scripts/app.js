@@ -147,7 +147,7 @@ function checkTopScore(event, countries) {
 		var uiEntry = document.getElementsByClassName("scoreboard--list--entry");
 
 		console.group("Top scorers");
-		for (i = 0; i < 3; i++) {
+		for (i = 0; i < allScores.length; i++) {
 			let rank = i + 1;
 			console.log("🥇 " + allScores[i][0] + " – " + allScores[i][1] + " points")
 			document.getElementById(allScores[i][0]).dataset.leaderboard = rank;
