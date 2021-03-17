@@ -77,18 +77,16 @@ body#scoreboard {
 			
 			margin: 0;
 			
+			padding: 10px;
+			grid-gap: 10px;
+			
 			@include xs {
-				padding: 10px;
-				grid-template-columns: 1fr;		
-				grid-gap: 10px;
+				grid-template-columns: 1fr;
 			}
 			@include sm-up {
-				padding: 15px;
-				grid-template-columns: 1fr 1fr;		
-				grid-gap: 15px;	
+				grid-template-columns: 1fr 1fr;
 			}
 			@include lg-up {
-				padding: 20px;
 				grid-template-columns: 1fr 1fr 1fr;		
 			}
 			@include xl {
@@ -114,11 +112,7 @@ body#scoreboard {
 				padding: 15px;
 			}
 			
-			@include toggleLightDark(background, $gray-200, $gray-800);
-
-			
-			border-radius: 10px;
-			
+			@include toggleLightDark(background, $gray-200, $gray-800);			
 			
 			&[data-nowplaying='true'] {				
 				span.now-playing {
@@ -434,8 +428,6 @@ body#vote {
 			
 			@include toggleLightDark(background, $gray-200, $gray-800);
 			
-			border-radius: 15px;
-			
 			span.running-order {
 				grid-area: pos;
 				align-self: flex-start;
@@ -488,97 +480,6 @@ body#vote {
 				min-height: 75px;
 				min-width: unset;
 				margin: 0;
-				
-				&.one {
-					@include xs {
-						border-radius: 10px 0 0 0;
-					}
-					@include sm-up {
-						border-radius: 10px 0 0 0;
-					}
-				}
-				
-				&.two {
-					@include xs {
-						border-radius: 0 10px 0 0;
-					}
-					@include sm-up {
-						border-radius: 0;
-					}
-				}
-				
-				&.three {
-					@include xs {
-						border-radius: 0;
-					}
-					@include sm-up {
-						border-radius: 0;
-					}
-				}
-				
-				&.four {
-					@include xs {
-						border-radius: 0;
-					}
-					@include sm-up {
-						border-radius: 0;
-					}
-				}
-				
-				&.five {
-					@include xs {
-						border-radius: 0;
-					}
-					@include sm-up {
-						border-radius: 0 10px 0 0;
-					}
-				}
-				
-				&.six {
-					@include xs {
-						border-radius: 0;
-					}
-					@include sm-up {
-						border-radius: 0 0 0 10px;
-					}
-				}
-				
-				&.seven {
-					@include xs {
-						border-radius: 0;
-					}
-					@include sm-up {
-						border-radius: 0;
-					}
-				}
-				
-				&.eight {
-					@include xs {
-						border-radius: 0;
-					}
-					@include sm-up {
-						border-radius: 0;
-					}
-				}
-				
-				&.ten {
-					@include xs {
-						border-radius: 0 0 0 10px;
-					}
-					@include sm-up {
-						border-radius: 0;
-					}
-				}
-				
-				&.twelve {
-					@include xs {
-						border-radius: 0 0 10px 0;
-					}
-					@include sm-up {
-						border-radius: 0 0 10px 0;
-					}
-				}
-				
 			}
 			
 		}
