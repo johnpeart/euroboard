@@ -72,14 +72,13 @@ body#home {
 		padding: 0;
 		margin: 0;
 		
-		@include xs {
-			grid-template-rows: 	auto auto auto auto auto auto;
-			grid-template-columns: 	1fr;
-		}
+		grid-template-rows: 	repeat(3, 1fr);
+		grid-template-columns: 	1fr;
 		
+		@include xs {
+			grid-row-gap: 20px;
+		}
 		@include sm-up {
-			grid-template-columns: 	1fr 1fr;
-			grid-template-rows: 	1fr 1fr 1fr;
 			grid-row-gap: 			30px;
 			
 			height: 				100%;
@@ -88,105 +87,72 @@ body#home {
 		
 		li.home--menu--list-item {
 			
+			display: grid;
+			
+			padding: 20px;
+			
+			@include xs {
+				grid-template-columns: auto;
+				grid-template-rows: repeat(2, auto) repeat(2, 1fr);
+				grid-row-gap: 10px;
+				grid-template-areas: 	"event" "date" "scoreboard" "vote";
+			}
+			
+			@include sm-up {
+				padding: 20px;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 50%) repeat(2, 50%);
+				grid-template-areas: 	"event scoreboard"
+										"date vote";
+			}
+			
+			@include toggleLightDark(background, $gray-200, $gray-800);
+			
 			font-size: 		$p-font-size-base * 1.2;
-			line-height: 	$p-line-height-base * 1.2;
+			line-height: 	1;
 			
 			@include xs {
 				font-size: 		$p-font-size-base-xs * 1.2;
-				line-height: 	$p-line-height-base-xs * 1.2;
 			}
 			@include sm {
 				font-size: 		$p-font-size-base-sm * 1.2;
-				line-height: 	$p-line-height-base-sm * 1.2;
 			}
 			@include md {
 				font-size: 		$p-font-size-base-md * 1.2;
-				line-height: 	$p-line-height-base-md * 1.2;
 			}
 			@include lg {
 				font-size: 		$p-font-size-base-lg * 1.4;
-				line-height: 	$p-line-height-base-lg * 1.4;
 			}
 			@include xl {
 				font-size: 		$p-font-size-base-xl * 1.4;
-				line-height: 	$p-line-height-base-xl * 1.4;
 			}
 			
 			font-weight:		$p-font-weight;
 			
 			a {
-				display: inline-grid;
-				
-				@include xs {
-					&.left {
-						grid-template-columns: 1fr;
-						grid-template-rows: minmax(50px, 1fr) minmax(50px, 1fr);
-					}
-					
-					&.right {
-						grid-template-columns: 1fr;
-						grid-template-rows: minmax(20px, 1fr);
-					}
-				}
-				
-				@include sm-up {
-					&.left {
-						grid-template-columns: 1fr;
-						grid-template-rows: minmax(50px, 1fr) minmax(50px, 1fr);
-					}
-					
-					&.right {
-						grid-template-columns: 1fr;
-						grid-template-rows: minmax(50px, 1fr);
-					}
-				}
+				display: block;
 				
 				margin: 	0px;
 				padding: 	20px;
+				
 				@include sm-up {
 					padding: 30px 40px;
+					align-self: flex-end;
 				}
 				
 				width: 		100%; 
 				height: 	100%;
 				
-				background: 	$cyan;
-				color:			$white;
-				
-				@include dark-mode {
-					background: $gray-900;
-					color: 		$white;
-				}
-				
-				@include toggleLightDark(background, $gray-200, $gray-800);
+				@include toggleLightDark(background, $cyan, $cyan);
 				@include toggleLightDark(color, $black, $white);
-
-				@include xs {
-					&.left {
-						border-radius: 		15px 15px 0 0;
-					}
-					
-					&.right {
-						border-radius: 		0 0 15px 15px;
-						margin-bottom: 20px;
-					}
-				}
-				
-				@include sm-up {
-					&.left {
-						border-radius: 		15px 0 0 15px;
-					}
-					
-					&.right {
-						border-radius: 		0 15px 15px 0;
-					}
-				}
+				@include toggleLightDark(border-color, $white, $black);
 				
 				text-decoration: none;
+				align-self: flex-end;
 				
 				&:hover {
-					@include toggleLightDark(background, $cyan, $cyan);
-					@include toggleLightDark(color, $white, $white);
+					@include toggleLightDark(background, $gray-700, $gray-300);
+					@include toggleLightDark(color, $white, $black);
 					cursor: pointer;
 					
 					z-index: 999;
@@ -213,12 +179,14 @@ body#home {
 			
 			span.home--menu--list-item--event {
 				align-self: flex-start;
-				
 				font-weight: bold;
+				grid-area: event;
 			}
 			
-			span.home--menu--list-item--type {
-				align-self: flex-end;
+			span.home--menu--list-item--date {
+				align-self: flex-start;
+				font-weight: normal;
+				grid-area: date;
 			}
 			
 		}	
