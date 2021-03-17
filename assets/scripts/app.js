@@ -47,7 +47,8 @@ window.onload = function() {
 	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
 		checkScores(event, entries)
-		setInterval(checkTopScore, 6000, event, entries)		
+		setTimeout(checkTopScore, 5000, event, entries)		
+		setInterval(checkTopScore, 60000, event, entries)		
 	}
 
 	// Show the UI
@@ -134,24 +135,32 @@ function checkTopScore(event, countries) {
 	
 	allScores.sort((a,b) => b[1] - a[1]);
 	
-	if (allScores[0] == 0 && allScores[1] == 0 && allScores[2] == 0 ) {
-		console.group("Leaderboard");
-			console.log("🥇🥈🥉 There aren't enough votes yet...")
-			console.info("Scores will update once at least 3 contestants have a non-zero score")
-		console.groupEnd();
-	} else {
+	var nonZero = 0;
+	for (i = 0; i < allScores.length; i++) {
+		if (allScores[i][1] > 0) {
+			nonZero++;
+		}
+	}
+	
+	if (nonZero > 3) {
 
 		var uiEntry = document.getElementsByClassName("scoreboard--list--entry");
 
 		console.group("Top scorers");
-		for (i = 0; i < uiEntry.length; i++) {
+		for (i = 0; i < 3; i++) {
 			let rank = i + 1;
 			console.log("🥇 " + allScores[i][0] + " – " + allScores[i][1] + " points")
 			document.getElementById(allScores[i][0]).dataset.leaderboard = rank;
 		}
 		console.groupEnd();
+		
+	} else {
 
-	}
+		console.group("Leaderboard");
+			console.log("🥇🥈🥉 There aren't enough votes yet...")
+			console.info("Scores will update once at least 3 contestants have a non-zero score")
+		console.groupEnd();
+	} 
 	
 }
 
