@@ -175,6 +175,7 @@ function checkTopScore(event, countries) {
 			console.log("🥇🥈🥉 There aren't enough votes yet...")
 			console.info("Scores will update once at least 3 contestants have a non-zero score")
 		console.groupEnd();
+		document.getElementById(allScores[i][0]).dataset.leaderboard = 0;
 	} 
 	
 }

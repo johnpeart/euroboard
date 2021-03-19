@@ -70,11 +70,6 @@ body#scoreboard {
 		
 	main.scoreboard {
 		
-		&[data-event='semi-final-one'],
-		&. {
-			
-		}
-		
 		ul#scoreboard--list {
 			
 			display: grid;
@@ -87,21 +82,90 @@ body#scoreboard {
 			@include xs {
 				grid-template-columns: 1fr;
 			}
-			@include sm-up {
-				grid-template-columns: 1fr 1fr;
+			@include sm {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(13, auto);
+				grid-template-areas: 	"p1 p2" 
+										"p3 p4"
+										"p5 p6"
+										"p7 p8"
+										"p9 p10"
+										"p11 p12"
+										"p13 p14"
+										"p15 p16"
+										"p17 p18"
+										"p19 p20"
+										"p21 p22"
+										"p23 p24"
+										"p25 p26";
 			}
-			@include lg-up {
-				grid-template-columns: 1fr 1fr 1fr;
+			@include md {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(13, auto);
+				grid-template-areas: 	"p1 p2" 
+										"p3 p4"
+										"p5 p6"
+										"p7 p8"
+										"p9 p10"
+										"p11 p12"
+										"p13 p14"
+										"p15 p16"
+										"p17 p18"
+										"p19 p20"
+										"p21 p22"
+										"p23 p24"
+										"p25 p26";
+			}
+			@include lg {
+				grid-template-rows: repeat(9, auto);
+				grid-template-columns: repeat(3, 1fr);
+				
+				grid-template-areas: 	"p1  p2  p3"
+										"p4  p5  p6"
+										"p7  p8  p9"
+										"p10 p11 p12"
+										"p13 p14 p15"
+										"p16 p17 p18"
+										"p19 p20 p21"
+										"p22 p23 p24"
+										"p25 p26 .";
+				
 			}
 			@include xl {
-				grid-template-columns: 1fr 1fr 1fr 1fr;		
+				grid-template-rows: repeat(7, auto);
+				grid-template-columns: repeat(4, 1fr);	
+				
+				grid-template-areas: 	"p1  p2  p3  p4"
+										"p5  p6  p7  p8"
+										"p9  p10 p11 p12"
+										"p13 p14 p15 p16"
+										"p17 p18 p19 p20"
+										"p21 p22 p23 p24"
+										"p25 p26 .  .";
+					
 			}				
 			
+		}
+		
+		&[data-layout="performance"] {				
+			@for $i from 1 through 26 {
+			  li[data-runningorder="#{$i}"] {
+				grid-area: p#{$i};
+			  }
+			}
+		}
+		&[data-layout="rank"] {				
+			@for $i from 1 through 26 {
+			  li[data-leaderboard="#{$i}"] {
+				grid-area: p#{$i};
+			  }
+			}
 		}
 		
 		li.scoreboard--list--entry {
 			
 			display: grid;
+			
 			
 			grid-template-rows: auto auto;
 			grid-template-columns: auto auto;
