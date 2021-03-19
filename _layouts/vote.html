@@ -15,10 +15,10 @@ layout: default
 	<ul id="vote--list" class="{{ event }}">
 		
 		{% for entry in entries %}
-		{% if entry.[event] == "TRUE" %}
+		{% if entry[event] == "TRUE" %}
 			
 			<li id="{{ entry.country | append: '-' | append: event | slugify }}" class="scoreboard--list--entry">
-				<span class="running-order">{{ entry.[running-order] | prepend: "#" }}</span>
+				<span class="running-order">{{ entry[running-order] | prepend: "#" }}</span>
 				<span class="country">{{ entry.country }}</span>
 				<button class="button vote one" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 1)">1</button>
 				<button class="button vote two" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 2)">2</button>

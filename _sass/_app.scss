@@ -76,7 +76,6 @@ body#scoreboard {
 			position: relative;
 			
 			margin: 0;
-			
 			padding: 10px;
 			grid-gap: 10px;
 			
@@ -87,11 +86,11 @@ body#scoreboard {
 				grid-template-columns: 1fr 1fr;
 			}
 			@include lg-up {
-				grid-template-columns: 1fr 1fr 1fr;		
+				grid-template-columns: 1fr 1fr 1fr;
 			}
 			@include xl {
 				grid-template-columns: 1fr 1fr 1fr 1fr;		
-			}
+			}				
 			
 		}
 		
@@ -99,14 +98,9 @@ body#scoreboard {
 			
 			display: grid;
 			
-			@include xs {
-				grid-template-rows: 1fr 2fr;
-				grid-template-columns: auto auto;
-			}
-			@include sm-up {
-				grid-template-rows: auto auto;
-				grid-template-columns: auto auto;
-			}
+			grid-template-rows: auto auto;
+			grid-template-columns: auto auto;
+		
 			grid-template-areas: 	"pos  		nowplaying"
 									"country 	score";
 			
@@ -118,11 +112,19 @@ body#scoreboard {
 				padding: 15px;
 			}
 			
-			@include toggleLightDark(background, $gray-200, $gray-800);			
+			@include toggleLightDark(background, $gray-200, $gray-800);
+			
 			
 			&[data-nowplaying='true'] {
 				@include toggleLightDark(background, $cyan, $cyan);
-				@include toggleLightDark(color, $white, $white);						
+				@include toggleLightDark(background-image, url("#{$nowplaying}"), url("#{$nowplaying}"));
+				@include toggleLightDark(background-repeat, no-repeat, no-repeat);
+				@include toggleLightDark(background-clip, border-box, border-box);
+				@include toggleLightDark(background-size, cover, cover);
+				@include toggleLightDark(background-position, center center, center center);
+				
+				@include toggleLightDark(color, $white, $white);	
+									
 				span.now-playing {
 					display: block;
 				}
@@ -172,9 +174,6 @@ body#scoreboard {
 				background-clip: border-box;
 				background-size: 100% 300%;
 				background-position: center right;
-				
-				-webkit-transition: all 2s;
-				transition: all 2s;
 				
 				@include toggleLightDark(color, $black, $black);
 				
@@ -300,8 +299,128 @@ body#scoreboard {
 			
 		}
 		
-	}
+		aside#message-center {
+			
+			display: block;
+			position: fixed;
+			z-index: 1000000;
+			
+			left: 0;
+			right: 0;
+			
+			margin: 0;
+			padding: 0;
+			
+			height: auto;
+			min-height: 0px;
+			
+			@include sm-up {
+				max-width: calc(50% - 15px);
+				box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+				border-radius: 20px 20px 0 20px;
+				margin: auto 10px auto auto;
+			}
+			
+			@include toggleLightDark(background, $cyan, $cyan);
+			@include toggleLightDark(color, $white, $white);
+			
+			@include xs {
+				width: 100%;
+				padding: 10px;
+			}
+			@include sm {
+				padding: 15px 20px;
+				border-radius: 20px 20px 0 20px;
+			}
+			@include md {
+				padding: 20px 30px;
+				border-radius: 20px 20px 0 20px;
+			}
+			@include lg {
+				padding: 20px 30px;
+				border-radius: 20px 20px 0 20px;
+			}
+			@include xl {
+				padding: 20px 30px;
+				border-radius: 30px 30px 0 30px;
+			}
+			
+			&::after {
+				@include md-up {
+					display: block;
+					position: absolute;
+					content: "";
+					width: 30px;
+					height: 30px;
+					border-top: 20px solid $cyan;
+					border-left: 40px solid transparent;					
+					bottom: -20px;
+					right: 0;
+					
+				}
+			}
+			
+			h1 {
+				@extend h2;
+				padding: 0 0 10px 0;
+			}
+			
+			p {
+				padding: 0;
+				line-height: 1.2;
+				
+				@include xs {
+					font-size: 20px;
+				}
+				@include sm {
+					font-size: 20px;
+				}
+				@include md {
+					font-size: 20px;
+				}
+				@include lg {
+					font-size: 20px;
+				}
+				@include xl {
+					font-size: 30px;
+				}
+			}
+			
+			&[data-messagesshow='true'] {
+				transition: all 2s;
+				
+				&[data-messagesposition='top'] {
+					bottom: auto;
+					top: 0;
+					@include md-up {
+						top: 10px;
+					}
+				}
+				&[data-messagesposition='bottom'] {
+					top: auto;
+					bottom: 0;
+					@include md-up {
+						bottom: 20px;
+					}
+				}
+			}
+			&[data-messagesshow='false'] {	
+				transition: all 2s;
+							
+				&[data-messagesposition='top'] {
+					bottom: auto;
+					top: -500px;		
+				}
+				&[data-messagesposition='bottom'] {
+					top: auto;
+					bottom: -500px;
+				}
+			}
+				
+		}
 		
+	}
+	
 }
 
 // App styles
@@ -595,6 +714,8 @@ body#admin {
 		
 	main.admin {
 		
+		padding-bottom: 30px;
+		
 		fieldset#optionsNowPlaying {
 			ul {
 				display: grid;
@@ -610,10 +731,77 @@ body#admin {
 				@include md-up {
 					grid-template-columns: auto auto auto;
 				}
-				@include xl-up {
-					grid-template-columns: auto auto auto auto;
+			}
+		}
+		
+		fieldset#optionsMessageCenter {
+			
+			display: grid;
+			grid-gap: 30px;
+			
+			@include xs {
+				grid-template-columns: auto;
+				grid-template-rows: auto auto auto auto;
+				grid-template-areas: "title" "ul1" "ul2" "msg";
+			}
+			@include sm-up {
+				grid-template-columns: auto auto;
+				grid-template-rows: auto auto auto;
+				grid-template-areas: "title title" "ul1 ul2" "msg msg";
+			}
+			
+			ul {
+				display: grid;
+				padding: 0 0 30px 0;
+				
+				@include xs {
+					grid-template-columns: auto;
+				}
+				
+				&:nth-of-type(1) {
+					@include xs {
+						border-bottom: 1px solid;
+						@include toggleLightDark(border-color, $gray-700, $gray-300);
+					}
 				}
 			}
+			
+			div.text-input {
+				display: grid;
+				grid-area: msg;
+				
+				@include sm-down {
+					grid-template-areas: "label" "hint" "textbox" "textarea" "btn";
+					grid-template-columns: auto;
+					grid-template-rows: auto auto auto auto auto;
+					grid-gap: 20px;
+				}
+				@include md-up {
+					grid-template-areas: "label label" "hint hint" "textbox btn" "textarea btn";
+					grid-template-rows: auto auto auto auto;
+					grid-template-columns: 6fr 1fr;
+					grid-gap: 20px;
+				}
+				
+				label {
+					grid-area: label;
+				}
+				span.label-hint {
+					grid-area: hint;
+				}
+				input#messageTitle {
+					grid-area: textbox;
+					margin-top: 0;
+				}
+				textarea#messageBody {
+					grid-area: textarea;
+					margin-top: 0;
+				}
+				button {
+					grid-area: btn;
+				}
+			}
+			
 		}
 		
 	}

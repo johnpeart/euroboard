@@ -19,20 +19,118 @@ layout: default
 		<ul>
 	
 			<li class="radio-input">
-				<input type="radio" onchange="setNowPlaying('{{ event }}');" name="radioNowPlaying" id="nowPlayingNull" value="null">
+				<input type="radio" onchange="setNowPlaying('{{ event }}', 0);" name="radioNowPlaying" id="nowPlayingNull" value="settings">
 				<label for="nowPlayingNull">Nothing</label>
 				<span class="label-hint">Nothing playing</span>
 			</li>		
 			{% for entry in entries %}
-			{% if entry.[event] == "TRUE" %}
+			{% if entry[event] == "TRUE" %}
 			<li class="radio-input">
-				<input type="radio" onchange="setNowPlaying('{{ event }}');" name="radioNowPlaying" id="nowPlaying{{ entry.code }}" value="{{ entry.code }}">
+				<input type="radio" onchange="setNowPlaying('{{ event }}', {{ entry[running-order]}});" name="radioNowPlaying" id="nowPlaying{{ entry.code }}" value="{{ entry.code }}">
 				<label for="nowPlaying{{ entry.code }}">{{ entry.country }}</label>
-				<span class="label-hint">{{ entry.[running-order] | append: " #" | append: entry.code }}</span>
+				<span class="label-hint">{{ entry[running-order] | append: " #" | append: entry.code }}</span>
 			</li>
 			{% endif %}		
 			{% endfor %}
 		</ul>
+
+	</fieldset>
+	
+	<fieldset id="optionsLayout">
+
+		<legend>Layout</legend>
+
+		<ul>
+	
+			<li class="radio-input">
+				<input type="radio" onchange="updateSettings('layout', 'performance');" name="showLayout" id="showLayoutPerformance" value="performance">
+				<label for="showLayoutPerformance">Performance</label>
+				<span class="label-hint">Show in performance order</span>
+			</li>	
+			
+			<li class="radio-input">
+				<input type="radio" onchange="updateSettings('layout', 'rank');" name="showLayout" id="showLayoutRanking" value="ranking">
+				<label for="showLayoutRanking">Ranking</label>
+				<span class="label-hint">Show in ranked order</span>
+			</li>
+			
+		</ul>
+
+	</fieldset>
+	
+	<fieldset id="optionsCalculation">
+
+		<legend>Vote calculations</legend>
+
+		<ul>
+	
+			<li class="radio-input">
+				<input type="radio" onchange="updateSettings('calculation', 'total');" name="showCalculations" id="showCalculationsTotal" value="total">
+				<label for="showCalculationsTotal">Total</label>
+				<span class="label-hint">Show total points</span>
+			</li>	
+			
+			<li class="radio-input">
+				<input type="radio" onchange="updateSettings('calculation', 'average');" name="showCalculations" id="showCalculationsAverage" value="average">
+				<label for="showCalculationsAverage">Average</label>
+				<span class="label-hint">Votes divided by voter</span>
+			</li>
+			
+		</ul>
+
+	</fieldset>
+	
+	<fieldset id="optionsMessageCenter">
+
+		<legend>Message Center</legend>
+
+		<ul>
+	
+			<li class="radio-input">
+				<input type="radio" onChange="updateSettings('messagesshow', 'true');" name="messageCenterShow" id="messageCenterOn" value="true">
+				<label for="messageCenterOn">On</label>
+				<span class="label-hint">Show messages</span>
+			</li>	
+			
+			<li class="radio-input">
+				<input type="radio" onChange="updateSettings('messagesshow', 'false');" name="messageCenterShow" id="messageCenterOff" value="false">
+				<label for="messageCenterOff">Off</label>
+				<span class="label-hint">Hide messages</span>
+			</li>
+			
+		</ul>
+		
+		<ul>
+	
+			<li class="radio-input">
+				<input type="radio" onChange="updateSettings('messagesposition', 'top');" name="messageCenterPosition" id="messageCenterTop" value="top">
+				<label for="messageCenterTop">Top</label>
+				<span class="label-hint">Pop down</span>
+			</li>	
+			
+			<li class="radio-input">
+				<input type="radio" onChange="updateSettings('messagesposition', 'bottom');" name="messageCenterPosition" id="messageCenterBottom" value="bottom">
+				<label for="messageCenterBottom">Bottom</label>
+				<span class="label-hint">Pop up</span>
+			</li>
+			
+		</ul>
+				
+		<div class="text-input">
+			<label for="messageContent">Message</label>
+			<span class="label-hint">Enter a message to be shown in the message center</span>
+			<input type="text" id="messageTitle" name="messageContent" placeholder="Enter the message title" value="">
+			<textarea id="messageBody" name="messageContent" placeholder="Enter your message." cols="30" rows="4"></textarea>
+			<button onClick="pushMessage();">Send</button>
+		</div>
+
+	</fieldset>
+	
+	<fieldset id="optionsSetDefaults">
+
+		<legend>Reset all event data</legend>
+
+		<button onClick="resetEventData();">Set defaults</button>
 
 	</fieldset>
 

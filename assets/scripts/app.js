@@ -23,36 +23,45 @@ const entriesGrandFinal = [{% for entry in site.data.entries %}{% if entry.grand
 const entriesFauxFinal = [{% for entry in site.data.entries %}{% if entry.faux-final == "TRUE" %}"{{ entry.code }}",{% endif %}{% endfor %}];
 
 // Loaders
-var loadingScreen = document.getElementById("loading-screen");
 var loader = document.getElementById("loader");
+
+
+// Variables to feed through to other functions
+if(window.location.pathname.indexOf("semi-final-one") != -1) {
+	event = "semi-final-one";
+	entries = entriesSemiFinal1;
+} else if(window.location.pathname.indexOf("semi-final-two") != -1) {
+	event = "semi-final-two";
+	entries = entriesSemiFinal2;
+} else if(window.location.pathname.indexOf("grand-final") != -1) {
+	event = "grand-final";
+	entries = entriesGrandFinal;
+} else {
+	event = "faux-final";
+	entries = entriesFauxFinal;
+}
+
+const settingsData = database.ref('/' + event + '/settings');
+const main = document.getElementById("content");
+const scoreboard = document.getElementById("scoreboard--list");
+const messageCenter = document.getElementById("message-center");
+const messageCenterTitle = document.getElementById("message-center--title");
+const messageCenterBody = document.getElementById("message-center--body");
+
 
 window.onload = function() {
 	
-	if(window.location.pathname.indexOf("semi-final-one") != -1) {
-		event = "semi-final-one";
-		entries = entriesSemiFinal1;
-	} else if(window.location.pathname.indexOf("semi-final-two") != -1) {
-		event = "semi-final-two";
-		entries = entriesSemiFinal2;
-	} else if(window.location.pathname.indexOf("grand-final") != -1) {
-		event = "grand-final";
-		entries = entriesGrandFinal;
-	} else {
-		event = "faux-final";
-		entries = entriesFauxFinal;
-	}
-	
-	// Show the animation to hide the UI
 	startLoader();
 	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
-		checkScores(event, entries)
-		setTimeout(checkTopScore, 5000, event, entries)		
-		setInterval(checkTopScore, 60000, event, entries)		
+		checkCountryData(event, entries);
+		setTimeout(checkTopScore, 5000, event, entries);
+		setInterval(checkTopScore, 60000, event, entries);
+		setTimeout(checkSettings, 3000, event);
 	}
-
-	// Show the UI
-	setTimeout(stopLoader, 2000);
+	
+	setTimeout(stopLoader, 1000);
+	
 }
 
 function fadeElement(el) {
@@ -64,61 +73,70 @@ function removeElement(el) {
 }
 
 function startLoader() {
-	
 	console.log("⏰ Starting the loading screen...");
-	loader.classList.remove("hidden");
-	loader.classList.add("grow");
-	
 }
 
 function stopLoader() {
-	
-	loader.classList.remove("grow");
-	loader.classList.add("shrink");
-	
-	setTimeout(fadeElement, 500, loadingScreen);
-	setTimeout(removeElement, 1000, loadingScreen);
-	
+	setTimeout(fadeElement, 500, loader);
+	setTimeout(removeElement, 2000, loader);	
 }
 
-function failLoader() {
-	alert('failed')
+function displayElementData(from, to) {
+	to.innerText = from;
 }
 
-function checkNowPlaying(event, country) {
-	var currentEntry = database.ref('/' + event + '/' + country + '/now-playing');
-	var uiEntry = document.getElementById(country);
+function setDataAttribute(el, attr, value) {
+	el.setAttribute('data-' + attr, value);
+}
+
+function checkSettings(event) {
+	console.log("⏰ Checking settings...")
 	
-	currentEntry.on('value', (snapshot) => {
-				
-		const data = snapshot.val();
-		if (data == true) {
-			uiEntry.dataset.nowplaying = true;
-			console.log('▶️ Now playing: ' + country);
-		} else {
-			uiEntry.dataset.nowplaying = false;
-		}
+	settingsData.on('value', (snapshot) => {
+		
+		let messageTitleData = snapshot.val().messagetitle;
+		let messageBodyData = snapshot.val().messagebody;
+		let messagesShowData = snapshot.val().messagesshow;
+		let messagesPositionData = snapshot.val().messagesposition;
+		let layoutData = snapshot.val().layout;
+		let calculationData = snapshot.val().calculation;
+		
+		setDataAttribute(main, "layout", layoutData);
+		setDataAttribute(main, "calculation", calculationData);
+		setDataAttribute(messageCenter, "messagesshow", messagesShowData);
+		setDataAttribute(messageCenter, "messagesposition", messagesPositionData);
+		
+		// setDataAttribute(messageCenter, "message", messageData);
+		displayElementData(messageTitleData, messageCenterTitle);
+		displayElementData(messageBodyData, messageCenterBody);
 		
 	});
 	
 }
 
-async function checkScores(event, countries) {
-	console.log("⏰ Checking scores...")
+function checkCountryData(event, countries) {
+	console.log("⏰ Checking country data...")
 
 	for (i = 0; i < entries.length; i++) {
 		
 		let country = entries[i];
-		let currentScore = database.ref('/' + event + '/' + country + '/vote');
-		let uiScore = document.getElementById("score-" + country);
+		let countryData = database.ref('/' + event + '/' + country);
 		
-		currentScore.on('value', (snapshot) => {
-			const data = snapshot.val();
-			uiScore.innerHTML = data;
-			console.log('✅ Score for ' + country + ' changed. New score: ' + data);			
+		let entry = document.getElementById(country);
+		let score = document.getElementById("score-" + country);
+		
+		countryData.on('value', (snapshot) => {
+			
+			let scoreData = snapshot.val().vote;
+			let countData = snapshot.val().count;
+			let nowPlayingData = snapshot.val().nowplaying;
+			
+			score.dataset.score = scoreData;
+			displayElementData(scoreData, score);
+			
+			entry.dataset.nowplaying = nowPlayingData;
+						
 		})
-		
-		checkNowPlaying(event, country);
 		
 	};
 
@@ -135,7 +153,7 @@ function checkTopScore(event, countries) {
 	
 	allScores.sort((a,b) => b[1] - a[1]);
 	
-	var nonZero = 0;
+	let nonZero = 0;
 	for (i = 0; i < allScores.length; i++) {
 		if (allScores[i][1] > 0) {
 			nonZero++;
@@ -143,19 +161,16 @@ function checkTopScore(event, countries) {
 	}
 	
 	if (nonZero > 3) {
-
-		var uiEntry = document.getElementsByClassName("scoreboard--list--entry");
-
 		console.group("Top scorers");
 		for (i = 0; i < allScores.length; i++) {
 			let rank = i + 1;
-			console.log("🥇 " + allScores[i][0] + " – " + allScores[i][1] + " points")
+			if (i < 3) {
+				console.log("🥇 " + allScores[i][0] + " – " + allScores[i][1] + " points")
+			}
 			document.getElementById(allScores[i][0]).dataset.leaderboard = rank;
 		}
 		console.groupEnd();
-		
 	} else {
-
 		console.group("Leaderboard");
 			console.log("🥇🥈🥉 There aren't enough votes yet...")
 			console.info("Scores will update once at least 3 contestants have a non-zero score")
@@ -169,23 +184,29 @@ function checkTopScore(event, countries) {
 function submitVote(event, country, vote) {
 	
 	// Get the current score for the country
-	var countryScore = database.ref('/' + event + '/' + country + '/vote');
-	var points = parseInt(vote);
-	var uiVoteButtons = document.getElementsByName("vote-" + country);
+	let countryScore = database.ref('/' + event + '/' + country + '/vote');
+	let countryVoteCount = database.ref('/' + event + '/' + country + '/count');
+	let points = parseInt(vote);
+	let voteButtons = document.getElementsByName("vote-" + country);
 	
 	countryScore.transaction(
 		function(score) {
 			return score + points;
 		}
 	)
+	countryVoteCount.transaction(
+		function(count) {
+			return count + 1;
+		}
+	)
 	
 	
-	for (i = 0; i < uiVoteButtons.length; i++) {
-		uiVoteButtons[i].disabled = true;
+	for (i = 0; i < voteButtons.length; i++) {
+		voteButtons[i].disabled = true;
 	}
 }
 
-function setNowPlaying(event) {
+function setNowPlaying(event, order) {
 	
 	// Get the current score for the country
 	var radios = document.getElementsByName('radioNowPlaying');
@@ -193,7 +214,7 @@ function setNowPlaying(event) {
 		if (radios[i].checked) {
 			// do whatever you want with the checked box
 			var country = radios[i].value;
-			var nowPlaying = database.ref('/' + event + '/' + country + '/now-playing');
+			var nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
 			
 			nowPlaying.transaction(
 				function() {
@@ -201,11 +222,16 @@ function setNowPlaying(event) {
 				}
 			)
 			
-		} else {
+			if (order == 9) {
+				updateSettings('messagesshow', true);
+				updateSettings('messagetitle', "Raise a glass to Sir Terry");
+				updateSettings('messagebody', "It’s song number 9. Sir Terry Wogan famously warned not to have anything to drink until this point. Time to celebrate his life and contribution to the Contest.");
+			}
 			
+		} else {
 			// do whatever you want with the unchecked box
 			var country = radios[i].value;
-			var nowPlaying = database.ref('/' + event + '/' + country + '/now-playing');
+			var nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
 			
 			nowPlaying.transaction(
 				function() {
@@ -214,5 +240,68 @@ function setNowPlaying(event) {
 			)
 		}
 	}
+	
+}
+
+function updateSettings(attr, value) {		
+	settingsData.update( {
+		[attr]: value
+	}, (error) => {
+	  if (error) {
+		console.warn("⚙️ Update to setting '" + attr + "' failed");
+	  } else {
+		  console.info("⚙️ '" + attr + "' changed to '" + value + "'");
+	  }
+	});
+}
+
+function pushMessage() {
+	let messageTitle = document.getElementById('messageTitle').value;
+	let messageBody = document.getElementById('messageBody').value;
+	updateSettings('messagetitle', messageTitle);
+	updateSettings('messagebody', messageBody);
+}
+
+function resetEventData() {
+
+	let reset = confirm("Do you want to reset all data for this event?");
+	if (reset == false) {
+	  console.info("💿 Data reset cancelled.")
+	} else {
+		
+	  // Add each country and set everything to zero
+	  for (i = 0; i < entries.length; i++) {
+		  
+		  let country = entries[i];
+		  let countryData = database.ref('/' + event + '/' + country);
+		  
+		  countryData.set({
+			  nowplaying: false,
+			  count: 0,
+			  vote : 0
+		  });
+		  
+	  };
+	  
+	  // Also add or reset event settings	
+	  settingsData.set({
+		  messagetitle: "Welcome",
+		  messagebody: "Messages will display here throughout the event.",
+		  messagesshow: true,
+		  messagesposition: "bottom",
+		  layout: "performance",
+		  calculation: "total",
+		  nowplaying: false,
+	  }, (error) => {
+		if (error) {
+		  console.warn("⚙️ Data for " + event + " failed to reset");
+		} else {
+		  console.info("💿 Data reset for " + event)
+		}
+	  });
+	  
+	}
+	
+	
 	
 }

@@ -32,8 +32,8 @@ a.button {
 	text-decoration: none;
 	
 	&:hover {
-		@include toggleLightDark(color, $black, $white);
-		@include toggleLightDark(background, $white, $black);
+		@include toggleLightDark(background, $gray-700, $gray-300);
+		@include toggleLightDark(color, $white, $black);
 		cursor: pointer;
 		
 		z-index: 999;
@@ -150,7 +150,7 @@ textarea {
 	&:hover {
 		box-shadow: 0 0 0 3px $cyan;
 		@include toggleLightDark(background, $gray-200, $gray-800);
-		@include toggleLightDark(border-width, inherit, 3px);
+		@include toggleLightDark(border-width, $border-width-form-element, 3px);
 	}
 
 }

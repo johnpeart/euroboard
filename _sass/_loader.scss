@@ -1,19 +1,26 @@
-section#loading-screen {
+section#loader {
 	
-	display: block;
+	display: grid;
 	position: fixed;
 	
 	width: 100vw;
 	height: 100vh;
 	
-	z-index: 100000;
+	z-index: 999999999;
 	overflow: hidden;
+	justify-content: center;
+	align-content: center;
 	
 	top: 0;
 	
 	opacity: 1;
 	
-	@include toggleLightDark(background, $body-background, $body-background-dark-mode)
+	@include toggleLightDark(background, $body-background, $body-background-dark-mode);
+	@include toggleLightDark(background-image, url("#{$loader}"), url("#{$loader}"));
+	@include toggleLightDark(background-repeat, no-repeat, no-repeat);
+	@include toggleLightDark(background-clip, border-box, border-box);
+	@include toggleLightDark(background-size, cover, cover);
+	@include toggleLightDark(background-position, center center, center center);
 	
 	&.fade-out {
 		-webkit-animation: fade-out 1s ease-in forwards;
@@ -21,93 +28,11 @@ section#loading-screen {
 		animation: fade-out 1s ease-in forwards;
 	}
 	
-	div.loader {
-		
-		&.hidden {
-			display: none !important;
-		}
-		
-		&.background {
-			
-			display: block;
-			position: absolute;
-			
-			width: 100vw;
-			height: 100vh;
-			
-			&.grow {
-				-webkit-animation: grow 1s ease-in-out forwards;
-				-moz-animation: grow 1s ease-in-out forwards;
-				animation: grow 1s ease-in-out forwards;
-			}
-			
-			&.shrink {
-				-webkit-animation: shirnk 1s ease-in-out forwards;
-				-moz-animation: shrink 1s ease-in-out forwards;
-				animation: shrink 1s ease-in-out forwards;
-				
-				transform: scale(0);
-			}
-			
-		}
-		
-		&.ring {
-			
-			display: block;
-			position: absolute;
-			
-			@include landscape {
-				width: 		100vw;
-				height: 	100vw;
-				
-				top: calc(50vh - (/* height */100vw / 2));
-				left: calc(50vw - (/* width */100vw / 2));
-			}
-			
-			@include portrait {
-				width: 		100vh;
-				height: 	100vh;
-				
-				top: calc(50vh - (/* height */100vh / 2));
-				left: calc(50vw - (/* width */100vh / 2));
-			}
-			
-		}
-					
-		&.outer {
-			background: url('../images/loader/outer.svg');
-			
-			background-size: 100vw;
-			background-position: center;
-			background-repeat: no-repeat;
-			
-			-webkit-animation: spin 45s linear infinite;
-			-moz-animation: spin 45s linear infinite;
-			animation: spin 45s linear infinite;
-		}
-		&.middle {
-			background: url('../images/loader/middle.svg');
-			
-			background-size: 66vw;
-			background-position: center;
-			background-repeat: no-repeat;
-			
-			-webkit-animation:spin 30s linear infinite reverse;
-			-moz-animation:spin 30s linear infinite reverse;
-			animation: spin 30s linear infinite reverse;				
-		}
-		&.inner {
-			background: url('../images/loader/inner.svg');
-			
-			background-size: 33vw;
-			background-position: center;
-			background-repeat: no-repeat;
-			
-			-webkit-animation: spin 15s linear infinite;
-			-moz-animation:spin 15s linear infinite;
-			animation: spin 15s linear infinite;
-		}
-		
+	h1 {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
 	}
 	
 }

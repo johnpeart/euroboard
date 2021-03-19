@@ -10,23 +10,31 @@ layout: default
 
 {% include header.html %}
 			
-<main id="content" class="scoreboard">
+<main id="content" class="scoreboard {{ event }}" data-layout="running-order" data-calculation="total">
 	
-	<ul id="scoreboard--list" class="{{ event }}">
+	<ul id="scoreboard--list">
 		
 		{% for entry in entries %}
-		{% if entry.[event] == "TRUE" %}
+		{% if entry[event] == "TRUE" %}
 			
-			<li id="{{ entry.code }}" class="scoreboard--list--entry" data-runningorder="{{ entry.[running-order] }}" data-leaderboard="" data-nowplaying="false">
-				<span class="running-order">{{ entry.[running-order] | append: " #" | append: entry.code }}</span>
+			<li id="{{ entry.code }}" class="scoreboard--list--entry" data-score="0" data-runningorder="{{ entry[running-order] }}" data-leaderboard="" data-nowplaying="false">
+				<span class="running-order">{{ entry[running-order] | append: " #" | append: entry.code }}</span>
 				<span class="now-playing">Now playing</span>
 				<span class="country">{{ entry.country }}</span>
-				<span id="score-{{ entry.code }}" class="score">??</span>
+				<span id="score-{{ entry.code }}" class="score"></span>
 			</li>
+			
 		{% endif %}		
 		{% endfor %}
-		
+
 	</ul>
+	
+	<aside id="message-center" data-messagesshow="false" data-messagesposition="bottom">
+		
+		<h1 id="message-center--title">Message title</h1>
+		<p id="message-center--body">Message text</p>
+		
+	</aside>
 
 </main>
 

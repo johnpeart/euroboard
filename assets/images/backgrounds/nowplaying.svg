@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 64" width="144" height="64">
+  <defs/>
+  <style type="text/css">
+    #arrow1,
+    #arrow2,
+    #arrow3,
+    #arrow4 {
+      -webkit-animation: nowplaying 4s linear alternate infinite;
+      -moz-animation: nowplaying 4s linear alternate infinite;
+      animation: nowplaying 4s linear alternate infinite;
+    }
+    #arrow2 {
+      animation-delay: 1s;
+    }
+    #arrow3 {
+      animation-delay: 2s;
+    }
+    #arrow4 {
+      animation-delay: 3s;
+    }
+    
+    @-moz-keyframes nowplaying { 
+      100% { 
+        opacity: 0;
+      } 
+    }
+    @-webkit-keyframes nowplaying { 
+      100% { 
+        opacity: 0;
+      } 
+    }
+    @keyframes nowplaying { 
+      100% { 
+        opacity: 0;
+      } 
+    }
+  
+  </style>
+  <metadata> Produced by OmniGraffle 7.18.4\n2021-03-18 17:46:32 +0000</metadata>
+  <g id="nowplaying" stroke-dasharray="none" stroke="none" fill="none" stroke-opacity="1" fill-opacity="1">
+    <title>nowplaying</title>
+    <g id="nowplaying_arrows">
+      <title>arrows</title>
+      <g id="arrow4">
+        <title>arrow4</title>
+        <path d="M 144 0 L 144 64 L 96 64 L 144 32 L 96 0 Z" fill="rgba(255,255,255,0.35)"/>
+      </g>
+      <g id="arrow3">
+        <title>arrow3</title>
+        <path d="M 96 0 L 144 32 L 96 64 L 48 64 L 96 32 L 48 0 Z" fill="rgba(255,255,255,0.35)"/>
+      </g>
+      <g id="arrow2">
+        <title>arrow2</title>
+        <path d="M 48 0 L 96 32 L 48 64 L 0 64 L 48 32 L 0 0 Z" fill="rgba(255,255,255,0.35)"/>
+      </g>
+      <g id="arrow1">
+        <title>arrow1</title>
+        <path d="M 0 0 L 48 32 L 0 64 Z" fill="rgba(255,255,255,0.25)"/>
+      </g>
+    </g>
+  </g>
+</svg>
