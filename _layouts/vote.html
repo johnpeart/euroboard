@@ -12,7 +12,7 @@ layout: default
 
 <main id="content" class="vote">
 	
-	<ul id="vote--list" class="{{ event }}">
+	<ul id="vote--list" data-event="{{ event }}">
 		
 		{% for entry in entries %}
 		{% if entry[event] == "TRUE" %}

@@ -226,6 +226,8 @@ function setNowPlaying(event, order) {
 				updateSettings('messagesshow', true);
 				updateSettings('messagetitle', "Raise a glass to Sir Terry");
 				updateSettings('messagebody', "It’s song number 9. Sir Terry Wogan famously warned not to have anything to drink until this point. Grab a drink and raise a glass to his life and contribution to the Contest.");
+				
+				setTimeout(updateSettings, 120000, 'messagesshow', false);
 			}
 			
 		} else {
@@ -260,6 +262,9 @@ function pushMessage() {
 	let messageBody = document.getElementById('messageBody').value;
 	updateSettings('messagetitle', messageTitle);
 	updateSettings('messagebody', messageBody);
+	
+	updateSettings('messagesshow', true);
+	setTimeout(updateSettings, 120000, 'messagesshow', false);
 }
 
 function resetEventData() {
@@ -287,7 +292,7 @@ function resetEventData() {
 	  settingsData.set({
 		  messagetitle: "Welcome",
 		  messagebody: "Messages will display here throughout the event.",
-		  messagesshow: true,
+		  messagesshow: false,
 		  messagesposition: "bottom",
 		  layout: "performance",
 		  calculation: "total",

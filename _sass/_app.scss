@@ -70,6 +70,11 @@ body#scoreboard {
 		
 	main.scoreboard {
 		
+		&[data-event='semi-final-one'],
+		&. {
+			
+		}
+		
 		ul#scoreboard--list {
 			
 			display: grid;
@@ -520,16 +525,16 @@ body#vote {
 				grid-gap: 20px;
 			}
 			
-			&.semi-final-one,
-			&.semi-final-two {
+			&[data-event='semi-final-one'],
+			&[data-event='semi-final-two'] {
 				
 				grid-template-rows: repeat(17, minmax(200px, auto));
 				grid-template-columns: 1fr;		
 				
 			}
 			
-			&.grand-final,
-			&.faux-final {
+			&[data-event='grand-final'],
+			&[data-event='faux-final'] {
 				
 				grid-template-rows: repeat(26, minmax(200px, auto));
 				grid-template-columns: 1fr;
