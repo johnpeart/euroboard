@@ -225,7 +225,7 @@ function setNowPlaying(event, order) {
 			if (order == 9) {
 				updateSettings('messagesshow', true);
 				updateSettings('messagetitle', "Raise a glass to Sir Terry");
-				updateSettings('messagebody', "It’s song number 9. Sir Terry Wogan famously warned not to have anything to drink until this point. Time to celebrate his life and contribution to the Contest.");
+				updateSettings('messagebody', "It’s song number 9. Sir Terry Wogan famously warned not to have anything to drink until this point. Grab a drink and raise a glass to his life and contribution to the Contest.");
 			}
 			
 		} else {
