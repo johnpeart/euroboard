@@ -5,7 +5,7 @@ subtitle: "Eurovision 2021"
 
 description: "A digital scoreboard that you can use at home as you watch the Eurovision Song Contest 2021."
 
-baseurl: "/scoreboard" # the subpath of your site, e.g. /blog
+baseurl: "/euroboard" # the subpath of your site, e.g. /blog
 url: "http://localhost:4000"
 author: "John Peart"
 
