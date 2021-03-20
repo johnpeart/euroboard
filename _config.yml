@@ -68,8 +68,6 @@ future: false
 sass:
     sass_dir: _sass
 
-remote_theme: johnpeart/jekyll-theme
-
 
 
 
