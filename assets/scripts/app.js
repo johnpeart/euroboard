@@ -49,10 +49,16 @@ const messageCenterBody = document.getElementById("message-center--body");
 
 window.onload = function() {
 		
-	checkPresence();
+	presence.on("value", (snap) => {
+		if (snap.val() === true) {
+			setTimeout(stopLoader, 2000);
+		} else {
+			startLoader();
+		}
+	});
 	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
-		checkCountryData(event, entries);
+		setTimeout(checkCountryData, 1000, event, entries);
 		setTimeout(checkTopScore, 5000, event, entries);
 		setTimeout(checkSettings, 1000, event);
 		setInterval(checkTopScore, 60000, event, entries);
@@ -80,29 +86,17 @@ function setDataAttribute(el, attr, value) {
 	el.setAttribute('data-' + attr, value);
 }
 
-function checkPresence() {
-	
-	presence.on("value", (snap) => {
-		if (snap.val() === true) {
-			setTimeout(stopLoader, 2000);
-		} else {
-			startLoader();
-		}
-	});
-	
-}
-
 function checkSettings(event) {
 	console.log("⏰ Checking settings...")
 	
 	settingsData.on('value', (snapshot) => {
 		
-		let messageTitleData = snapshot.val().messagetitle;
-		let messageBodyData = snapshot.val().messagebody;
-		let messagesShowData = snapshot.val().messagesshow;
-		let messagesPositionData = snapshot.val().messagesposition;
-		let layoutData = snapshot.val().layout;
-		let calculationData = snapshot.val().calculation;
+		var messageTitleData = snapshot.val().messagetitle;
+		var messageBodyData = snapshot.val().messagebody;
+		var messagesShowData = snapshot.val().messagesshow;
+		var messagesPositionData = snapshot.val().messagesposition;
+		var layoutData = snapshot.val().layout;
+		var calculationData = snapshot.val().calculation;
 		
 		setDataAttribute(main, "layout", layoutData);
 		setDataAttribute(main, "calculation", calculationData);
@@ -122,17 +116,17 @@ function checkCountryData(event, countries) {
 
 	for (i = 0; i < entries.length; i++) {
 		
-		let country = entries[i];
-		let countryData = database.ref('/' + event + '/' + country);
+		var country = entries[i];
+		var countryData = database.ref('/' + event + '/' + country);
 		
-		let entry = document.getElementById(country);
-		let score = document.getElementById("score-" + country);
+		var entry = document.getElementById(country);
+		var score = document.getElementById("score-" + country);
 		
 		countryData.on('value', (snapshot) => {
 			
-			let scoreData = snapshot.val().vote;
-			let countData = snapshot.val().count;
-			let nowPlayingData = snapshot.val().nowplaying;
+			var scoreData = snapshot.val().vote;
+			var countData = snapshot.val().count;
+			var nowPlayingData = snapshot.val().nowplaying;
 			
 			score.dataset.score = scoreData;
 			displayElementData(scoreData, score);
@@ -146,17 +140,17 @@ function checkCountryData(event, countries) {
 }
 
 function checkTopScore(event, countries) {
-	let allScores = new Array()
+	var allScores = new Array()
 	
 	for (i = 0; i < entries.length; i++) {
-		let country = entries[i];	
-		let score = document.getElementById("score-" + country).innerText;
+		var country = entries[i];	
+		var score = document.getElementById("score-" + country).innerText;
 		allScores.push([country, score])
 	}
 	
 	allScores.sort((a,b) => b[1] - a[1]);
 	
-	let nonZero = 0;
+	var nonZero = 0;
 	for (i = 0; i < allScores.length; i++) {
 		if (allScores[i][1] > 0) {
 			nonZero++;
@@ -166,7 +160,7 @@ function checkTopScore(event, countries) {
 	if (nonZero > 3) {
 		console.group("Top scorers");
 		for (i = 0; i < allScores.length; i++) {
-			let rank = i + 1;
+			var rank = i + 1;
 			if (i < 3) {
 				console.log("🥇 " + allScores[i][0] + " – " + allScores[i][1] + " points")
 			}
@@ -188,10 +182,10 @@ function checkTopScore(event, countries) {
 function submitVote(event, country, vote) {
 	
 	// Get the current score for the country
-	let countryScore = database.ref('/' + event + '/' + country + '/vote');
-	let countryVoteCount = database.ref('/' + event + '/' + country + '/count');
-	let points = parseInt(vote);
-	let voteButtons = document.getElementsByName("vote-" + country);
+	var countryScore = database.ref('/' + event + '/' + country + '/vote');
+	var countryVoteCount = database.ref('/' + event + '/' + country + '/count');
+	var points = parseInt(vote);
+	var voteButtons = document.getElementsByName("vote-" + country);
 	
 	countryScore.transaction(
 		function(score) {
@@ -262,8 +256,8 @@ function updateSettings(attr, value) {
 }
 
 function pushMessage() {
-	let messageTitle = document.getElementById('messageTitle').value;
-	let messageBody = document.getElementById('messageBody').value;
+	var messageTitle = document.getElementById('messageTitle').value;
+	var messageBody = document.getElementById('messageBody').value;
 	updateSettings('messagetitle', messageTitle);
 	updateSettings('messagebody', messageBody);
 	
@@ -273,7 +267,7 @@ function pushMessage() {
 
 function resetEventData() {
 
-	let reset = confirm("Do you want to reset all data for this event?");
+	var reset = confirm("Do you want to reset all data for this event?");
 	if (reset == false) {
 	  console.info("💿 Data reset cancelled.")
 	} else {
@@ -281,8 +275,8 @@ function resetEventData() {
 	  // Add each country and set everything to zero
 	  for (i = 0; i < entries.length; i++) {
 		  
-		  let country = entries[i];
-		  let countryData = database.ref('/' + event + '/' + country);
+		  var country = entries[i];
+		  var countryData = database.ref('/' + event + '/' + country);
 		  
 		  countryData.set({
 			  nowplaying: false,
