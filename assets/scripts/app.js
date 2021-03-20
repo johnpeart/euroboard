@@ -38,10 +38,10 @@ if(window.location.pathname.indexOf("semi-final-one") != -1) {
 	entries = entriesFauxFinal;
 }
 
+var loader = document.getElementById("loader");
 const settingsData = database.ref('/' + event + '/settings');
 const body = document.getElementById("body");
 const main = document.getElementById("content");
-var loader = document.getElementById("loader");
 const scoreboard = document.getElementById("scoreboard--list");
 const messageCenter = document.getElementById("message-center");
 const messageCenterTitle = document.getElementById("message-center--title");
@@ -53,7 +53,7 @@ window.onload = function() {
 	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
 		checkCountryData(event, entries);
-		setTimeout(checkTopScore, 1000, event, entries);
+		setTimeout(checkTopScore, 5000, event, entries);
 		setTimeout(checkSettings, 1000, event);
 		setInterval(checkTopScore, 60000, event, entries);
 	}
