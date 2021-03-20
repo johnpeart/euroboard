@@ -15,6 +15,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // Get a reference to the database service
 var database = firebase.database();
+var presence = database.ref(".info/connected");
 
 // Countries in each event
 const entriesSemiFinal1 = [{% for entry in site.data.entries %}{% if entry.semi-final-one == "TRUE" %}"{{ entry.code }}",{% endif %}{% endfor %}]
@@ -42,43 +43,34 @@ if(window.location.pathname.indexOf("semi-final-one") != -1) {
 }
 
 const settingsData = database.ref('/' + event + '/settings');
+const body = document.getElementById("body");
 const main = document.getElementById("content");
 const scoreboard = document.getElementById("scoreboard--list");
 const messageCenter = document.getElementById("message-center");
 const messageCenterTitle = document.getElementById("message-center--title");
 const messageCenterBody = document.getElementById("message-center--body");
 
-
 window.onload = function() {
-	
-	startLoader();
+		
+	checkPresence();
 	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
 		checkCountryData(event, entries);
-		setTimeout(checkTopScore, 5000, event, entries);
+		setTimeout(checkTopScore, 1000, event, entries);
+		setTimeout(checkSettings, 1000, event);
 		setInterval(checkTopScore, 60000, event, entries);
-		setTimeout(checkSettings, 3000, event);
 	}
 	
-	setTimeout(stopLoader, 1000);
-	
-}
-
-function fadeElement(el) {
-	el.classList.add("fade-out");
-}
-
-function removeElement(el) {
-	el.style.display = "none";
 }
 
 function startLoader() {
-	console.log("⏰ Starting the loading screen...");
+	console.log("📶 Establishing connection. Showing the loading screen...");
+	setDataAttribute(body, "connection", false)
 }
 
 function stopLoader() {
-	setTimeout(fadeElement, 500, loader);
-	setTimeout(removeElement, 2000, loader);	
+	console.log("👻 Connected. Hiding the loading screen...");	
+	setDataAttribute(body, "connection", true)
 }
 
 function displayElementData(from, to) {
@@ -87,6 +79,19 @@ function displayElementData(from, to) {
 
 function setDataAttribute(el, attr, value) {
 	el.setAttribute('data-' + attr, value);
+}
+
+function checkPresence() {
+	
+	presence.on("value", (snap) => {
+		if (snap.val() === true) {
+			console.log("connected");
+			setTimeout(stopLoader, 2000);
+		} else {
+			startLoader();
+		}
+	});
+	
 }
 
 function checkSettings(event) {

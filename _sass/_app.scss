@@ -1,6 +1,6 @@
 // App styles
 
-body#scoreboard {
+body.scoreboard {
 	
 	header#scoreboard--header {
 		
@@ -81,6 +81,8 @@ body#scoreboard {
 			
 			@include xs {
 				grid-template-columns: 1fr;
+				grid-template-rows: repeat(26, minmax(auto, 1fr));
+				grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17" "p18" "p19" "p20" "p21" "p22" "p23" "p24" "p25" "p26";
 			}
 			@include sm {
 				grid-template-columns: repeat(2, 1fr);
@@ -494,7 +496,7 @@ body#scoreboard {
 
 // App styles
 
-body#vote {
+body.vote {
 	
 	header#vote--header {
 		
@@ -713,7 +715,7 @@ body#vote {
 
 // App styles
 
-body#admin {
+body.admin {
 	
 	header#admin--header {
 		

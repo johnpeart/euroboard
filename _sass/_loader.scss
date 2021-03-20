@@ -13,8 +13,6 @@ section#loader {
 	
 	top: 0;
 	
-	opacity: 1;
-	
 	@include toggleLightDark(background, $body-background, $body-background-dark-mode);
 	@include toggleLightDark(background-image, url("#{$loader}"), url("#{$loader}"));
 	@include toggleLightDark(background-repeat, no-repeat, no-repeat);
@@ -22,17 +20,63 @@ section#loader {
 	@include toggleLightDark(background-size, cover, cover);
 	@include toggleLightDark(background-position, center center, center center);
 	
-	&.fade-out {
-		-webkit-animation: fade-out 1s ease-in forwards;
-		-moz-animation: fade-out 1s ease-in forwards;
-		animation: fade-out 1s ease-in forwards;
+	div.loader--text {
+		max-width: 500px;
+		padding: 0 $container-padding;
 	}
 	
 	h1 {
 		position: relative;
 		display: block;
 		margin: 0;
-		padding: 0;
+		padding: 0 0 20px;
+	}
+	p {
+		font-size: 		$p-font-size-base * 1.5;
+		line-height: 	$p-line-height-base * 1.5;
+		padding-bottom: 	$p-padding-bottom * 1.5;
+		
+		@include xs {
+			font-size: 		$p-font-size-base-xs * 1.1;
+			line-height: 	$p-line-height-base-xs;
+			padding-bottom: 	$p-padding-bottom-xs * 1.5;
+		}
+		@include sm {
+			font-size: 		$p-font-size-base-sm * 1.25;
+			line-height: 	$p-line-height-base-sm * 1.1;
+			padding-bottom: 	$p-padding-bottom-sm * 1.5;
+		}
+		@include md {
+			font-size: 		$p-font-size-base-md * 1.25;
+			line-height: 	$p-line-height-base-md * 1.1;
+			padding-bottom: 	$p-padding-bottom-md * 1.5;
+		}
+		@include lg {
+			font-size: 		$p-font-size-base-lg * 1.25;
+			line-height: 	$p-line-height-base-lg * 1.1;
+			padding-bottom: 	$p-padding-bottom-lg * 1.5;
+		}
+		@include xl {
+			font-size: 		$p-font-size-base-xl * 1.25;
+			line-height: 	$p-line-height-base-xl * 1.1;
+			padding-bottom: 	$p-padding-bottom-xl * 1.5;
+		}
+		
+		font-weight:		normal;
 	}
 	
+}
+
+
+body[data-connection="false"] {
+	section#loader {
+		transition: opacity 1s;
+		opacity: 1;
+	}
+}
+body[data-connection="true"] {
+	section#loader {
+		transition: opacity 1s;
+		opacity: 0;
+	}
 }
