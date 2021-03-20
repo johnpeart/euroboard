@@ -23,10 +23,6 @@ const entriesSemiFinal2 = [{% for entry in site.data.entries %}{% if entry.semi-
 const entriesGrandFinal = [{% for entry in site.data.entries %}{% if entry.grand-final == "TRUE" %}"{{ entry.code }}",{% endif %}{% endfor %}];
 const entriesFauxFinal = [{% for entry in site.data.entries %}{% if entry.faux-final == "TRUE" %}"{{ entry.code }}",{% endif %}{% endfor %}];
 
-// Loaders
-var loader = document.getElementById("loader");
-
-
 // Variables to feed through to other functions
 if(window.location.pathname.indexOf("semi-final-one") != -1) {
 	event = "semi-final-one";
@@ -45,6 +41,7 @@ if(window.location.pathname.indexOf("semi-final-one") != -1) {
 const settingsData = database.ref('/' + event + '/settings');
 const body = document.getElementById("body");
 const main = document.getElementById("content");
+var loader = document.getElementById("loader");
 const scoreboard = document.getElementById("scoreboard--list");
 const messageCenter = document.getElementById("message-center");
 const messageCenterTitle = document.getElementById("message-center--title");
@@ -65,12 +62,14 @@ window.onload = function() {
 
 function startLoader() {
 	console.log("📶 Establishing connection. Showing the loading screen...");
-	setDataAttribute(body, "connection", false)
+	setDataAttribute(body, "connection", false);
+	setDataAttribute(loader, "visibility", "visible");
 }
 
 function stopLoader() {
 	console.log("👻 Connected. Hiding the loading screen...");	
-	setDataAttribute(body, "connection", true)
+	setDataAttribute(body, "connection", true);
+	setTimeout(setDataAttribute, 2000, loader, "visibility", "hidden");
 }
 
 function displayElementData(from, to) {
@@ -85,7 +84,6 @@ function checkPresence() {
 	
 	presence.on("value", (snap) => {
 		if (snap.val() === true) {
-			console.log("connected");
 			setTimeout(stopLoader, 2000);
 		} else {
 			startLoader();

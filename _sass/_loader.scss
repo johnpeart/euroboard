@@ -65,6 +65,14 @@ section#loader {
 		font-weight:		normal;
 	}
 	
+	visibility: visible;
+
+	&[data-visibility="hidden"] {
+		visibility: hidden !important;
+	}
+	
+	
+	
 }
 
 
