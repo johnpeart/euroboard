@@ -18,11 +18,19 @@
 	}
 }
 
+@include keyframes(spin) {
+	to {
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
 @include keyframes(fade) {
-	0% {
+	from {
 		opacity: 1;
 	}
-	100% {
+	to {
 		opacity: 0;
 	}
 }
