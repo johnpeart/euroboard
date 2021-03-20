@@ -21,7 +21,7 @@ section#loader {
 	@include toggleLightDark(background-position, center center, center center);
 	
 	div.loader--text {
-		max-width: 500px;
+		max-width: 600px;
 		padding: 0 $container-padding;
 	}
 	
