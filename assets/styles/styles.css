@@ -1155,6 +1155,58 @@ body.vote main.vote ul#vote--list { display: grid; position: relative; margin: 0
 
 body.vote main.vote li.vote--list--entry { display: grid; background: #e9ecef; }
 
+body.vote main.vote li.vote--list--entry[data-runningorder="1"] { grid-area: p1; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="2"] { grid-area: p2; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="3"] { grid-area: p3; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="4"] { grid-area: p4; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="5"] { grid-area: p5; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="6"] { grid-area: p6; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="7"] { grid-area: p7; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="8"] { grid-area: p8; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="9"] { grid-area: p9; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="10"] { grid-area: p10; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="11"] { grid-area: p11; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="12"] { grid-area: p12; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="13"] { grid-area: p13; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="14"] { grid-area: p14; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="15"] { grid-area: p15; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="16"] { grid-area: p16; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="17"] { grid-area: p17; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="18"] { grid-area: p18; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="19"] { grid-area: p19; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="20"] { grid-area: p20; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="21"] { grid-area: p21; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="22"] { grid-area: p22; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="23"] { grid-area: p23; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="24"] { grid-area: p24; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="25"] { grid-area: p25; }
+
+body.vote main.vote li.vote--list--entry[data-runningorder="26"] { grid-area: p26; }
+
 @media only screen and (max-width: 599px) { body.vote main.vote li.vote--list--entry { grid-template-rows: auto auto repeat(5, 1fr); grid-template-columns: repeat(2, 1fr); grid-template-areas: "pos pos" "country country" "one two" "three four" "five six" "seven eight" "ten twelve"; grid-gap: 2px; } }
 
 @media only screen and (min-width: 600px) { body.vote main.vote li.vote--list--entry { grid-template-rows: repeat(2, 1fr); grid-template-columns: minmax(250px, 30%) repeat(5, 1fr); grid-template-areas: "pos  		one two three four five" "country 	six seven eight ten twelve"; grid-gap: 2px; } }
