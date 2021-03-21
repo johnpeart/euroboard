@@ -409,7 +409,8 @@ body.scoreboard {
 			}
 			
 			&[data-messagesshow='true'] {
-				transition: all 2s;
+				transition: all 1s;
+				transition-timing-function: ease-out;
 				
 				&[data-messagesposition='top'] {
 					bottom: auto;
@@ -427,15 +428,16 @@ body.scoreboard {
 				}
 			}
 			&[data-messagesshow='false'] {	
-				transition: all 2s;
+				transition: all 1s;
+				transition-timing-function: ease-in;
 							
 				&[data-messagesposition='top'] {
 					bottom: auto;
-					top: -500px;		
+					top: -1000px;		
 				}
 				&[data-messagesposition='bottom'] {
 					top: auto;
-					bottom: -500px;
+					bottom: -1000px;
 				}
 			}
 				
