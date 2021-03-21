@@ -17,7 +17,7 @@ layout: default
 		{% for entry in entries %}
 		{% if entry[event] == "TRUE" %}
 			
-			<li id="{{ entry.country | append: '-' | append: event | slugify }}" class="scoreboard--list--entry">
+			<li id="{{ entry.code }}" class="vote--list--entry">
 				<span class="running-order">{{ entry[running-order] | prepend: "#" }}</span>
 				<span class="country">{{ entry.country }}</span>
 				<button class="button vote one" name="vote-{{ entry.code }}" onClick="submitVote('{{ event }}', '{{ entry.code }}', 1)">1</button>
