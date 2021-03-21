@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" width="64" height="64">
+  <defs/>
+  <style type="text/css">
+    #outter {
+    -webkit-animation: spin 45s linear infinite;
+    -moz-animation: spin 45s linear infinite;
+    animation: spin 45s linear infinite;
+    -moz-transform-origin: center center;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    }
+    #middle-a,
+    #middle-b {
+    -webkit-animation:spin 30s linear infinite reverse;
+    -moz-animation:spin 30s linear infinite reverse;
+    animation: spin 30s linear infinite reverse;
+    -moz-transform-origin: center center;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    }
+    #inner {
+    -webkit-animation: spin 15s linear infinite;
+    -moz-animation:spin 15s linear infinite;
+    animation: spin 15s linear infinite;
+    -moz-transform-origin: center center;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    }
+    
+    @-moz-keyframes spin { 
+    100% { 
+      -moz-transform: rotate(360deg);
+    } 
+    }
+    @-webkit-keyframes spin { 
+    100% { 
+      -webkit-transform: rotate(360deg); 
+    } 
+    }
+    @keyframes spin { 
+    100% { 
+      transform: rotate(360deg); 
+    } 
+    }
+  
+  </style>
+  <metadata> Produced by OmniGraffle 7.18.4\n2021-03-17 21:39:42 +0000</metadata>
+  <g id="gold" fill-opacity="1" fill="none" stroke="none" stroke-dasharray="none" stroke-opacity="1">
+    <title>gold</title>
+    <g id="gold_Layer_1">
+      <title>Layer 1</title>
+      <g id="outter">
+        <title>outter</title>
+        <g id="Graphic_98">
+          <path d="M 32 32 L 32 2 C 34.62174 2 37.232166 2.3436694 39.76457 3.0222252 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_97">
+          <path d="M 32 32 L 47 6.019238 C 49.27049 7.330107 51.359354 8.932947 53.213203 10.786797 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_96">
+          <path d="M 32 32 L 57.98076 17 C 60.61381 21.560576 62 26.7339 62 32 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_95">
+          <path d="M 32 32 L 60.977775 39.76457 C 60.29922 42.296976 59.29163 44.72951 57.98076 47 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_94">
+          <path d="M 32 32 L 53.213203 53.213203 C 47.58711 58.839295 39.956495 62 32 62 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_93">
+          <path d="M 32 32 L 24.23543 60.977775 C 21.703024 60.29922 19.270492 59.29163 17 57.98076 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_92">
+          <path d="M 32 32 L 10.786797 53.213203 C 8.932947 51.359354 7.330107 49.27049 6.019238 47 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_91">
+          <path d="M 32 32 L 2 32 C 2 26.7339 3.386188 21.560576 6.019238 17 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+        <g id="Graphic_90">
+          <path d="M 32 32 L 10.786797 10.786797 C 14.510492 7.063102 19.148767 4.385192 24.23543 3.0222252 L 32 32 Z" fill="#af9500" fill-opacity=".10020272"/>
+        </g>
+      </g>
+      <g id="middle-a">
+        <title>middle-a</title>
+        <g id="Graphic_89">
+          <title>Adjustable Wedge</title>
+          <path d="M 32 32 L 36.94109 13.559598 C 38.55262 13.991406 40.100596 14.632598 41.545455 15.466788 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+        <g id="Graphic_88">
+          <path d="M 32 32 L 45.49931 18.500689 C 46.679033 19.68041 47.69902 21.009687 48.53321 22.454545 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+        <g id="Graphic_87">
+          <path d="M 32 32 L 22.454545 48.53321 C 21.009687 47.69902 19.68041 46.679033 18.500689 45.49931 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+        <g id="Graphic_86">
+          <path d="M 32 32 L 15.466788 41.545455 C 14.632598 40.100596 13.991406 38.55262 13.559598 36.94109 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+        <g id="Graphic_85">
+          <path d="M 32 32 L 15.466788 22.454545 C 16.300977 21.009687 17.320967 19.68041 18.500689 18.500689 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+        <g id="Graphic_84">
+          <path d="M 32 32 L 27.05891 13.559598 C 27.917513 13.329536 28.791137 13.15972 29.673403 13.051392 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+        <g id="Graphic_83">
+          <path d="M 32 32 L 48.53321 41.545455 C 47.69902 42.990313 46.679033 44.31959 45.49931 45.49931 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+        <g id="Graphic_82">
+          <path d="M 32 32 L 32 51.09091 C 30.33162 51.09091 28.67044 50.87221 27.05891 50.4404 L 32 32 Z" fill="#af9500" fill-opacity=".25088"/>
+        </g>
+      </g>
+      <g id="middle-b">
+        <title>middle-b</title>
+        <g id="Graphic_81">
+          <path d="M 32 32 L 50.4404 36.94109 C 50.008594 38.55262 49.3674 40.100596 48.53321 41.545455 L 32 32 Z" fill="#af9500" fill-opacity=".35189732"/>
+        </g>
+        <g id="Graphic_80">
+          <path d="M 32 32 L 41.545455 48.53321 C 38.64327 50.20879 35.351154 51.09091 32 51.09091 L 32 32 Z" fill="#af9500" fill-opacity=".35189732"/>
+        </g>
+        <g id="Graphic_79">
+          <path d="M 32 32 L 18.500689 18.500689 C 19.68041 17.320967 21.009687 16.300977 22.454545 15.466788 L 32 32 Z" fill="#af9500" fill-opacity=".35189732"/>
+        </g>
+        <g id="Graphic_78">
+          <path d="M 32 32 L 12.909091 32 C 12.909091 28.648846 13.79121 25.35673 15.466788 22.454545 L 32 32 Z" fill="#af9500" fill-opacity=".35189732"/>
+        </g>
+        <g id="Graphic_77">
+          <path d="M 32 32 L 48.53321 22.454545 C 49.3674 23.899404 50.008594 25.44738 50.4404 27.05891 L 32 32 Z" fill="#af9500" fill-opacity=".35189732"/>
+        </g>
+        <g id="Graphic_76">
+          <title>Adjustable Wedge</title>
+          <path d="M 32 32 L 32 12.909091 C 33.66838 12.909091 35.32956 13.12779 36.94109 13.559598 L 32 32 Z" fill="#af9500" fill-opacity=".35189732"/>
+        </g>
+      </g>
+      <g id="inner">
+        <title>inner</title>
+        <g id="Graphic_75">
+          <path d="M 32 32 L 32 21.09091 C 32.95336 21.09091 33.902606 21.21588 34.82348 21.462627 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+        <g id="Graphic_74">
+          <path d="M 32 32 L 37.454545 22.55245 C 39.112937 23.509923 40.490077 24.887063 41.44755 26.545455 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+        <g id="Graphic_73">
+          <path d="M 32 32 L 42.90909 32 C 42.90909 32.95336 42.78412 33.902606 42.537373 34.82348 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+        <g id="Graphic_72">
+          <path d="M 32 32 L 41.44755 37.454545 C 39.49883 40.82983 35.897443 42.90909 32 42.90909 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+        <g id="Graphic_71">
+          <path d="M 32 32 L 29.17652 42.537373 C 28.255645 42.290625 27.371088 41.92423 26.545455 41.44755 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+        <g id="Graphic_70">
+          <path d="M 32 32 L 22.55245 37.454545 C 21.594977 35.796154 21.09091 33.914945 21.09091 32 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+        <g id="Graphic_69">
+          <path d="M 32 32 L 21.462627 29.17652 C 21.709375 28.255645 22.07577 27.371088 22.55245 26.545455 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+        <g id="Graphic_68">
+          <path d="M 32 32 L 24.286108 24.286108 C 25.64018 22.932037 27.326824 21.958252 29.17652 21.462627 L 32 32 Z" fill="#af9500" fill-opacity=".5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

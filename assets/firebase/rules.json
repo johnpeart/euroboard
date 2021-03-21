@@ -1,0 +1,280 @@
+{
+	  "rules": {
+		"semi-final-one": {
+			
+			"AUS": {
+					".read": true,
+					".write": true,
+				},
+			"AZE": {
+					".read": true,
+					".write": true,
+				},
+			"BLR": {
+					".read": true,
+					".write": true,
+				},
+			"BEL": {
+					".read": true,
+					".write": true,
+				},
+			"CRO": {
+					".read": true,
+					".write": true,
+				},
+			"CYP": {
+					".read": true,
+					".write": true,
+				},
+			"EIR": {
+					".read": true,
+					".write": true,
+				},
+			"ISR": {
+					".read": true,
+					".write": true,
+				},
+			"LTU": {
+					".read": true,
+					".write": true,
+				},
+			"MLT": {
+					".read": true,
+					".write": true,
+				},
+			"MKD": {
+					".read": true,
+					".write": true,
+				},
+			"NOR": {
+					".read": true,
+					".write": true,
+				},
+			"ROM": {
+					".read": true,
+					".write": true,
+				},
+			"RUS": {
+					".read": true,
+					".write": true,
+				},
+			"SLO": {
+					".read": true,
+					".write": true,
+				},
+			"SWE": {
+					".read": true,
+					".write": true,
+				},
+			"UKR": {
+					".read": true,
+					".write": true,
+				},
+		},
+		"semi-final-two": {
+			
+			"ALB": {
+					".read": true,
+					".write": true,
+				},
+			"AUT": {
+					".read": true,
+					".write": true,
+				},
+			"BGR": {
+					".read": true,
+					".write": true,
+				},
+			"CZE": {
+					".read": true,
+					".write": true,
+				},
+			"DEN": {
+					".read": true,
+					".write": true,
+				},
+			"EST": {
+					".read": true,
+					".write": true,
+				},
+			"FIN": {
+					".read": true,
+					".write": true,
+				},
+			"GEO": {
+					".read": true,
+					".write": true,
+				},
+			"GRE": {
+					".read": true,
+					".write": true,
+				},
+			"ISL": {
+					".read": true,
+					".write": true,
+				},
+			"LAT": {
+					".read": true,
+					".write": true,
+				},
+			"MDA": {
+					".read": true,
+					".write": true,
+				},
+			"POL": {
+					".read": true,
+					".write": true,
+				},
+			"POR": {
+					".read": true,
+					".write": true,
+				},
+			"SMR": {
+					".read": true,
+					".write": true,
+				},
+			"SRB": {
+					".read": true,
+					".write": true,
+				},
+			"SUI": {
+					".read": true,
+					".write": true,
+				},
+		},
+		"grand-final": {
+			
+			"FRA": {
+					".read": true,
+					".write": true,
+				},
+			"GER": {
+					".read": true,
+					".write": true,
+				},
+			"ITA": {
+					".read": true,
+					".write": true,
+				},
+			"NED": {
+					".read": true,
+					".write": true,
+				},
+			"ESP": {
+					".read": true,
+					".write": true,
+				},
+			"GBR": {
+					".read": true,
+					".write": true,
+				},
+		},
+		"faux-final": {
+			
+			"AUS": {
+					".read": true,
+					".write": true,
+				},
+			"AZE": {
+					".read": true,
+					".write": true,
+				},
+			"BLR": {
+					".read": true,
+					".write": true,
+				},
+			"BEL": {
+					".read": true,
+					".write": true,
+				},
+			"BGR": {
+					".read": true,
+					".write": true,
+				},
+			"CRO": {
+					".read": true,
+					".write": true,
+				},
+			"DEN": {
+					".read": true,
+					".write": true,
+				},
+			"EST": {
+					".read": true,
+					".write": true,
+				},
+			"FRA": {
+					".read": true,
+					".write": true,
+				},
+			"GER": {
+					".read": true,
+					".write": true,
+				},
+			"ISL": {
+					".read": true,
+					".write": true,
+				},
+			"ITA": {
+					".read": true,
+					".write": true,
+				},
+			"LAT": {
+					".read": true,
+					".write": true,
+				},
+			"LTU": {
+					".read": true,
+					".write": true,
+				},
+			"MLT": {
+					".read": true,
+					".write": true,
+				},
+			"NED": {
+					".read": true,
+					".write": true,
+				},
+			"MKD": {
+					".read": true,
+					".write": true,
+				},
+			"NOR": {
+					".read": true,
+					".write": true,
+				},
+			"POR": {
+					".read": true,
+					".write": true,
+				},
+			"ROM": {
+					".read": true,
+					".write": true,
+				},
+			"SRB": {
+					".read": true,
+					".write": true,
+				},
+			"SLO": {
+					".read": true,
+					".write": true,
+				},
+			"ESP": {
+					".read": true,
+					".write": true,
+				},
+			"SWE": {
+					".read": true,
+					".write": true,
+				},
+			"SUI": {
+					".read": true,
+					".write": true,
+				},
+			"GBR": {
+					".read": true,
+					".write": true,
+				},
+		}
+	}
+}
