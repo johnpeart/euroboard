@@ -135,9 +135,7 @@ function checkCountryData(event, countries) {
 			scoreElement.dataset.score = scoreData;
 			displayElementData(scoreData, scoreElement);
 			
-			console.log("🏆 " + country + ": " + scoreData + " points")
-			
-			scoreElement.dataset.nowplaying = nowPlayingData;
+			entryElement.dataset.nowplaying = nowPlayingData;
 						
 		})
 		
@@ -215,12 +213,12 @@ function submitVote(event, country, vote) {
 function setNowPlaying(event, order) {
 	
 	// Get the current score for the country
-	let radios = document.getElementsByName('radioNowPlaying');
+	var radios = document.getElementsByName('radioNowPlaying');
 	for (var i = 0, length = radios.length; i < length; i++) {
 		if (radios[i].checked) {
 			// do whatever you want with the checked box
-			let country = radios[i].value;
-			let nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
+			var country = radios[i].value;
+			var nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
 			
 			nowPlaying.transaction(
 				function() {
@@ -238,8 +236,8 @@ function setNowPlaying(event, order) {
 			
 		} else {
 			// do whatever you want with the unchecked box
-			let country = radios[i].value;
-			let nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
+			var country = radios[i].value;
+			var nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
 			
 			nowPlaying.transaction(
 				function() {
