@@ -152,7 +152,6 @@ function checkTopScore(event, countries) {
 		let country = entries[i];	
 		let score = document.getElementById("score-" + country).innerText;
 		allScores.push([country, score])
-		console.log(allScores + + country + score)
 	}
 	
 	allScores.sort((a,b) => b[1] - a[1]);
