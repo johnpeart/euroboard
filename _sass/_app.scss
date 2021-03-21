@@ -339,6 +339,9 @@ body.scoreboard {
 				border-radius: 20px 20px 0 20px;
 				margin: auto 10px auto auto;
 			}
+			@include xl {
+				max-width: 35%;
+			}
 			
 			@include toggleLightDark(background, $cyan, $cyan);
 			@include toggleLightDark(color, $white, $white);
