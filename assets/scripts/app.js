@@ -279,13 +279,19 @@ function updateSettings(attr, value) {
 }
 
 function pushMessage() {
+	
 	var messageTitle = document.getElementById('messageTitle').value;
 	var messageBody = document.getElementById('messageBody').value;
-	updateSettings('messagetitle', messageTitle);
-	updateSettings('messagebody', messageBody);
 	
-	updateSettings('messagesshow', true);
-	setTimeout(updateSettings, 120000, 'messagesshow', false);
+	updateSettings('messagesshow', false);
+	
+	setTimeout(function() {
+		updateSettings('messagetitle', messageTitle);
+		updateSettings('messagebody', messageBody);
+		updateSettings('messagesshow', true);
+	}, 3000)
+	setTimeout(updateSettings, 60000, 'messagesshow', false);
+	
 }
 
 function resetEventData() {

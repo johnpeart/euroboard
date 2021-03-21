@@ -163,9 +163,7 @@ footer#site-footer div.footer nav#footer--links a.footer--nav-link:hover:focus {
 
 footer#site-footer div.footer::after { content: ""; clear: both; display: table; }
 
-header { display: grid; position: relative; z-index: 100; width: 100%; justify-content: center; align-content: center; min-height: 50vh; padding-top: 40px; padding-bottom: 40px; background: #fafafa; }
-
-@media (prefers-color-scheme: dark) { header { background: #070B30; } }
+header { display: grid; position: relative; z-index: 100; width: 100%; justify-content: center; align-content: center; min-height: 50vh; padding-top: 40px; padding-bottom: 40px; }
 
 header h1.header span { display: block; width: 100%; }
 
@@ -1131,7 +1129,7 @@ body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.sco
 
 @media only screen and (min-width: 1900px) { body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.scoreboard aside#message-center .skip-link, body.scoreboard main.scoreboard aside#message-center button, body.scoreboard main.scoreboard aside#message-center a.button, body.scoreboard main.scoreboard aside#message-center .text-input, body.scoreboard main.scoreboard aside#message-center .radio-input, body.scoreboard main.scoreboard aside#message-center label, body.scoreboard main.scoreboard aside#message-center .label-hint, body.scoreboard main.scoreboard aside#message-center input[type="text"], body.scoreboard main.scoreboard aside#message-center textarea { font-size: 30px; } }
 
-body.scoreboard main.scoreboard aside#message-center[data-messagesshow='true'] { transition: all 2s; }
+body.scoreboard main.scoreboard aside#message-center[data-messagesshow='true'] { transition: all 1s; transition-timing-function: ease-out; }
 
 body.scoreboard main.scoreboard aside#message-center[data-messagesshow='true'][data-messagesposition='top'] { bottom: auto; top: 0; }
 
@@ -1141,11 +1139,11 @@ body.scoreboard main.scoreboard aside#message-center[data-messagesshow='true'][d
 
 @media only screen and (min-width: 760px) { body.scoreboard main.scoreboard aside#message-center[data-messagesshow='true'][data-messagesposition='bottom'] { bottom: 20px; } }
 
-body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'] { transition: all 2s; }
+body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'] { transition: all 1s; transition-timing-function: ease-in; }
 
-body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'][data-messagesposition='top'] { bottom: auto; top: -500px; }
+body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'][data-messagesposition='top'] { bottom: auto; top: -1000px; }
 
-body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'][data-messagesposition='bottom'] { top: auto; bottom: -500px; }
+body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'][data-messagesposition='bottom'] { top: auto; bottom: -1000px; }
 
 body.vote main.vote ul#vote--list { display: grid; position: relative; margin: 0; width: 100%; max-width: 1200px; justify-self: center; grid-template-rows: repeat(26, minmax(auto, 1fr)); grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17" "p18" "p19" "p20" "p21" "p22" "p23" "p24" "p25" "p26"; }
 
