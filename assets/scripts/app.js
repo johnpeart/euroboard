@@ -14,6 +14,8 @@ const firebaseConfig = {
 // Initialise Firebase
 firebase.initializeApp(firebaseConfig);
 // Get a reference to the database service
+// // Enable logging across page refreshes
+// firebase.database.enableLogging(true, true);
 var database = firebase.database();
 var presence = database.ref(".info/connected");
 
@@ -59,7 +61,7 @@ window.onload = function() {
 	
 	if(window.location.pathname.indexOf("scoreboard") != -1){
 		setTimeout(checkCountryData, 1000, event, entries);
-		setTimeout(checkTopScore, 5000, event, entries);
+		setTimeout(checkTopScore, 10000, event, entries);
 		setTimeout(checkSettings, 1000, event);
 		setInterval(checkTopScore, 60000, event, entries);
 	}
@@ -116,11 +118,13 @@ function checkCountryData(event, countries) {
 
 	for (i = 0; i < entries.length; i++) {
 		
-		var country = entries[i];
-		var countryData = database.ref('/' + event + '/' + country);
+		let country = entries[i];
+		let countryData = database.ref('/' + event + '/' + country);
 		
-		var entry = document.getElementById(country);
-		var score = document.getElementById("score-" + country);
+		let entryElement = document.getElementById(country);
+		let scoreElement = document.getElementById("score-" + country);
+		
+		console.log("Event: " + event + ". Country: " + country)
 		
 		countryData.on('value', (snapshot) => {
 			
@@ -128,10 +132,12 @@ function checkCountryData(event, countries) {
 			var countData = snapshot.val().count;
 			var nowPlayingData = snapshot.val().nowplaying;
 			
-			score.dataset.score = scoreData;
-			displayElementData(scoreData, score);
+			scoreElement.dataset.score = scoreData;
+			displayElementData(scoreData, scoreElement);
 			
-			entry.dataset.nowplaying = nowPlayingData;
+			console.log("🏆 " + country + ": " + scoreData + " points")
+			
+			scoreElement.dataset.nowplaying = nowPlayingData;
 						
 		})
 		
@@ -140,17 +146,18 @@ function checkCountryData(event, countries) {
 }
 
 function checkTopScore(event, countries) {
-	var allScores = new Array()
-	
+	var allScores = new Array();
+
 	for (i = 0; i < entries.length; i++) {
-		var country = entries[i];	
-		var score = document.getElementById("score-" + country).innerText;
+		let country = entries[i];	
+		let score = document.getElementById("score-" + country).innerText;
 		allScores.push([country, score])
+		console.log(allScores + + country + score)
 	}
 	
 	allScores.sort((a,b) => b[1] - a[1]);
 	
-	var nonZero = 0;
+	let nonZero = 0;
 	for (i = 0; i < allScores.length; i++) {
 		if (allScores[i][1] > 0) {
 			nonZero++;
@@ -160,7 +167,7 @@ function checkTopScore(event, countries) {
 	if (nonZero > 3) {
 		console.group("Top scorers");
 		for (i = 0; i < allScores.length; i++) {
-			var rank = i + 1;
+			let rank = i + 1;
 			if (i < 3) {
 				console.log("🥇 " + allScores[i][0] + " – " + allScores[i][1] + " points")
 			}
@@ -172,7 +179,9 @@ function checkTopScore(event, countries) {
 			console.log("🥇🥈🥉 There aren't enough votes yet...")
 			console.info("Scores will update once at least 3 contestants have a non-zero score")
 		console.groupEnd();
-		document.getElementById(allScores[i][0]).dataset.leaderboard = 0;
+		for (i = 0; i < allScores.length; i++) {
+			document.getElementById(allScores[i][0]).dataset.leaderboard = 0;
+		}
 	} 
 	
 }
@@ -207,12 +216,12 @@ function submitVote(event, country, vote) {
 function setNowPlaying(event, order) {
 	
 	// Get the current score for the country
-	var radios = document.getElementsByName('radioNowPlaying');
+	let radios = document.getElementsByName('radioNowPlaying');
 	for (var i = 0, length = radios.length; i < length; i++) {
 		if (radios[i].checked) {
 			// do whatever you want with the checked box
-			var country = radios[i].value;
-			var nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
+			let country = radios[i].value;
+			let nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
 			
 			nowPlaying.transaction(
 				function() {
@@ -230,8 +239,8 @@ function setNowPlaying(event, order) {
 			
 		} else {
 			// do whatever you want with the unchecked box
-			var country = radios[i].value;
-			var nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
+			let country = radios[i].value;
+			let nowPlaying = database.ref('/' + event + '/' + country + '/nowplaying');
 			
 			nowPlaying.transaction(
 				function() {
