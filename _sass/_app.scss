@@ -473,22 +473,9 @@ body.vote {
 				grid-gap: 20px;
 			}
 			
-			&[data-event='semi-final-one'],
-			&[data-event='semi-final-two'] {
-				
-				grid-template-rows: repeat(17, minmax(200px, auto));
-				grid-template-columns: 1fr;		
-				
-			}
-			
-			&[data-event='grand-final'],
-			&[data-event='faux-final'] {
-				
-				grid-template-rows: repeat(26, minmax(200px, auto));
-				grid-template-columns: 1fr;
-				
-			}
-			
+			grid-template-rows: repeat(26, minmax(auto, 1fr));
+			grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17" "p18" "p19" "p20" "p21" "p22" "p23" "p24" "p25" "p26";
+						
 		}
 		
 		li.vote--list--entry {
