@@ -134,7 +134,7 @@ body.scoreboard {
 				padding: 15px;
 			}
 			
-			@include toggleLightDark(background, $gray-200, $euro-blue-light);
+			@include toggleLightDark(background, $gray-200, $gray-800);
 			
 			
 			&[data-nowplaying='true'] {
@@ -243,7 +243,7 @@ body.scoreboard {
 				
 				line-height: 	1;
 				
-				@include toggleLightDark(color, $gray-600, $cyan);
+				@include toggleLightDark(color, $gray-600, $gray-500);
 
 				
 				@include xs {
