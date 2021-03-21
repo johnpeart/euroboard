@@ -480,6 +480,12 @@ body.vote {
 		
 		li.vote--list--entry {
 			
+			@for $i from 1 through 26 {
+			  &[data-runningorder="#{$i}"] {
+				grid-area: p#{$i};
+			  }
+			}
+			
 			display: grid;
 			
 			@include xs {
