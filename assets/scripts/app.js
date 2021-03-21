@@ -122,7 +122,8 @@ function checkCountryData(event, countries) {
 		let countryData = database.ref('/' + event + '/' + country);
 		
 		let entryElement = document.getElementById(country);
-		let scoreElement = document.getElementById("score-" + country);
+		let totalPointsElement = document.getElementById("total-points-" + country);
+		let averagePointsElement = document.getElementById("average-points-" + country);
 		
 		console.log("Event: " + event + ". Country: " + country)
 		
@@ -130,10 +131,17 @@ function checkCountryData(event, countries) {
 			
 			var scoreData = snapshot.val().vote;
 			var countData = snapshot.val().count;
+			if (scoreData / countData > 0) {
+				var averageData = scoreData / countData
+			} else {
+				var averageData = 0
+			}
 			var nowPlayingData = snapshot.val().nowplaying;
 			
-			scoreElement.dataset.score = scoreData;
-			displayElementData(scoreData, scoreElement);
+			entryElement.dataset.score = scoreData;
+			entryElement.dataset.count = countData;
+			displayElementData(scoreData, totalPointsElement);
+			displayElementData(averageData, averagePointsElement);
 			
 			entryElement.dataset.nowplaying = nowPlayingData;
 						
@@ -148,8 +156,8 @@ function checkTopScore(event, countries) {
 
 	for (i = 0; i < entries.length; i++) {
 		let country = entries[i];	
-		let score = document.getElementById("score-" + country).innerText;
-		allScores.push([country, score])
+		let points = document.getElementById("total-points-" + country).innerText;
+		allScores.push([country, points])
 	}
 	
 	allScores.sort((a,b) => b[1] - a[1]);
@@ -188,21 +196,33 @@ function checkTopScore(event, countries) {
 function submitVote(event, country, vote) {
 	
 	// Get the current score for the country
-	var countryScore = database.ref('/' + event + '/' + country + '/vote');
-	var countryVoteCount = database.ref('/' + event + '/' + country + '/count');
+	var countryData = database.ref('/' + event + '/' + country);
 	var points = parseInt(vote);
 	var voteButtons = document.getElementsByName("vote-" + country);
 	
-	countryScore.transaction(
-		function(score) {
-			return score + points;
+	countryData.transaction(
+		function(data) {
+			if (data) {
+				var currentVotes = data.vote;
+				var currentCount = data.count;
+				data['vote'] = currentVotes + points;
+				data['count'] = currentCount + 1;
+			}
+			return data;
+		}, 
+		function(error, committed, snapshot) {
+			console.group("You voted");
+			if (error) {
+				console.log('Transaction failed abnormally!', error);
+			} else if (!committed) {
+				console.log('Your vote wasn’t counted. Sorry.');
+			} else {
+				console.log('You gave ' + points + ' points to ' + country);
+				console.log(snapshot.val().count + ' other people have awarded points to ' + country)
+			}
+			console.groupEnd();
 		}
-	)
-	countryVoteCount.transaction(
-		function(count) {
-			return count + 1;
-		}
-	)
+	);
 	
 	
 	for (i = 0; i < voteButtons.length; i++) {

@@ -56,15 +56,15 @@ body.scoreboard {
 				grid-template-rows: repeat(9, auto);
 				grid-template-columns: repeat(3, 1fr);
 				
-				grid-template-areas: 	"p1  p2  p3"
-										"p4  p5  p6"
-										"p7  p8  p9"
-										"p10 p11 p12"
-										"p13 p14 p15"
-										"p16 p17 p18"
-										"p19 p20 p21"
-										"p22 p23 p24"
-										"p25 p26 .";
+				grid-template-areas: 	"p1 p10 p19"
+										"p2 p11 p20"
+										"p3 p12 p21"
+										"p4 p13 p22"
+										"p5 p14 p23"
+										"p6 p15 p24"
+										"p7 p16 p25"
+										"p8 p17 p26"
+										"p9 p18 .";
 				
 			}
 			@include xl {
@@ -98,6 +98,23 @@ body.scoreboard {
 			}
 		}
 		
+		&[data-calculation="total"] {
+			span[id^='total-points'] {
+				visibility: visible;
+			}
+			span[id^='average-points'] {
+				visibility: hidden;
+			}
+		}
+		&[data-calculation="average"] {
+			span[id^='total-points'] {
+				visibility: hidden;
+			}
+			span[id^='average-points'] {
+				visibility: visible;
+			}
+		}
+		
 		li.scoreboard--list--entry {
 			
 			display: grid;
@@ -117,7 +134,7 @@ body.scoreboard {
 				padding: 15px;
 			}
 			
-			@include toggleLightDark(background, $gray-200, $gray-800);
+			@include toggleLightDark(background, $gray-200, $euro-blue-light);
 			
 			
 			&[data-nowplaying='true'] {
@@ -226,7 +243,7 @@ body.scoreboard {
 				
 				line-height: 	1;
 				
-				@include toggleLightDark(color, $gray-600, $gray-500);
+				@include toggleLightDark(color, $gray-600, $cyan);
 
 				
 				@include xs {
@@ -297,9 +314,6 @@ body.scoreboard {
 				@include xl {
 					font-size: 45px;
 				}
-				
-				
-				
 			}
 			
 		}

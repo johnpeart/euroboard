@@ -20,7 +20,9 @@ $black:    	 						#1d1d1d !default;
 $true-black: 	 					#000000 !default;
 
 $blue:    	 						#007aff !default;
-$facebook-blue: 					#3b5998 !default;
+$euro-blue: 						#070B30 !default;
+$euro-blue-light:					lighten($euro-blue, 5%);
+$euro-blue-dark:					darken($euro-blue, 5%);
 $purple:  	 						#c643fc !default;
 $magenta:   	 					#e6007e !default;
 $red:     	 						#B10E1E !default;
@@ -39,7 +41,7 @@ $bronze:							#6A3805 !default;
 $body-background:					$white;
 $body-color:							$black;
 
-$body-background-dark-mode:			$black;
+$body-background-dark-mode:			$euro-blue;
 $body-color-dark-mode:				$white;
 
 $skiplink-color:						$white;
@@ -60,7 +62,7 @@ $link-text-decoration-hover:		underline;
 $link-text-decoration-focus:		underline;
 
 $header-background:					$white;
-$header-background-dark-mode:		$black;
+$header-background-dark-mode:		$euro-blue-dark;
 
 $footer-color:						$body-color;
 $footer-nav-color:					$gray-600;

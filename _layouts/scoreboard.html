@@ -17,11 +17,12 @@ layout: default
 		{% for entry in entries %}
 		{% if entry[event] == "TRUE" %}
 			
-			<li id="{{ entry.code }}" class="scoreboard--list--entry" data-score="0" data-runningorder="{{ entry[running-order] }}" data-leaderboard="" data-nowplaying="false">
+			<li id="{{ entry.code }}" class="scoreboard--list--entry" data-runningorder="{{ entry[running-order] }}" data-leaderboard=""  data-count="" data-score="" data-nowplaying="false">
 				<span class="running-order">{{ entry[running-order] | append: " #" | append: entry.code }}</span>
 				<span class="now-playing">Now playing</span>
 				<span class="country">{{ entry.country }}</span>
-				<span id="score-{{ entry.code }}" class="score"></span>
+				<span id="total-points-{{ entry.code }}" class="score"></span>
+				<span id="average-points-{{ entry.code }}" class="score"></span>
 			</li>
 			
 		{% endif %}		
