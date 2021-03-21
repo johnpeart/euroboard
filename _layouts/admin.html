@@ -26,7 +26,7 @@ layout: default
 			{% for entry in entries %}
 			{% if entry[event] == "TRUE" %}
 			<li class="radio-input">
-				<input type="radio" onchange="setNowPlaying('{{ event }}', {{ entry[running-order]}});" name="radioNowPlaying" id="nowPlaying{{ entry.code }}" value="{{ entry.code }}">
+				<input type="radio" onchange="setNowPlaying('{{ event }}', {{ entry[running-order]}});" name="radioNowPlaying" id="nowPlaying{{ entry.code }}" value="{{ entry.code }}" data-country="{{ entry.country }}" data-code="{{ entry.code }}">
 				<label for="nowPlaying{{ entry.code }}">{{ entry.country }}</label>
 				<span class="label-hint">{{ entry[running-order] | append: " #" | append: entry.code }}</span>
 			</li>
