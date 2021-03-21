@@ -1,0 +1,72 @@
+// Header styles
+
+header {
+	
+	display: grid;
+	position: relative;
+	
+	z-index: 100;
+	
+	width: 100%;
+	justify-content: center;
+	align-content: center;
+	
+	min-height: 50vh;
+	
+	padding-top: 40px;
+	padding-bottom: 40px;
+	
+	@include toggleLightDark(background, $gray-200, $true-black);
+	
+
+	h1.header {
+				
+		span {
+			display: block;
+			width: 100%;
+			
+			&.page {
+				
+			}
+			&.site {
+				@include toggleLightDark(color, $gray-500, $gray-600);
+			}
+		}
+	}
+	
+	p {
+		font-size: 		$p-font-size-base * 1.5;
+		line-height: 	$p-line-height-base * 1.5;
+		padding-bottom: 	$p-padding-bottom * 1.5;
+		
+		@include xs {
+			font-size: 		$p-font-size-base-xs * 1.1;
+			line-height: 	$p-line-height-base-xs;
+			padding-bottom: 	$p-padding-bottom-xs * 1.5;
+		}
+		@include sm {
+			font-size: 		$p-font-size-base-sm * 1.25;
+			line-height: 	$p-line-height-base-sm * 1.1;
+			padding-bottom: 	$p-padding-bottom-sm * 1.5;
+		}
+		@include md {
+			font-size: 		$p-font-size-base-md * 1.25;
+			line-height: 	$p-line-height-base-md * 1.1;
+			padding-bottom: 	$p-padding-bottom-md * 1.5;
+		}
+		@include lg {
+			font-size: 		$p-font-size-base-lg * 1.25;
+			line-height: 	$p-line-height-base-lg * 1.1;
+			padding-bottom: 	$p-padding-bottom-lg * 1.5;
+		}
+		@include xl {
+			font-size: 		$p-font-size-base-xl * 1.25;
+			line-height: 	$p-line-height-base-xl * 1.1;
+			padding-bottom: 	$p-padding-bottom-xl * 1.5;
+		}
+		
+		font-weight:		normal;
+		max-width: 			45ch;
+	}
+
+}

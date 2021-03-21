@@ -233,26 +233,26 @@ $footnotes-font-weight:					normal;
 
 // H1 TEXT SIZES & SPACING
 
-$h1-font-size-base:					$p-font-size-base * 2;
+$h1-font-size-base:					$p-font-size-base * 1.5;
 $h1-font-size-base-xs:				$h1-font-size-base;
 $h1-font-size-base-sm:				$p-font-size-base-sm * 2.75;
 $h1-font-size-base-md:				$p-font-size-base-md * 2.75;
 $h1-font-size-base-lg:				$p-font-size-base-lg * 2.75;
 $h1-font-size-base-xl:				$p-font-size-base-xl * 2.75;
 
-$h1-line-height-base:				$h1-font-size-base * 0.9;
+$h1-line-height-base:				$h1-font-size-base;
 $h1-line-height-base-xs:				$h1-line-height-base;
 $h1-line-height-base-sm:				$h1-font-size-base-sm;
 $h1-line-height-base-md:				$h1-font-size-base-md;
 $h1-line-height-base-lg:				$h1-font-size-base-lg;
 $h1-line-height-base-xl:				$h1-font-size-base-xl;
 
-$h1-padding-top:						$h1-font-size-base * 2;
-$h1-padding-top-xs:					$h1-font-size-base-xs * 2;
-$h1-padding-top-sm:					$h1-font-size-base-sm * 2;
-$h1-padding-top-md:					$h1-font-size-base-md * 2;
-$h1-padding-top-lg:					$h1-font-size-base-lg * 2;
-$h1-padding-top-xl:					$h1-font-size-base-xl * 2;
+$h1-padding-top:						$h1-font-size-base;
+$h1-padding-top-xs:					$h1-font-size-base-xs;
+$h1-padding-top-sm:					$h1-font-size-base-sm;
+$h1-padding-top-md:					$h1-font-size-base-md;
+$h1-padding-top-lg:					$h1-font-size-base-lg;
+$h1-padding-top-xl:					$h1-font-size-base-xl;
 
 $h1-padding-bottom:					$h1-font-size-base;
 $h1-padding-bottom-xs:				$h1-font-size-base-xs;

@@ -1,72 +1,6 @@
 // App styles
 
 body.scoreboard {
-	
-	header#scoreboard--header {
-		
-		display: grid;
-		position: relative;
-		
-		z-index: 100;
-		
-		width: 100%;
-		justify-content: center;
-		align-content: center;
-		
-		@include xs {
-			min-height: 100vh;
-		}
-		@include sm-up {
-			min-height: 50vh;
-		}
-		
-		@include toggleLightDark(background, $gray-200, $true-black);
-		
-		text-align: center;
-		
-		p.lead {
-			font-size: 		$p-font-size-base * 1.5;
-			line-height: 	$p-line-height-base * 1.5;
-			padding-bottom: 	$p-padding-bottom * 1.5;
-			
-			@include xs {
-				font-size: 		$p-font-size-base-xs * 1.1;
-				line-height: 	$p-line-height-base-xs;
-				padding-bottom: 	$p-padding-bottom-xs * 1.5;
-			}
-			@include sm {
-				font-size: 		$p-font-size-base-sm * 1.25;
-				line-height: 	$p-line-height-base-sm * 1.1;
-				padding-bottom: 	$p-padding-bottom-sm * 1.5;
-			}
-			@include md {
-				font-size: 		$p-font-size-base-md * 1.25;
-				line-height: 	$p-line-height-base-md * 1.1;
-				padding-bottom: 	$p-padding-bottom-md * 1.5;
-			}
-			@include lg {
-				font-size: 		$p-font-size-base-lg * 1.25;
-				line-height: 	$p-line-height-base-lg * 1.1;
-				padding-bottom: 	$p-padding-bottom-lg * 1.5;
-			}
-			@include xl {
-				font-size: 		$p-font-size-base-xl * 1.25;
-				line-height: 	$p-line-height-base-xl * 1.1;
-				padding-bottom: 	$p-padding-bottom-xl * 1.5;
-			}
-			
-			font-weight:		bold;
-		}
-		
-		p.down-arrow {
-			@include xs {
-				margin-top: 10vh;
-			}
-			@include sm-up {
-				display: none !important;
-			}
-		}
-	}
 		
 	main.scoreboard {
 		
@@ -137,13 +71,13 @@ body.scoreboard {
 				grid-template-rows: repeat(7, auto);
 				grid-template-columns: repeat(4, 1fr);	
 				
-				grid-template-areas: 	"p1  p2  p3  p4"
-										"p5  p6  p7  p8"
-										"p9  p10 p11 p12"
-										"p13 p14 p15 p16"
-										"p17 p18 p19 p20"
-										"p21 p22 p23 p24"
-										"p25 p26 .  .";
+				grid-template-areas: 	"p1 p8  p15 p22"
+										"p2 p9  p16 p23"
+										"p3 p10 p17 p24"
+										"p4 p11 p18 p25"
+										"p5 p12 p19 p26"
+										"p6 p13 p20 ."
+										"p7 p14 p21 .";
 					
 			}				
 			
@@ -498,72 +432,6 @@ body.scoreboard {
 
 body.vote {
 	
-	header#vote--header {
-		
-		display: grid;
-		position: relative;
-		
-		z-index: 100;
-		
-		width: 100%;
-		justify-content: center;
-		align-content: center;
-		
-		@include xs {
-			min-height: 100vh;
-		}
-		@include sm-up {
-			min-height: 50vh;
-		}
-		
-		@include toggleLightDark(background, $gray-200, $true-black);
-		
-		text-align: center;
-		
-		p.lead {
-			font-size: 		$p-font-size-base * 1.5;
-			line-height: 	$p-line-height-base * 1.5;
-			padding-bottom: 	$p-padding-bottom * 1.5;
-			
-			@include xs {
-				font-size: 		$p-font-size-base-xs * 1.1;
-				line-height: 	$p-line-height-base-xs;
-				padding-bottom: 	$p-padding-bottom-xs * 1.5;
-			}
-			@include sm {
-				font-size: 		$p-font-size-base-sm * 1.25;
-				line-height: 	$p-line-height-base-sm * 1.1;
-				padding-bottom: 	$p-padding-bottom-sm * 1.5;
-			}
-			@include md {
-				font-size: 		$p-font-size-base-md * 1.25;
-				line-height: 	$p-line-height-base-md * 1.1;
-				padding-bottom: 	$p-padding-bottom-md * 1.5;
-			}
-			@include lg {
-				font-size: 		$p-font-size-base-lg * 1.25;
-				line-height: 	$p-line-height-base-lg * 1.1;
-				padding-bottom: 	$p-padding-bottom-lg * 1.5;
-			}
-			@include xl {
-				font-size: 		$p-font-size-base-xl * 1.25;
-				line-height: 	$p-line-height-base-xl * 1.1;
-				padding-bottom: 	$p-padding-bottom-xl * 1.5;
-			}
-			
-			font-weight:		bold;
-		}
-		
-		p.down-arrow {
-			@include xs {
-				margin-top: 10vh;
-			}
-			@include sm-up {
-				display: none !important;
-			}
-		}
-	}
-		
 	main.vote {
 		
 		ul#vote--list {
@@ -717,72 +585,6 @@ body.vote {
 
 body.admin {
 	
-	header#admin--header {
-		
-		display: grid;
-		position: relative;
-		
-		z-index: 100;
-		
-		width: 100%;
-		justify-content: center;
-		align-content: center;
-		
-		@include xs {
-			min-height: 100vh;
-		}
-		@include sm-up {
-			min-height: 50vh;
-		}
-		
-		@include toggleLightDark(background, $gray-200, $true-black);
-		
-		text-align: center;
-		
-		p.lead {
-			font-size: 		$p-font-size-base * 1.5;
-			line-height: 	$p-line-height-base * 1.5;
-			padding-bottom: 	$p-padding-bottom * 1.5;
-			
-			@include xs {
-				font-size: 		$p-font-size-base-xs * 1.1;
-				line-height: 	$p-line-height-base-xs;
-				padding-bottom: 	$p-padding-bottom-xs * 1.5;
-			}
-			@include sm {
-				font-size: 		$p-font-size-base-sm * 1.25;
-				line-height: 	$p-line-height-base-sm * 1.1;
-				padding-bottom: 	$p-padding-bottom-sm * 1.5;
-			}
-			@include md {
-				font-size: 		$p-font-size-base-md * 1.25;
-				line-height: 	$p-line-height-base-md * 1.1;
-				padding-bottom: 	$p-padding-bottom-md * 1.5;
-			}
-			@include lg {
-				font-size: 		$p-font-size-base-lg * 1.25;
-				line-height: 	$p-line-height-base-lg * 1.1;
-				padding-bottom: 	$p-padding-bottom-lg * 1.5;
-			}
-			@include xl {
-				font-size: 		$p-font-size-base-xl * 1.25;
-				line-height: 	$p-line-height-base-xl * 1.1;
-				padding-bottom: 	$p-padding-bottom-xl * 1.5;
-			}
-			
-			font-weight:		bold;
-		}
-		
-		p.down-arrow {
-			@include xs {
-				margin-top: 10vh;
-			}
-			@include sm-up {
-				display: none !important;
-			}
-		}
-	}
-		
 	main.admin {
 		
 		padding-bottom: 30px;

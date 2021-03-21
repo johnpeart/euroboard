@@ -1,35 +1,31 @@
-{% if page.layout == "scoreboard" %}
-<header id="scoreboard--header" class="container">
-	
-	<h1>{{ site.title }}</h1>
-	<p class="lead">{{ page.title }}</p>
-	
-	<p class="down-arrow">&#9660;</p>
-	
-</header>
-{% endif %}
+<header class="{{ page.layout }}">
 
-{% if page.layout == "vote" %}
-<header id="vote--header" class="container">
+	<div class="container">
+		{% if page.layout == "scoreboard" %}
+		<h1 class="header">
+			<span class="site">{{ site.title }}</span>
+			<span class="page">{{ page.title }}</span>
+		</h1>
+		{% endif %}
 	
-	<h1>{{ site.title }}</h1>
-	<p class="lead">{{ page.title }}</p>
-	<p>Award 1, 2, 3, 4, 5, 6, 7, 8, 10 or 12 points to each country during the show.</p>
-	<p>Vote for every country. You can vote once per country.</p>
+		{% if page.layout == "vote" %}
+		<h1 class="header">
+			<span class="site">{{ site.title }}</span>
+			<span class="page">{{ page.title }}</span>
+		</h1>
+		<p>Award 1, 2, 3, 4, 5, 6, 7, 8, 10 or 12 points to each country during the show.</p>
+		<p>Vote for every country. You can vote once per country.</p>
+		{% endif %}
 	
-	<p class="down-arrow">&#9660;</p>
-	
-</header>
-{% endif %}
+		{% if page.layout == "admin" %}
+		<h1 class="header">
+			<span class="site">{{ site.title }}</span>
+			<span class="page">{{ page.title }}</span>
+		</h1>
+		<p>Use these settings to control the scoreboard.</p>
+		{% endif %}
+	</div>
 
-{% if page.layout == "admin" %}
-<header id="admin--header" class="container">
-	
-	<h1>{{ site.title }}</h1>
-	<p class="lead">{{ page.title }}</p>
-	<p>Use these settings to control the scoreboard.</p>
-	
-	<p class="down-arrow">&#9660;</p>
-	
 </header>
-{% endif %}
+
+	
