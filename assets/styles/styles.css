@@ -1145,17 +1145,13 @@ body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'][
 
 body.scoreboard main.scoreboard aside#message-center[data-messagesshow='false'][data-messagesposition='bottom'] { top: auto; bottom: -500px; }
 
-body.vote main.vote ul#vote--list { display: grid; position: relative; margin: 0; width: 100%; max-width: 1200px; justify-self: center; }
+body.vote main.vote ul#vote--list { display: grid; position: relative; margin: 0; width: 100%; max-width: 1200px; justify-self: center; grid-template-rows: repeat(26, minmax(auto, 1fr)); grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17" "p18" "p19" "p20" "p21" "p22" "p23" "p24" "p25" "p26"; }
 
 @media only screen and (max-width: 599px) { body.vote main.vote ul#vote--list { padding: 10px; grid-gap: 30px; } }
 
 @media only screen and (min-width: 600px) { body.vote main.vote ul#vote--list { padding: 15px; grid-gap: 15px; } }
 
 @media only screen and (min-width: 1200px) { body.vote main.vote ul#vote--list { padding: 20px; grid-gap: 20px; } }
-
-body.vote main.vote ul#vote--list[data-event='semi-final-one'], body.vote main.vote ul#vote--list[data-event='semi-final-two'] { grid-template-rows: repeat(17, minmax(200px, auto)); grid-template-columns: 1fr; }
-
-body.vote main.vote ul#vote--list[data-event='grand-final'], body.vote main.vote ul#vote--list[data-event='faux-final'] { grid-template-rows: repeat(26, minmax(200px, auto)); grid-template-columns: 1fr; }
 
 body.vote main.vote li.vote--list--entry { display: grid; background: #e9ecef; }
 
