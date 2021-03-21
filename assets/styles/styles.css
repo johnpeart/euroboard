@@ -23,16 +23,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 @font-face { font-family: 'JP'; font-weight: bold; font-style: italic; src: url("../fonts/iA/BoldItalic.eot"); src: url("../fonts/iA/BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/iA/BoldItalic.woff2") format("woff2"), url("../fonts/iA/BoldItalic.woff") format("woff"), url("../fonts/iA/BoldItalic.ttf") format("truetype"); -moz-font-feature-settings: "ss02", "tnum", "liga", "zero", "kern"; -o-font-feature-settings: "ss02", "tnum", "liga", "zero", "kern"; -webkit-font-feature-settings: "ss02", "tnum", "liga", "zero", "kern"; font-feature-settings: "ss02", "tnum", "liga", "zero", "kern"; font-display: fallback; }
 
 /* Animation Keyframes*/
-@-moz-keyframes spin { to { -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-@-webkit-keyframes spin { to { -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-@-keyframes spin { to { -moz-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
-
 @-moz-keyframes fade { from { opacity: 1; }
   to { opacity: 0; } }
 
@@ -1167,47 +1157,47 @@ body.vote main.vote ul#vote--list[data-event='semi-final-one'], body.vote main.v
 
 body.vote main.vote ul#vote--list[data-event='grand-final'], body.vote main.vote ul#vote--list[data-event='faux-final'] { grid-template-rows: repeat(26, minmax(200px, auto)); grid-template-columns: 1fr; }
 
-body.vote main.vote li.scoreboard--list--entry { display: grid; background: #e9ecef; }
+body.vote main.vote li.vote--list--entry { display: grid; background: #e9ecef; }
 
-@media only screen and (max-width: 599px) { body.vote main.vote li.scoreboard--list--entry { grid-template-rows: auto auto repeat(5, 1fr); grid-template-columns: repeat(2, 1fr); grid-template-areas: "pos pos" "country country" "one two" "three four" "five six" "seven eight" "ten twelve"; grid-gap: 2px; } }
+@media only screen and (max-width: 599px) { body.vote main.vote li.vote--list--entry { grid-template-rows: auto auto repeat(5, 1fr); grid-template-columns: repeat(2, 1fr); grid-template-areas: "pos pos" "country country" "one two" "three four" "five six" "seven eight" "ten twelve"; grid-gap: 2px; } }
 
-@media only screen and (min-width: 600px) { body.vote main.vote li.scoreboard--list--entry { grid-template-rows: repeat(2, 1fr); grid-template-columns: minmax(250px, 30%) repeat(5, 1fr); grid-template-areas: "pos  		one two three four five" "country 	six seven eight ten twelve"; grid-gap: 2px; } }
+@media only screen and (min-width: 600px) { body.vote main.vote li.vote--list--entry { grid-template-rows: repeat(2, 1fr); grid-template-columns: minmax(250px, 30%) repeat(5, 1fr); grid-template-areas: "pos  		one two three four five" "country 	six seven eight ten twelve"; grid-gap: 2px; } }
 
-@media only screen and (min-width: 1200px) { body.vote main.vote li.scoreboard--list--entry { grid-template-rows: repeat(2, 1fr); grid-template-columns: minmax(250px, 50%) repeat(5, 1fr); grid-template-areas: "pos  		one two three four five" "country 	six seven eight ten twelve"; grid-gap: 2px; } }
+@media only screen and (min-width: 1200px) { body.vote main.vote li.vote--list--entry { grid-template-rows: repeat(2, 1fr); grid-template-columns: minmax(250px, 50%) repeat(5, 1fr); grid-template-areas: "pos  		one two three four five" "country 	six seven eight ten twelve"; grid-gap: 2px; } }
 
-@media only screen and (max-width: 599px) { body.vote main.vote li.scoreboard--list--entry { padding: 10px; } }
+@media only screen and (max-width: 599px) { body.vote main.vote li.vote--list--entry { padding: 10px; } }
 
-@media only screen and (min-width: 600px) { body.vote main.vote li.scoreboard--list--entry { padding: 15px; } }
+@media only screen and (min-width: 600px) { body.vote main.vote li.vote--list--entry { padding: 15px; } }
 
-@media (prefers-color-scheme: dark) { body.vote main.vote li.scoreboard--list--entry { background: #343a40; } }
+@media (prefers-color-scheme: dark) { body.vote main.vote li.vote--list--entry { background: #343a40; } }
 
-body.vote main.vote li.scoreboard--list--entry span.running-order { grid-area: pos; align-self: flex-start; color: #868e96; line-height: 1; }
+body.vote main.vote li.vote--list--entry span.running-order { grid-area: pos; align-self: flex-start; color: #868e96; line-height: 1; }
 
-@media (prefers-color-scheme: dark) { body.vote main.vote li.scoreboard--list--entry span.running-order { color: #adb5bd; } }
+@media (prefers-color-scheme: dark) { body.vote main.vote li.vote--list--entry span.running-order { color: #adb5bd; } }
 
-@media only screen and (max-width: 599px) { body.vote main.vote li.scoreboard--list--entry span.running-order { font-size: 20px; } }
+@media only screen and (max-width: 599px) { body.vote main.vote li.vote--list--entry span.running-order { font-size: 20px; } }
 
-@media only screen and (min-width: 600px) and (max-width: 759px) { body.vote main.vote li.scoreboard--list--entry span.running-order { font-size: 20px; } }
+@media only screen and (min-width: 600px) and (max-width: 759px) { body.vote main.vote li.vote--list--entry span.running-order { font-size: 20px; } }
 
-@media only screen and (min-width: 760px) and (max-width: 1199px) { body.vote main.vote li.scoreboard--list--entry span.running-order { font-size: 30px; } }
+@media only screen and (min-width: 760px) and (max-width: 1199px) { body.vote main.vote li.vote--list--entry span.running-order { font-size: 30px; } }
 
-@media only screen and (min-width: 1200px) and (max-width: 1899px) { body.vote main.vote li.scoreboard--list--entry span.running-order { font-size: 30px; } }
+@media only screen and (min-width: 1200px) and (max-width: 1899px) { body.vote main.vote li.vote--list--entry span.running-order { font-size: 30px; } }
 
-@media only screen and (min-width: 1900px) { body.vote main.vote li.scoreboard--list--entry span.running-order { font-size: 30px; } }
+@media only screen and (min-width: 1900px) { body.vote main.vote li.vote--list--entry span.running-order { font-size: 30px; } }
 
-body.vote main.vote li.scoreboard--list--entry span.country { grid-area: country; align-self: flex-end; line-height: 1; }
+body.vote main.vote li.vote--list--entry span.country { grid-area: country; align-self: flex-end; line-height: 1; }
 
-@media only screen and (max-width: 599px) { body.vote main.vote li.scoreboard--list--entry span.country { padding: 20px 0; font-size: 25px; } }
+@media only screen and (max-width: 599px) { body.vote main.vote li.vote--list--entry span.country { padding: 20px 0; font-size: 25px; } }
 
-@media only screen and (min-width: 600px) and (max-width: 759px) { body.vote main.vote li.scoreboard--list--entry span.country { font-size: 25px; } }
+@media only screen and (min-width: 600px) and (max-width: 759px) { body.vote main.vote li.vote--list--entry span.country { font-size: 25px; } }
 
-@media only screen and (min-width: 760px) and (max-width: 1199px) { body.vote main.vote li.scoreboard--list--entry span.country { font-size: 25px; } }
+@media only screen and (min-width: 760px) and (max-width: 1199px) { body.vote main.vote li.vote--list--entry span.country { font-size: 25px; } }
 
-@media only screen and (min-width: 1200px) and (max-width: 1899px) { body.vote main.vote li.scoreboard--list--entry span.country { font-size: 35px; } }
+@media only screen and (min-width: 1200px) and (max-width: 1899px) { body.vote main.vote li.vote--list--entry span.country { font-size: 35px; } }
 
-@media only screen and (min-width: 1900px) { body.vote main.vote li.scoreboard--list--entry span.country { font-size: 40px; } }
+@media only screen and (min-width: 1900px) { body.vote main.vote li.vote--list--entry span.country { font-size: 40px; } }
 
-body.vote main.vote li.scoreboard--list--entry button { min-height: 75px; min-width: unset; margin: 0; }
+body.vote main.vote li.vote--list--entry button { min-height: 75px; min-width: unset; margin: 0; }
 
 body.admin main.admin { padding-bottom: 30px; }
 
