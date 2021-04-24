@@ -10,10 +10,6 @@
 					".read": true,
 					".write": true,
 				},
-			"BLR": {
-					".read": true,
-					".write": true,
-				},
 			"BEL": {
 					".read": true,
 					".write": true,
@@ -179,10 +175,6 @@
 					".read": true,
 					".write": true,
 				},
-			"BLR": {
-					".read": true,
-					".write": true,
-				},
 			"BEL": {
 					".read": true,
 					".write": true,
@@ -248,6 +240,10 @@
 					".write": true,
 				},
 			"ROM": {
+					".read": true,
+					".write": true,
+				},
+			"SMR": {
 					".read": true,
 					".write": true,
 				},

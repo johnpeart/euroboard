@@ -17,10 +17,10 @@ var database = firebase.database();
 var presence = database.ref(".info/connected");
 
 // Countries in each event
-const entriesSemiFinal1 = ["AUS","AZE","BLR","BEL","CRO","CYP","EIR","ISR","LTU","MLT","MKD","NOR","ROM","RUS","SLO","SWE","UKR",]
+const entriesSemiFinal1 = ["AUS","AZE","BEL","CRO","CYP","EIR","ISR","LTU","MLT","MKD","NOR","ROM","RUS","SLO","SWE","UKR",]
 const entriesSemiFinal2 = ["ALB","AUT","BGR","CZE","DEN","EST","FIN","GEO","GRE","ISL","LAT","MDA","POL","POR","SMR","SRB","SUI",]
 const entriesGrandFinal = ["FRA","GER","ITA","NED","ESP","GBR",];
-const entriesFauxFinal = ["AUS","AZE","BLR","BEL","BGR","CRO","DEN","EST","FRA","GER","ISL","ITA","LAT","LTU","MLT","NED","MKD","NOR","POR","ROM","SRB","SLO","ESP","SWE","SUI","GBR",];
+const entriesFauxFinal = ["AUS","AZE","BEL","BGR","CRO","DEN","EST","FRA","GER","ISL","ITA","LAT","LTU","MLT","NED","MKD","NOR","POR","ROM","SMR","SRB","SLO","ESP","SWE","SUI","GBR",];
 
 // Variables to feed through to other functions
 if(window.location.pathname.indexOf("semi-final-one") != -1) {
