@@ -11,75 +11,140 @@ body.scoreboard {
 			
 			margin: 0;
 			padding: 10px;
-			grid-gap: 10px;
-			
-			@include xs {
-				grid-template-columns: 1fr;
-				grid-template-rows: repeat(26, minmax(auto, 1fr));
-				grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17" "p18" "p19" "p20" "p21" "p22" "p23" "p24" "p25" "p26";
-			}
-			@include sm {
-				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: repeat(13, auto);
-				grid-template-areas: 	"p1 p2" 
-										"p3 p4"
-										"p5 p6"
-										"p7 p8"
-										"p9 p10"
-										"p11 p12"
-										"p13 p14"
-										"p15 p16"
-										"p17 p18"
-										"p19 p20"
-										"p21 p22"
-										"p23 p24"
-										"p25 p26";
-			}
-			@include md {
-				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: repeat(13, auto);
-				grid-template-areas: 	"p1 p2" 
-										"p3 p4"
-										"p5 p6"
-										"p7 p8"
-										"p9 p10"
-										"p11 p12"
-										"p13 p14"
-										"p15 p16"
-										"p17 p18"
-										"p19 p20"
-										"p21 p22"
-										"p23 p24"
-										"p25 p26";
-			}
-			@include lg {
-				grid-template-rows: repeat(9, auto);
-				grid-template-columns: repeat(3, 1fr);
+			grid-gap: 10px;	
 				
-				grid-template-areas: 	"p1 p10 p19"
-										"p2 p11 p20"
-										"p3 p12 p21"
-										"p4 p13 p22"
-										"p5 p14 p23"
-										"p6 p15 p24"
-										"p7 p16 p25"
-										"p8 p17 p26"
-										"p9 p18 .";
-				
-			}
-			@include xl {
-				grid-template-rows: repeat(7, auto);
-				grid-template-columns: repeat(4, 1fr);	
-				
-				grid-template-areas: 	"p1 p8  p15 p22"
-										"p2 p9  p16 p23"
-										"p3 p10 p17 p24"
-										"p4 p11 p18 p25"
-										"p5 p12 p19 p26"
-										"p6 p13 p20 ."
-										"p7 p14 p21 .";
+		}
+		
+		&[data-event="semi-final-one"] ul#scoreboard--list,
+		&[data-event="semi-final-two"] ul#scoreboard--list {
+		
+				@include xs {
+					grid-template-columns: 1fr;
+					grid-template-rows: repeat(17, minmax(auto, 1fr));
+					grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17";
+				}
+				@include sm {
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-rows: repeat(9, auto);
+					grid-template-areas: 	"p1 p2" 
+											"p3 p4"
+											"p5 p6"
+											"p7 p8"
+											"p9 p10"
+											"p11 p12"
+											"p13 p14"
+											"p15 p16"
+											"p17 p18";
+				}
+				@include md {
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-rows: repeat(9, auto);
+					grid-template-areas: 	"p1 p2" 
+											"p3 p4"
+											"p5 p6"
+											"p7 p8"
+											"p9 p10"
+											"p11 p12"
+											"p13 p14"
+											"p15 p16"
+											"p17 p18";
+				}
+				@include lg {
+					grid-template-rows: repeat(6, auto);
+					grid-template-columns: repeat(3, 1fr);
 					
-			}				
+					grid-template-areas: 	"p1 p7 p13"
+											"p2 p8 p14"
+											"p3 p9 p15"
+											"p4 p10 p16"
+											"p5 p11 p17"
+											"p6 p12 p18";
+					
+				}
+				@include xl {
+					grid-template-rows: repeat(5, auto);
+					grid-template-columns: repeat(4, 1fr);	
+					
+					grid-template-areas: 	"p1 p6  p11 p16"
+											"p2 p7  p12 p17"
+											"p3 p8  p13 p18"
+											"p4 p9  p14 p19"
+											"p5 p10 p15 p20";
+						
+				}
+			
+		}
+		
+		&[data-event="faux-final"] ul#scoreboard--list,
+		&[data-event="grand-final"] ul#scoreboard--list {
+		
+				@include xs {
+					grid-template-columns: 1fr;
+					grid-template-rows: repeat(26, minmax(auto, 1fr));
+					grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17" "p18" "p19" "p20" "p21" "p22" "p23" "p24" "p25" "p26";
+				}
+				@include sm {
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-rows: repeat(13, auto);
+					grid-template-areas: 	"p1 p2" 
+											"p3 p4"
+											"p5 p6"
+											"p7 p8"
+											"p9 p10"
+											"p11 p12"
+											"p13 p14"
+											"p15 p16"
+											"p17 p18"
+											"p19 p20"
+											"p21 p22"
+											"p23 p24"
+											"p25 p26";
+				}
+				@include md {
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-rows: repeat(13, auto);
+					grid-template-areas: 	"p1 p2" 
+											"p3 p4"
+											"p5 p6"
+											"p7 p8"
+											"p9 p10"
+											"p11 p12"
+											"p13 p14"
+											"p15 p16"
+											"p17 p18"
+											"p19 p20"
+											"p21 p22"
+											"p23 p24"
+											"p25 p26";
+				}
+				@include lg {
+					grid-template-rows: repeat(9, auto);
+					grid-template-columns: repeat(3, 1fr);
+					
+					grid-template-areas: 	"p1 p10 p19"
+											"p2 p11 p20"
+											"p3 p12 p21"
+											"p4 p13 p22"
+											"p5 p14 p23"
+											"p6 p15 p24"
+											"p7 p16 p25"
+											"p8 p17 p26"
+											"p9 p18 .";
+					
+				}
+				@include xl {
+					grid-template-rows: repeat(7, auto);
+					grid-template-columns: repeat(4, 1fr);	
+					
+					grid-template-areas: 	"p1 p8  p15 p22"
+											"p2 p9  p16 p23"
+											"p3 p10 p17 p24"
+											"p4 p11 p18 p25"
+											"p5 p12 p19 p26"
+											"p6 p13 p20 ."
+											"p7 p14 p21 .";
+						
+				}
 			
 		}
 		
