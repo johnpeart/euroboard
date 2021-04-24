@@ -200,33 +200,39 @@ function submitVote(event, country, vote) {
 	var points = parseInt(vote);
 	var voteButtons = document.getElementsByName("vote-" + country);
 	
-	countryData.transaction(
-		function(data) {
-			if (data) {
-				var currentVotes = data.vote;
-				var currentCount = data.count;
-				data['vote'] = currentVotes + points;
-				data['count'] = currentCount + 1;
+	var voteConfirm = confirm("You are voting for " + country + ". \nYou are awarding " + vote + " points. \n\nYou can only vote one. Do you want to confirm your vote?");
+	
+	if (voteConfirm == true) {
+		countryData.transaction(
+			function(data) {
+				if (data) {
+					var currentVotes = data.vote;
+					var currentCount = data.count;
+					data['vote'] = currentVotes + points;
+					data['count'] = currentCount + 1;
+				}
+				return data;
+			}, 
+			function(error, committed, snapshot) {
+				console.group("You voted");
+				if (error) {
+					console.log('Transaction failed abnormally!', error);
+				} else if (!committed) {
+					console.log('Your vote wasn’t counted. Sorry.');
+				} else {
+					console.log('You gave ' + points + ' points to ' + country);
+					console.log(snapshot.val().count + ' other people have awarded points to ' + country)
+				}
+				console.groupEnd();
 			}
-			return data;
-		}, 
-		function(error, committed, snapshot) {
-			console.group("You voted");
-			if (error) {
-				console.log('Transaction failed abnormally!', error);
-			} else if (!committed) {
-				console.log('Your vote wasn’t counted. Sorry.');
-			} else {
-				console.log('You gave ' + points + ' points to ' + country);
-				console.log(snapshot.val().count + ' other people have awarded points to ' + country)
-			}
-			console.groupEnd();
+		);
+		
+		
+		for (i = 0; i < voteButtons.length; i++) {
+			voteButtons[i].disabled = true;
 		}
-	);
-	
-	
-	for (i = 0; i < voteButtons.length; i++) {
-		voteButtons[i].disabled = true;
+	} else {
+		
 	}
 }
 
