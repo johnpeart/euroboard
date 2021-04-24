@@ -2,15 +2,15 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "jekyll clean\njekyll build"
+      "script" : "bundle update \nbundle install\nbundle exec jekyll clean\nbundle exec jekyll build"
     },
     "clean" : {
       "enabled" : true,
-      "script" : "jekyll clean"
+      "script" : "bundle exec jekyll clean"
     },
     "run" : {
       "enabled" : true,
-      "script" : "jekyll serve --config _local.yml"
+      "script" : "bundle exec jekyll serve --config _local.yml"
     }
   },
   "identifier" : "AD887031-AB1C-4101-8128-81596E39F449",
