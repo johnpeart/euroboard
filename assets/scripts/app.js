@@ -129,7 +129,13 @@ function checkCountryData(event, countries) {
 			var scoreData = snapshot.val().vote;
 			var countData = snapshot.val().count;
 			if (scoreData / countData > 0) {
-				var averageData = scoreData / countData
+				var averageData = Math.round(scoreData / countData)
+				if (averageData == 11) {
+					var averageData = 12;
+				}
+				if (averageData == 9) {
+					var averageData = 10;
+				}
 			} else {
 				var averageData = 0
 			}
