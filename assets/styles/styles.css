@@ -983,7 +983,7 @@ body.scoreboard main.scoreboard[data-calculation="average"] span[id^='total-poin
 
 body.scoreboard main.scoreboard[data-calculation="average"] span[id^='average-points'] { visibility: visible; }
 
-body.scoreboard main.scoreboard li.scoreboard--list--entry { display: grid; grid-template-rows: auto auto; grid-template-columns: auto auto; grid-template-areas: "pos  		nowplaying" "country 	score"; background: #e9ecef; }
+body.scoreboard main.scoreboard li.scoreboard--list--entry { display: grid; line-height: 1; grid-template-rows: auto auto; grid-template-columns: auto auto; grid-template-areas: "pos  		nowplaying" "country 	score"; background: #e9ecef; }
 
 @media only screen and (max-width: 599px) { body.scoreboard main.scoreboard li.scoreboard--list--entry { padding: 10px; } }
 
@@ -1007,7 +1007,17 @@ body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true
 
 @media (prefers-color-scheme: dark) { body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] { color: #fafafa; } }
 
-body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.now-playing { display: block; }
+body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.now-playing { display: block; padding-bottom: 15px; }
+
+@media only screen and (max-width: 599px) { body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.now-playing { font-size: 20px; } }
+
+@media only screen and (min-width: 600px) and (max-width: 759px) { body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.now-playing { font-size: 20px; } }
+
+@media only screen and (min-width: 760px) and (max-width: 1199px) { body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.now-playing { font-size: 15px; } }
+
+@media only screen and (min-width: 1200px) and (max-width: 1899px) { body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.now-playing { font-size: 20px; } }
+
+@media only screen and (min-width: 1900px) { body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.now-playing { font-size: 25px; } }
 
 body.scoreboard main.scoreboard li.scoreboard--list--entry[data-nowplaying='true'] span.running-order { color: #fafafa; }
 
