@@ -183,7 +183,7 @@ body.scoreboard {
 		li.scoreboard--list--entry {
 			
 			display: grid;
-			
+			line-height: 1;
 			
 			grid-template-rows: auto auto;
 			grid-template-columns: auto auto;
@@ -214,6 +214,24 @@ body.scoreboard {
 									
 				span.now-playing {
 					display: block;
+
+					@include xs {
+						font-size: 20px;
+					}
+					@include sm {
+						font-size: 20px;
+					}
+					@include md {
+						font-size: 15px;
+					}
+					@include lg {
+						font-size: 20px;
+					}
+					@include xl {
+						font-size: 25px;
+					}
+					
+					padding-bottom: 15px;
 				}
 				span.running-order {
 					@include toggleLightDark(color, $white, $white);
