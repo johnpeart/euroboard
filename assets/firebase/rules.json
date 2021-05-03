@@ -4,14 +4,15 @@
 	  "rules": {
 		".read": false,
 		".write": false,
-		
 		// Semi final one data
 		"semi-final-one": {
 			".read": false,
 			".write": false,
+			".validate": true,
 			"settings": {
 				".read": true,
 				".write": true,
+				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": true },
 				"layout": { ".validate": true },
@@ -21,31 +22,48 @@
 				"messagebody": { ".validate": true },
 				"nowplaying": { ".validate": true },
 				// Disallow all other fields
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
 			"null": {
 				".read": true,
 				".write": true,
+				".validate": true,
 			},
 			{% for entry in site.data.entries %}{% if entry.semi-final-one == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
 				".write": true,
+				".validate": true,
 				"count": { ".validate": true },
 				"vote": { ".validate": true },
 				"nowplaying": { ".validate": true },
 				// Disallow all other fields
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
-			{% endif %}{% endfor %}
+			{% endif %}{% endfor %} // Disallow other fields
+			"$other": { 
+				".read": false,
+				".write": false,
+				".validate": false,
+			},
 		},
 		
 		// Semi final two data
 		"semi-final-two": {
 			".read": false,
 			".write": false,
+			".validate": true,
 			"settings": {
 				".read": true,
 				".write": true,
+				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": true },
 				"layout": { ".validate": true },
@@ -55,30 +73,47 @@
 				"messagebody": { ".validate": true },
 				"nowplaying": { ".validate": true },
 				// Disallow all other fields
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
 			"null": {
 				".read": true,
 				".write": true,
+				".validate": true,
 			},
 			{% for entry in site.data.entries %}{% if entry.semi-final-two == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
 				".write": true,
+				".validate": true,
 				"count": { ".validate": true },
 				"vote": { ".validate": true },
 				"nowplaying": { ".validate": true },
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
-			{% endif %}{% endfor %}
+			{% endif %}{% endfor %} // Disallow other fields
+			"$other": { 
+				".read": false,
+				".write": false,
+				".validate": false,
+			},
 		},
 		
 		// Grand final data
 		"grand-final": {
 			".read": false,
 			".write": false,
+			".validate": true,
 			"settings": {
 				".read": true,
 				".write": true,
+				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": true },
 				"layout": { ".validate": true },
@@ -88,30 +123,47 @@
 				"messagebody": { ".validate": true },
 				"nowplaying": { ".validate": true },
 				// Disallow all other fields
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
 			"null": {
 				".read": true,
 				".write": true,
+				".validate": true,
 			},
-			{% for entry in site.data.entries %}{% if entry.grand-final == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
+			{% for entry in site.data.entries %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
 				".write": true,
+				".validate": true,
 				"count": { ".validate": true },
 				"vote": { ".validate": true },
 				"nowplaying": { ".validate": true },
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
-			{% endif %}{% endfor %}
+			{% endfor %} // Disallow other fields
+			"$other": { 
+				".read": false,
+				".write": false,
+				".validate": false,
+			},
 		},
 		
 		// Test data (can be removed eventually)
 		"faux-final": {
 			".read": false,
 			".write": false,
+			".validate": true,
 			"settings": {
 				".read": true,
 				".write": true,
+				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": true },
 				"layout": { ".validate": true },
@@ -121,21 +173,41 @@
 				"messagebody": { ".validate": true },
 				"nowplaying": { ".validate": true },
 				// Disallow all other fields
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
 			"null": {
 				".read": true,
 				".write": true,
+				".validate": true,
 			},
 			{% for entry in site.data.entries %}{% if entry.faux-final == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
 				".write": true,
+				".validate": true,
 				"count": { ".validate": true },
 				"vote": { ".validate": true },
 				"nowplaying": { ".validate": true },
-				"$other": { ".validate": false },
+				"$other": { 
+					".read": false,
+					".write": false,
+					".validate": false,
+				},
 			},
-			{% endif %}{% endfor %}
-		}
+			{% endif %}{% endfor %} // Disallow other fields
+			"$other": { 
+				".read": false,
+				".write": false,
+				".validate": false,
+			},
+		},
+		"$other": { 
+			".read": false,
+			".write": false,
+			".validate": false,
+		},
 	}
 }
