@@ -2,33 +2,140 @@
 ---
 {
 	  "rules": {
+		".read": false,
+		".write": false,
+		
+		// Semi final one data
 		"semi-final-one": {
-			{% for entry in site.data.entries %}{% if entry.semi-final-one == "TRUE" %}
-			{{ entry.code | append: '"' | prepend: '"' }}: {
-					".read": true,
-					".write": true,
-				},{% endif %}{% endfor %}
+			".read": false,
+			".write": false,
+			"settings": {
+				".read": true,
+				".write": true,
+				// Allowed fields
+				"calculation": { ".validate": true },
+				"layout": { ".validate": true },
+				"messagesposition": { ".validate": true },
+				"messagesshow": { ".validate": true },
+				"messagetitle": { ".validate": true },
+				"messagebody": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				// Disallow all other fields
+				"$other": { ".validate": false },
+			},
+			"null": {
+				".read": true,
+				".write": true,
+			},
+			{% for entry in site.data.entries %}{% if entry.semi-final-one == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
+				".read": true,
+				".write": true,
+				"count": { ".validate": true },
+				"vote": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				// Disallow all other fields
+				"$other": { ".validate": false },
+			},
+			{% endif %}{% endfor %}
 		},
+		
+		// Semi final two data
 		"semi-final-two": {
-			{% for entry in site.data.entries %}{% if entry.semi-final-two == "TRUE" %}
-			{{ entry.code | append: '"' | prepend: '"' }}: {
-					".read": true,
-					".write": true,
-				},{% endif %}{% endfor %}
+			".read": false,
+			".write": false,
+			"settings": {
+				".read": true,
+				".write": true,
+				// Allowed fields
+				"calculation": { ".validate": true },
+				"layout": { ".validate": true },
+				"messagesposition": { ".validate": true },
+				"messagesshow": { ".validate": true },
+				"messagetitle": { ".validate": true },
+				"messagebody": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				// Disallow all other fields
+				"$other": { ".validate": false },
+			},
+			"null": {
+				".read": true,
+				".write": true,
+			},
+			{% for entry in site.data.entries %}{% if entry.semi-final-two == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
+				".read": true,
+				".write": true,
+				"count": { ".validate": true },
+				"vote": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				"$other": { ".validate": false },
+			},
+			{% endif %}{% endfor %}
 		},
+		
+		// Grand final data
 		"grand-final": {
-			{% for entry in site.data.entries %}{% if entry.grand-final == "TRUE" %}
-			{{ entry.code | append: '"' | prepend: '"' }}: {
-					".read": true,
-					".write": true,
-				},{% endif %}{% endfor %}
+			".read": false,
+			".write": false,
+			"settings": {
+				".read": true,
+				".write": true,
+				// Allowed fields
+				"calculation": { ".validate": true },
+				"layout": { ".validate": true },
+				"messagesposition": { ".validate": true },
+				"messagesshow": { ".validate": true },
+				"messagetitle": { ".validate": true },
+				"messagebody": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				// Disallow all other fields
+				"$other": { ".validate": false },
+			},
+			"null": {
+				".read": true,
+				".write": true,
+			},
+			{% for entry in site.data.entries %}{% if entry.grand-final == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
+				".read": true,
+				".write": true,
+				"count": { ".validate": true },
+				"vote": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				"$other": { ".validate": false },
+			},
+			{% endif %}{% endfor %}
 		},
+		
+		// Test data (can be removed eventually)
 		"faux-final": {
-			{% for entry in site.data.entries %}{% if entry.faux-final == "TRUE" %}
-			{{ entry.code | append: '"' | prepend: '"' }}: {
-					".read": true,
-					".write": true,
-				},{% endif %}{% endfor %}
+			".read": false,
+			".write": false,
+			"settings": {
+				".read": true,
+				".write": true,
+				// Allowed fields
+				"calculation": { ".validate": true },
+				"layout": { ".validate": true },
+				"messagesposition": { ".validate": true },
+				"messagesshow": { ".validate": true },
+				"messagetitle": { ".validate": true },
+				"messagebody": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				// Disallow all other fields
+				"$other": { ".validate": false },
+			},
+			"null": {
+				".read": true,
+				".write": true,
+			},
+			{% for entry in site.data.entries %}{% if entry.faux-final == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
+				".read": true,
+				".write": true,
+				"count": { ".validate": true },
+				"vote": { ".validate": true },
+				"nowplaying": { ".validate": true },
+				"$other": { ".validate": false },
+			},
+			{% endif %}{% endfor %}
 		}
 	}
 }
