@@ -257,14 +257,190 @@ function setNowPlaying(event, order) {
 				}
 			)
 
-			if (event == "grand-final" && order == 9) {
+			if (event == "semi-final-one") {
+				if (order == 1) {
+
+				}
+
+				if (order == 2) {
+
+				}
+
+				if (order == 3) {
+
+				}
+
+				if (order == 4) {
+
+				}
+
+				if (order == 5) {
+
+				}
+
+				if (order == 6) {
+
+				}
+
+				if (order == 7) {
+
+				}
+
+				if (order == 8) {
+					messagetitle = "We're half way there...";
+					messagebody = "Woah! Living on a prayer!";
+				}
+
+				if (order == 9) {
+
+				}
+
+
+				if (order == 10) {
+
+				}
+
+				if (order == 11) {
+
+				}
+
+				if (order == 12) {
+
+				}
+
+				if (order == 13) {
+
+				}
+
+				if (order == 14) {
+
+				}
+
+				if (order == 15) {
+
+				}
+
+				if (order == 16) {
+
+				}
+
+			}
+
+			if (event == "grand-final") {
+				if (order == 1) {
+
+				}
+
+				if (order == 2) {
+
+				}
+
+				if (order == 3) {
+
+				}
+
+				if (order == 4) {
+
+				}
+
+				if (order == 5) {
+
+				}
+
+				if (order == 6) {
+
+				}
+
+				if (order == 7) {
+
+				}
+
+				if (order == 8) {
+
+				}
+
+				if (order == 9) {
+					messagetitle = "Raise a glass to Sir Terry";
+					messagebody = "It’s song number 9. Sir Terry Wogan famously warned not to have anything to drink until this point. Grab a drink and raise a glass to his life and contribution to the Contest.";
+				}
+
+
+				if (order == 10) {
+
+				}
+
+				if (order == 11) {
+
+				}
+
+				if (order == 12) {
+
+				}
+
+				if (order == 13) {
+
+				}
+
+				if (order == 14) {
+
+				}
+
+				if (order == 15) {
+
+				}
+
+				if (order == 16) {
+
+				}
+
+				if (order == 17) {
+
+				}
+
+				if (order == 18) {
+
+				}
+
+				if (order == 19) {
+
+				}
+
+				if (order == 20) {
+
+				}
+
+				if (order == 21) {
+
+				}
+
+				if (order == 22) {
+
+				}
+
+				if (order == 23) {
+
+				}
+
+				if (order == 24) {
+
+				}
+
+				if (order == 25) {
+
+				}
+
+				if (order == 26) {
+
+				}
+
 				updateSettings('messagesshow', false);
 				setTimeout(function() {
 					updateSettings('messagesshow', true);
-					updateSettings('messagetitle', "Raise a glass to Sir Terry");
-					updateSettings('messagebody', "It’s song number 9. Sir Terry Wogan famously warned not to have anything to drink until this point. Grab a drink and raise a glass to his life and contribution to the Contest.");
+					updateSettings('messagetitle', messagetitle);
+					updateSettings('messagebody', messagebody);
 					setTimeout(updateSettings, 60000, 'messagesshow', false);
 				}, 3000);
+
 			}
 
 		} else {
