@@ -9,7 +9,7 @@
 			".validate": true,
 			"settings": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": "newData.isString()" },
@@ -28,12 +28,12 @@
 			},
 			"null": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 			},
 			"AUS": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -47,7 +47,7 @@
 			},
 			"AZE": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -61,7 +61,7 @@
 			},
 			"BEL": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -75,7 +75,7 @@
 			},
 			"CRO": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -89,7 +89,7 @@
 			},
 			"CYP": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -103,7 +103,7 @@
 			},
 			"EIR": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -117,7 +117,7 @@
 			},
 			"ISR": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -131,7 +131,7 @@
 			},
 			"LTU": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -145,7 +145,7 @@
 			},
 			"MLT": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -159,7 +159,7 @@
 			},
 			"MKD": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -173,7 +173,7 @@
 			},
 			"NOR": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -185,9 +185,9 @@
 					".validate": false,
 				},
 			},
-			"ROM": {
+			"ROU": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -201,7 +201,7 @@
 			},
 			"RUS": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -213,9 +213,9 @@
 					".validate": false,
 				},
 			},
-			"SLO": {
+			"SVN": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -229,7 +229,7 @@
 			},
 			"SWE": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -243,7 +243,7 @@
 			},
 			"UKR": {
 				".read": true,
-				".write": "now < 1621378800000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -927,7 +927,7 @@
 					".validate": false,
 				},
 			},
-			"ROM": {
+			"ROU": {
 				".read": true,
 				".write": "now < 1621727940000",
 				".validate": true,
@@ -979,7 +979,7 @@
 					".validate": false,
 				},
 			},
-			"SLO": {
+			"SVN": {
 				".read": true,
 				".write": "now < 1621727940000",
 				".validate": true,
@@ -1328,7 +1328,7 @@
 					".validate": false,
 				},
 			},
-			"ROM": {
+			"ROU": {
 				".read": true,
 				".write": true,
 				".validate": true,
@@ -1367,7 +1367,7 @@
 					".validate": false,
 				},
 			},
-			"SLO": {
+			"SVN": {
 				".read": true,
 				".write": true,
 				".validate": true,
