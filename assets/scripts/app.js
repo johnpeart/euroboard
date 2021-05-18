@@ -254,7 +254,7 @@ function setNowPlaying(event, order) {
 				}
 			)
 
-			if (order == 9) {
+			if (event == "grand-final" && order == 9) {
 				updateSettings('messagesshow', false);
 				setTimeout(function() {
 					updateSettings('messagesshow', true);
