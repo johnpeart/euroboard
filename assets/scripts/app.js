@@ -257,73 +257,95 @@ function setNowPlaying(event, order) {
 				}
 			)
 
-			if (event == "semi-final-one") {
+			if (event == "semi-final-two") {
 				if (order == 1) {
-					messagetitle = "We're off to the races...";
-					messagebody = "Lithuania is up first and the Roop is on fire! That explains his odd facial expressions, anyway.";
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 2) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 3) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 4) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 5) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 6) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 7) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 8) {
+					messagetitle = "";
+					messagebody = "";
+				}
+
+				if (order == 9) {
 					messagetitle = "We're half way there...";
 					messagebody = "Woah! Living on a prayer!";
 				}
 
-				if (order == 9) {
-
-				}
-
 
 				if (order == 10) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 11) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 12) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 13) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 14) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 15) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
 
 				if (order == 16) {
-
+					messagetitle = "";
+					messagebody = "";
 				}
+
+				updateSettings('messagesshow', false);
+				setTimeout(function() {
+					updateSettings('messagesshow', true);
+					updateSettings('messagetitle', messagetitle);
+					updateSettings('messagebody', messagebody);
+					setTimeout(updateSettings, 60000, 'messagesshow', false);
+				}, 3000);
 
 			}
 
