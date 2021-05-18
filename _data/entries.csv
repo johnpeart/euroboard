@@ -2,11 +2,11 @@ code,country,artist,song,language,semi-final-one,semi-final-one-running-order,se
 ALB,Albania,Anxhela Peristeri,Karma,Albanian,,,TRUE,11,,,,
 AUS,Australia,Montaigne,Technicolour,English,TRUE,5,,,,,TRUE,2
 AUT,Austria,Vincent Bueno,Amen,English,,,TRUE,5,,,,
-AZE,Azerbaijan,Efendi,Mata Hari,,TRUE,14,,,,,TRUE,3
-BEL,Belgium,Hooverphonic,The Wrong Place,English,TRUE,11,,,,,TRUE,4
+AZE,Azerbaijan,Efendi,Mata Hari,,TRUE,14,,,TRUE,,TRUE,3
+BEL,Belgium,Hooverphonic,The Wrong Place,English,TRUE,11,,,TRUE,,TRUE,4
 BGR,Bulgaria,Victoria,Growing Up Is Getting Old,English,,,TRUE,13,,,TRUE,21
 CRO,Croatia,Albina,Tick-Tock,"English, Croatian",TRUE,10,,,,,TRUE,1
-CYP,Cyprus,Elena Tsagrinou,El Diablo,English,TRUE,8,,,,,,
+CYP,Cyprus,Elena Tsagrinou,El Diablo,English,TRUE,8,,,TRUE,,,
 CZE,Czech Republic,Benny Cristo,Omaga,English,,,TRUE,3,,,,
 DEN,Denmark,Fyr & Flamme,Øve os på hinanden,Danish,,,TRUE,17,,,TRUE,7
 EST,Estonia,Uku Suviste,The Lucky One,English,,,TRUE,2,,,TRUE,6
@@ -17,24 +17,24 @@ GER,Germany,Jendrik,I Don’t Feel Hate,English,,,,,TRUE,,TRUE,8
 GRE,Greece,Stefania,Last Dance,English,,,TRUE,4,,,,
 ISL,Iceland,Daði og Gagnamagnið,10 Years,English,,,TRUE,8,,,TRUE,10
 EIR,Ireland,Lesley Roy,Maps,English,TRUE,7,,,,,,
-ISR,Israel,Eden Alene,Set Me Free,English,TRUE,12,,,,,,
+ISR,Israel,Eden Alene,Set Me Free,English,TRUE,12,,,TRUE,,,
 ITA,Italy,Måneskin,Zitti e buoni,Italian,,,,,TRUE,,TRUE,14
 LAT,Latvia,Samanta Tīna,The Moon Is Rising,English,,,TRUE,15,,,TRUE,13
-LTU,Lithuania,The Roop,Discoteque,English,TRUE,1,,,,,TRUE,12
-MLT,Malta,Destiny,TBA,,TRUE,16,,,,,TRUE,11
+LTU,Lithuania,The Roop,Discoteque,English,TRUE,1,,,TRUE,,TRUE,12
+MLT,Malta,Destiny,TBA,,TRUE,16,,,TRUE,,TRUE,11
 MDA,Moldova,Natalia Gordienko,Sugar,English,,,TRUE,7,,,,
 NED,Netherlands,Jeangu Macrooy,Birth of a New Age,"English, Sranan Tongo",,,,,TRUE,,TRUE,17
 MKD,North Macedonia,Vasil,Here I Stand,English,TRUE,6,,,,,TRUE,16
-NOR,Norway,Tix,Fallen Angel,English,TRUE,9,,,,,TRUE,15
+NOR,Norway,Tix,Fallen Angel,English,TRUE,9,,,TRUE,,TRUE,15
 POL,Poland,Rafał,The Ride,English,,,TRUE,6,,,,
 POR,Portugal,The Black Mamba,Love Is on My Side,English,,,TRUE,12,,,TRUE,19
-ROM,Romania,Roxen,Amnesia,English,TRUE,13,,,,,TRUE,18
-RUS,Russia,Manizha,Russian Woman,"Russian, English",TRUE,3,,,,,,
+ROU,Romania,Roxen,Amnesia,English,TRUE,13,,,,,TRUE,18
+RUS,Russia,Manizha,Russian Woman,"Russian, English",TRUE,3,,,TRUE,,,
 SMR,San Marino,Senhit,Adrenalina,English,,,TRUE,1,,,TRUE,5
 SRB,Serbia,Hurricane,Loco Loco,Serbian,,,TRUE,9,,,TRUE,25
-SLO,Slovenia,Ana Soklič,Amen,English,TRUE,2,,,,,TRUE,24
+SVN,Slovenia,Ana Soklič,Amen,English,TRUE,2,,,,,TRUE,24
 ESP,Spain,Blas Cantó,Voy a quedarme,Spanish,,,,,TRUE,,TRUE,23
-SWE,Sweden,Tusse,Voices,English,TRUE,4,,,,,TRUE,22
+SWE,Sweden,Tusse,Voices,English,TRUE,4,,,TRUE,,TRUE,22
 SUI,Switzerland,Gjon’s Tears,Tout l’Univers,French,,,TRUE,16,,,TRUE,20
-UKR,Ukraine,Go_A,Shum,Ukranian,TRUE,15,,,,,,
+UKR,Ukraine,Go_A,Shum,Ukranian,TRUE,15,,,TRUE,,,
 GBR,United Kingdom,James Newman,Embers,English,,,,,TRUE,,TRUE,26
