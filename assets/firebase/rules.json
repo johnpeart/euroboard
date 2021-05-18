@@ -11,7 +11,7 @@
 			".validate": true,
 			"settings": {
 				".read": true,
-				".write": "now > 1621360800000 && now < 1621378800000",
+				".write": "now < 1621378800000",
 				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": "newData.isString()" },
@@ -30,12 +30,12 @@
 			},
 			"null": {
 				".read": true,
-				".write": "now > 1621364400000 && now < 1621378800000",
+				".write": "now < 1621378800000",
 				".validate": true,
 			},
 			{% for entry in site.data.entries %}{% if entry.semi-final-one == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
-				".write": "now > 1621364400000 && now < 1621378800000",
+				".write": "now < 1621378800000",
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -62,7 +62,7 @@
 			".validate": true,
 			"settings": {
 				".read": true,
-				".write": "now > 1621533600000 && now < 1621551600000",
+				".write": "now < 1621551600000",
 				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": "newData.isString()" },
@@ -81,12 +81,12 @@
 			},
 			"null": {
 				".read": true,
-				".write": "now > 1621537200000 && now < 1621551600000",
+				".write": "now < 1621551600000",
 				".validate": true,
 			},
 			{% for entry in site.data.entries %}{% if entry.semi-final-two == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
-				".write": "now > 1621537200000 && now < 1621551600000",
+				".write": "now < 1621551600000",
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -112,7 +112,7 @@
 			".validate": true,
 			"settings": {
 				".read": true,
-				".write": "now > 1621706400000 && now < 1621727940000",
+				".write": "now < 1621727940000",
 				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": "newData.isString()" },
@@ -131,12 +131,12 @@
 			},
 			"null": {
 				".read": true,
-				".write": "now > 1621710000000 && now < 1621727940000",
+				".write": "now < 1621727940000",
 				".validate": true,
 			},
 			{% for entry in site.data.entries %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
-				".write": "now > 1621710000000 && now < 1621727940000",
+				".write": "now < 1621727940000",
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
