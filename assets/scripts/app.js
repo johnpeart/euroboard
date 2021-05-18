@@ -259,7 +259,8 @@ function setNowPlaying(event, order) {
 
 			if (event == "semi-final-one") {
 				if (order == 1) {
-
+					messagetitle = "We're off to the races...";
+					messagebody = "Lithuania is up first and the Roop is on fire! That explains his odd facial expressions, anyway.";
 				}
 
 				if (order == 2) {
