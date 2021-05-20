@@ -349,7 +349,6 @@ function setNowPlaying(event, order) {
 					updateSettings('messagesshow', true);
 					updateSettings('messagetitle', messagetitle);
 					updateSettings('messagebody', messagebody);
-					setTimeout(updateSettings, 60000, 'messagesshow', false);
 				}, 3000);
 
 			}
@@ -466,7 +465,6 @@ function setNowPlaying(event, order) {
 					updateSettings('messagesshow', true);
 					updateSettings('messagetitle', messagetitle);
 					updateSettings('messagebody', messagebody);
-					setTimeout(updateSettings, 60000, 'messagesshow', false);
 				}, 3000);
 
 			}
@@ -509,7 +507,6 @@ function pushMessage() {
 		updateSettings('messagetitle', messageTitle);
 		updateSettings('messagebody', messageBody);
 		updateSettings('messagesshow', true);
-		setTimeout(updateSettings, 60000, 'messagesshow', false);
 	}, 3000)
 
 }
