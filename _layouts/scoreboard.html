@@ -5,18 +5,16 @@ layout: default
 {% assign event = page.path | remove: ".md" | remove: "_scoreboards/" %}
 {% assign running-order = event | append: "-running-order" %}
 {% assign entries = site.data.entries | sort: running-order %}
-		
+
 {% include loader.html %}
 
-{% include header.html %}
-			
 <main id="content" class="scoreboard" data-event="{{ event }}" data-layout="running-order" data-calculation="total">
-	
+
 	<ul id="scoreboard--list">
-		
+
 		{% for entry in entries %}
 		{% if entry[event] == "TRUE" %}
-			
+
 			<li id="{{ entry.code }}" class="scoreboard--list--entry" data-runningorder="{{ entry[running-order] }}" data-leaderboard=""  data-count="" data-score="" data-nowplaying="false">
 				<span class="running-order">{{ entry[running-order] | append: " #" | append: entry.code }}</span>
 				<span class="now-playing">Now playing</span>
@@ -24,12 +22,12 @@ layout: default
 				<span id="total-points-{{ entry.code }}" class="score"></span>
 				<span id="average-points-{{ entry.code }}" class="score"></span>
 			</li>
-			
-		{% endif %}		
+
+		{% endif %}
 		{% endfor %}
 
 	</ul>
-	
+
 	<aside id="message-center" data-messagesshow="false" data-messagesposition="bottom">
 		<h1 id="message-center--title">Message title</h1>
 		<p id="message-center--body">Message text</p>
