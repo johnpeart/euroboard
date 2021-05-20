@@ -19,7 +19,7 @@ var presence = database.ref(".info/connected");
 // Countries in each event
 const entriesSemiFinal1 = ["AUS","AZE","BEL","CRO","CYP","EIR","ISR","LTU","MLT","MKD","NOR","ROU","RUS","SVN","SWE","UKR",]
 const entriesSemiFinal2 = ["ALB","AUT","BGR","CZE","DEN","EST","FIN","GEO","GRE","ISL","LAT","MDA","POL","POR","SMR","SRB","SUI",]
-const entriesGrandFinal = ["AZE","BEL","CYP","FRA","GER","ISR","ITA","LTU","MLT","NED","NOR","RUS","ESP","SWE","UKR","GBR",];
+const entriesGrandFinal = ["ALB","AZE","BEL","BGR","CYP","FIN","FRA","GER","GRE","ISL","ISR","ITA","LTU","MLT","MDA","NED","NOR","POR","RUS","SMR","SRB","ESP","SWE","SUI","UKR","GBR",];
 const entriesFauxFinal = ["AUS","AZE","BEL","BGR","CRO","DEN","EST","FRA","GER","ISL","ITA","LAT","LTU","MLT","NED","MKD","NOR","POR","ROU","SMR","SRB","SVN","ESP","SWE","SUI","GBR",];
 
 // Variables to feed through to other functions
