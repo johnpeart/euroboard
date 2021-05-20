@@ -257,7 +257,105 @@ function setNowPlaying(event, order) {
 				}
 			)
 
+			if (event == "semi-final-two") {
+
+				if (order == 1) {
+					messagetitle = "Senhit from San Marino opening the show";
+					messagebody = "This is a high adrenaline number featuring none other than Flo Rida! Senhit has revealed that part of her staging is meant to reference the female reproductive system. No, I don't know why either.";
+				}
+
+				if (order == 2) {
+					messagetitle = "Uku look stunning";
+					messagebody = "Estonia's entry, Uku Siveste, was apparently recently voted as the country's hottest man. Does he get your douze points too?";
+				}
+
+				if (order == 3) {
+					messagetitle = "Oh my god!";
+					messagebody = "It's time for song number 3 already: Benny Cristo with ”Omaga”, representing the Czech Republic.";
+				}
+
+				if (order == 4) {
+					messagetitle = "Now you see me...";
+					messagebody = "... Now you don't! Look out for some inventive and abundant use of green screen in this entry from Greece.";
+				}
+
+				if (order == 5) {
+					messagetitle = "Is this what you wanted?";
+					messagebody = "Well, is it? Did you want a ballad about relationship breakdown for Eurovision? Tough. You're getting it anyway.";
+				}
+
+				if (order == 6) {
+					messagetitle = "Back to 80s";
+					messagebody = "Standby for brash synths and an excess of pyrotechnics in Poland's entry.";
+				}
+
+				if (order == 7) {
+					messagetitle = "Got a sweet tooth?";
+					messagebody = "I hope so, because Moldova is bringing you some sugar.";
+				}
+
+				if (order == 8) {
+					messagetitle = "Interuptted by Covid";
+					messagebody = "Iceland's entry has been forced into isolation due to a positive Covid test result amongst their delegation. We'll be watching a pre-record now, and if they make it through to the final, the same pre-record will be used them too.";
+				}
+
+				if (order == 9) {
+					messagetitle = "Hold on to your hats.";
+					messagebody = "Here comes a Hurricane to drive you Loco Loco.";
+				}
+
+				if (order == 10) {
+					messagetitle = "Nap time.";
+					messagebody = "Wake me up in three minutes and 45 seconds...";
+				}
+
+				if (order == 11) {
+					messagetitle = "20 years in the making.";
+					messagebody = "This is apparently Anxhela’s second attempt at getting to Eurovision – her first was in 2001. She got here. Good for her. After a 20 year wait though, all I can think is: what a waste of an opening!";
+				}
+
+				if (order == 12) {
+					messagetitle = "It's a kind of magic...";
+					messagebody = "This is one of the few performances to feature the gigantic see-through screen that's been built especially for the contest. It's a pretty cool effect. Not magic; just technology.";
+				}
+
+				if (order == 13) {
+					messagetitle = "Growing Up is Getting Old";
+					messagebody = "I hear you, VICTORIA. After 3 minutes of listening to this, you might feel like you've aged a decade too.";
+				}
+
+				if (order == 14) {
+					messagetitle = "Do not “put your middle fingers up” at Eurovision ";
+					messagebody = "Finland's entry have, despite their lyrics, been expressly told not to put their middle fingers up. This is a family friendly show kids; even if you're a rock band.";
+				}
+
+				if (order == 15) {
+					messagetitle = "The Blood Moon Is Rising";
+					messagebody = "No, this isn't the new theme tune for the next Legend of Zelda installment. (I highly recommend Breath of the Wild, if you haven't played it, though).";
+				}
+
+				if (order == 16) {
+					messagetitle = "Throwing some shapes";
+					messagebody = "The rehearsals for this track have triggered a wave of memes. The dancing does seem a bit out of place, but  the vocals will be exceptional!";
+				}
+
+				if (order == 17) {
+					messagetitle = "To me. To you.";
+					messagebody = "This is very camp and very 80s. It’s as if an synth-ladden chart-topper got smushed with opening credits of Chucklevision.";
+				}
+
+				updateSettings('messagesshow', false);
+				setTimeout(function() {
+					updateSettings('messagesshow', true);
+					updateSettings('messagetitle', messagetitle);
+					updateSettings('messagebody', messagebody);
+					setTimeout(updateSettings, 60000, 'messagesshow', false);
+				}, 3000);
+
+			}
+
 			if (event == "grand-final") {
+
 				if (order == 1) {
 
 				}
@@ -294,7 +392,6 @@ function setNowPlaying(event, order) {
 					messagetitle = "Raise a glass to Sir Terry";
 					messagebody = "It’s song number 9. Sir Terry Wogan famously warned not to have anything to drink until this point. Grab a drink and raise a glass to his life and contribution to the Contest.";
 				}
-
 
 				if (order == 10) {
 
