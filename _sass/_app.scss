@@ -1,23 +1,23 @@
 // App styles
 
 body.scoreboard {
-		
+
 	main.scoreboard {
-		
+
 		ul#scoreboard--list {
-			
+
 			display: grid;
 			position: relative;
-			
+
 			margin: 0;
 			padding: 10px;
-			grid-gap: 10px;	
-				
+			grid-gap: 10px;
+
 		}
-		
+
 		&[data-event="semi-final-one"] ul#scoreboard--list,
 		&[data-event="semi-final-two"] ul#scoreboard--list {
-		
+
 				@include xs {
 					grid-template-columns: 1fr;
 					grid-template-rows: repeat(17, minmax(auto, 1fr));
@@ -26,7 +26,7 @@ body.scoreboard {
 				@include sm {
 					grid-template-columns: repeat(2, 1fr);
 					grid-template-rows: repeat(9, auto);
-					grid-template-areas: 	"p1 p2" 
+					grid-template-areas: 	"p1 p2"
 											"p3 p4"
 											"p5 p6"
 											"p7 p8"
@@ -39,7 +39,7 @@ body.scoreboard {
 				@include md {
 					grid-template-columns: repeat(2, 1fr);
 					grid-template-rows: repeat(9, auto);
-					grid-template-areas: 	"p1 p2" 
+					grid-template-areas: 	"p1 p2"
 											"p3 p4"
 											"p5 p6"
 											"p7 p8"
@@ -52,32 +52,32 @@ body.scoreboard {
 				@include lg {
 					grid-template-rows: repeat(6, auto);
 					grid-template-columns: repeat(3, 1fr);
-					
+
 					grid-template-areas: 	"p1 p7 p13"
 											"p2 p8 p14"
 											"p3 p9 p15"
 											"p4 p10 p16"
 											"p5 p11 p17"
 											"p6 p12 p18";
-					
+
 				}
 				@include xl {
 					grid-template-rows: repeat(5, auto);
-					grid-template-columns: repeat(4, 1fr);	
-					
+					grid-template-columns: repeat(4, 1fr);
+
 					grid-template-areas: 	"p1 p6  p11 p16"
 											"p2 p7  p12 p17"
 											"p3 p8  p13 p18"
 											"p4 p9  p14 p19"
 											"p5 p10 p15 p20";
-						
+
 				}
-			
+
 		}
-		
+
 		&[data-event="faux-final"] ul#scoreboard--list,
 		&[data-event="grand-final"] ul#scoreboard--list {
-		
+
 				@include xs {
 					grid-template-columns: 1fr;
 					grid-template-rows: repeat(26, minmax(auto, 1fr));
@@ -86,7 +86,7 @@ body.scoreboard {
 				@include sm {
 					grid-template-columns: repeat(2, 1fr);
 					grid-template-rows: repeat(13, auto);
-					grid-template-areas: 	"p1 p2" 
+					grid-template-areas: 	"p1 p2"
 											"p3 p4"
 											"p5 p6"
 											"p7 p8"
@@ -103,7 +103,7 @@ body.scoreboard {
 				@include md {
 					grid-template-columns: repeat(2, 1fr);
 					grid-template-rows: repeat(13, auto);
-					grid-template-areas: 	"p1 p2" 
+					grid-template-areas: 	"p1 p2"
 											"p3 p4"
 											"p5 p6"
 											"p7 p8"
@@ -120,7 +120,7 @@ body.scoreboard {
 				@include lg {
 					grid-template-rows: repeat(9, auto);
 					grid-template-columns: repeat(3, 1fr);
-					
+
 					grid-template-areas: 	"p1 p10 p19"
 											"p2 p11 p20"
 											"p3 p12 p21"
@@ -130,12 +130,12 @@ body.scoreboard {
 											"p7 p16 p25"
 											"p8 p17 p26"
 											"p9 p18 .";
-					
+
 				}
 				@include xl {
 					grid-template-rows: repeat(7, auto);
-					grid-template-columns: repeat(4, 1fr);	
-					
+					grid-template-columns: repeat(4, 1fr);
+
 					grid-template-areas: 	"p1 p8  p15 p22"
 											"p2 p9  p16 p23"
 											"p3 p10 p17 p24"
@@ -143,26 +143,26 @@ body.scoreboard {
 											"p5 p12 p19 p26"
 											"p6 p13 p20 ."
 											"p7 p14 p21 .";
-						
+
 				}
-			
+
 		}
-		
-		&[data-layout="performance"] {				
+
+		&[data-layout="performance"] {
 			@for $i from 1 through 26 {
 			  li[data-runningorder="#{$i}"] {
 				grid-area: p#{$i};
 			  }
 			}
 		}
-		&[data-layout="rank"] {				
+		&[data-layout="rank"] {
 			@for $i from 1 through 26 {
 			  li[data-leaderboard="#{$i}"] {
 				grid-area: p#{$i};
 			  }
 			}
 		}
-		
+
 		&[data-calculation="total"] {
 			span[id^='total-points'] {
 				visibility: visible;
@@ -179,29 +179,29 @@ body.scoreboard {
 				visibility: visible;
 			}
 		}
-		
+
 		li.scoreboard--list--entry {
-			
+
 			display: grid;
 			line-height: 1;
-			
+
 			grid-template-rows: auto auto;
 			grid-template-columns: auto auto;
-		
+
 			grid-template-areas: 	"pos  		nowplaying"
 									"country 	score";
-			
-			
+
+
 			@include xs {
 				padding: 10px;
 			}
 			@include sm-up {
 				padding: 15px;
 			}
-			
+
 			@include toggleLightDark(background, $gray-200, $gray-800);
-			
-			
+
+
 			&[data-nowplaying='true'] {
 				@include toggleLightDark(background, $cyan, $cyan);
 				@include toggleLightDark(background-image, url("#{$nowplaying}"), url("#{$nowplaying}"));
@@ -209,9 +209,9 @@ body.scoreboard {
 				@include toggleLightDark(background-clip, border-box, border-box);
 				@include toggleLightDark(background-size, cover, cover);
 				@include toggleLightDark(background-position, center center, center center);
-				
-				@include toggleLightDark(color, $white, $white);	
-									
+
+				@include toggleLightDark(color, $white, $white);
+
 				span.now-playing {
 					display: block;
 
@@ -230,7 +230,7 @@ body.scoreboard {
 					@include xl {
 						font-size: 25px;
 					}
-					
+
 					padding-bottom: 15px;
 				}
 				span.running-order {
@@ -239,14 +239,14 @@ body.scoreboard {
 				span.country {
 					font-weight: bold;
 				}
-				
+
 			}
-			&[data-nowplaying='false'] {				
+			&[data-nowplaying='false'] {
 				span.now-playing {
 					display: none;
 				}
 			}
-			
+
 			&[data-leaderboard='1'] {
 				@include toggleLightDark(background, lighten($gold, 45%), lighten($gold, 45%));
 				@include toggleLightDark(background-image, url("#{$goldspinner}"), url("#{$goldspinner}"));
@@ -260,7 +260,7 @@ body.scoreboard {
 				@include toggleLightDark(background-image, url("#{$silverspinner}"), url("#{$silverspinner}"));
 				&::after {
 					content: "2nd place";
-				}				
+				}
 			}
 			&[data-leaderboard='3'] {
 				@include toggleLightDark(background, lighten($bronze, 65%), lighten($bronze, 65%));
@@ -270,29 +270,29 @@ body.scoreboard {
 					content: "3rd place";
 				}
 			}
-			
+
 			&[data-leaderboard='1'],
 			&[data-leaderboard='2'],
 			&[data-leaderboard='3'] {
-				
+
 				background-repeat: no-repeat;
 				background-clip: border-box;
 				background-size: 100% 300%;
 				background-position: center right;
-				
+
 				@include toggleLightDark(color, $black, $black);
-				
+
 				&::after {
 					display: block;
 					grid-area: pos;
 					align-self: flex-start;
-					
+
 					padding-bottom: 15px;
-					
+
 					line-height: 	1;
-					
+
 					@include toggleLightDark(color, $black, $black);
-					
+
 					@include xs {
 						font-size: 20px;
 					}
@@ -315,20 +315,20 @@ body.scoreboard {
 				span.country {
 					font-weight: bold;
 				}
-			
+
 			}
-			
+
 			span.running-order {
 				grid-area: pos;
 				align-self: flex-start;
-				
+
 				padding-bottom: 15px;
-				
+
 				line-height: 	1;
-				
+
 				@include toggleLightDark(color, $gray-600, $gray-500);
 
-				
+
 				@include xs {
 					font-size: 20px;
 				}
@@ -344,7 +344,7 @@ body.scoreboard {
 				@include xl {
 					font-size: 25px;
 				}
-				
+
 			}
 			span.now-playing {
 				grid-area: nowplaying;
@@ -354,9 +354,9 @@ body.scoreboard {
 			span.country {
 				grid-area: country;
 				align-self: flex-end;
-				
+
 				line-height: 	1;
-				
+
 				@include xs {
 					font-size: 20px;
 				}
@@ -372,16 +372,16 @@ body.scoreboard {
 				@include xl {
 					font-size: 30px;
 				}
-				
+
 			}
 			span.score {
 				grid-area: score;
 				align-self: flex-end;
 				justify-self: flex-end;
-				
+
 				font-weight: bold;
 				line-height: 	1;
-				
+
 				@include xs {
 					font-size: 30px;
 				}
@@ -398,24 +398,24 @@ body.scoreboard {
 					font-size: 45px;
 				}
 			}
-			
+
 		}
-		
+
 		aside#message-center {
-			
+
 			display: block;
 			position: fixed;
 			z-index: 1000000;
-			
+
 			left: 0;
 			right: 0;
-			
+
 			margin: 0;
 			padding: 0;
-			
+
 			height: auto;
 			min-height: 0px;
-			
+
 			@include sm-up {
 				max-width: calc(50% - 15px);
 				box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -425,10 +425,10 @@ body.scoreboard {
 			@include xl {
 				max-width: 35%;
 			}
-			
+
 			@include toggleLightDark(background, $cyan, $cyan);
 			@include toggleLightDark(color, $white, $white);
-			
+
 			@include xs {
 				width: 100%;
 				padding: 10px;
@@ -449,7 +449,7 @@ body.scoreboard {
 				padding: 20px 30px;
 				border-radius: 30px 30px 0 30px;
 			}
-			
+
 			&::after {
 				@include md-up {
 					display: block;
@@ -458,22 +458,22 @@ body.scoreboard {
 					width: 30px;
 					height: 30px;
 					border-top: 20px solid $cyan;
-					border-left: 40px solid transparent;					
+					border-left: 40px solid transparent;
 					bottom: -20px;
 					right: 0;
-					
+
 				}
 			}
-			
+
 			h1 {
 				@extend h2;
 				padding: 0 0 10px 0;
 			}
-			
+
 			p {
 				padding: 0;
 				line-height: 1.2;
-				
+
 				@include xs {
 					font-size: 20px;
 				}
@@ -490,11 +490,11 @@ body.scoreboard {
 					font-size: 30px;
 				}
 			}
-			
+
 			&[data-messagesshow='true'] {
 				transition: all 1s;
 				transition-timing-function: ease-out;
-				
+
 				&[data-messagesposition='top'] {
 					bottom: auto;
 					top: 0;
@@ -510,44 +510,44 @@ body.scoreboard {
 					}
 				}
 			}
-			&[data-messagesshow='false'] {	
+			&[data-messagesshow='false'] {
 				transition: all 1s;
 				transition-timing-function: ease-in;
-							
+
 				&[data-messagesposition='top'] {
 					bottom: auto;
-					top: -1000px;		
+					top: -1000px;
 				}
 				&[data-messagesposition='bottom'] {
 					top: auto;
 					bottom: -1000px;
 				}
 			}
-				
+
 		}
-		
+
 	}
-	
+
 }
 
 // App styles
 
 body.vote {
-	
+
 	main.vote {
-		
+
 		ul#vote--list {
-			
+
 			display: grid;
 			position: relative;
-			
+
 			margin: 0;
-			
-			width: 100%;			
+
+			width: 100%;
 			max-width: 1200px;
-			
+
 			justify-self: center;
-			
+
 			@include xs {
 				padding: 10px;
 				grid-gap: 30px;
@@ -560,22 +560,22 @@ body.vote {
 				padding: 20px;
 				grid-gap: 20px;
 			}
-			
+
 			grid-template-rows: repeat(26, minmax(auto, 1fr));
 			grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6" "p7" "p8" "p9" "p10" "p11" "p12" "p13" "p14" "p15" "p16" "p17" "p18" "p19" "p20" "p21" "p22" "p23" "p24" "p25" "p26";
-						
+
 		}
-		
+
 		li.vote--list--entry {
-			
+
 			@for $i from 1 through 26 {
 			  &[data-runningorder="#{$i}"] {
 				grid-area: p#{$i};
 			  }
 			}
-			
+
 			display: grid;
-			
+
 			@include xs {
 				grid-template-rows: auto auto repeat(5, 1fr);
 				grid-template-columns: repeat(2, 1fr);
@@ -586,7 +586,7 @@ body.vote {
 										"five six"
 										"seven eight"
 										"ten twelve";
-				
+
 				grid-gap: 2px;
 			}
 			@include sm-up {
@@ -594,7 +594,7 @@ body.vote {
 				grid-template-columns: minmax(250px, 30%) repeat(5, 1fr);
 				grid-template-areas: 	"pos  		one two three four five"
 										"country 	six seven eight ten twelve";
-										
+
 				grid-gap: 2px;
 			}
 			@include lg-up {
@@ -602,28 +602,28 @@ body.vote {
 				grid-template-columns: minmax(250px, 50%) repeat(5, 1fr);
 				grid-template-areas: 	"pos  		one two three four five"
 										"country 	six seven eight ten twelve";
-																
+
 				grid-gap: 2px;
 			}
-			
-			
+
+
 			@include xs {
 				padding: 10px;
 			}
 			@include sm-up {
 				padding: 15px;
-			}		
-			
+			}
+
 			@include toggleLightDark(background, $gray-200, $gray-800);
-			
+
 			span.running-order {
 				grid-area: pos;
 				align-self: flex-start;
-				
+
 				@include toggleLightDark(color, $gray-600, $gray-500);
-				
+
 				line-height: 	1;
-				
+
 				@include xs {
 					font-size: 20px;
 				}
@@ -643,9 +643,9 @@ body.vote {
 			span.country {
 				grid-area: country;
 				align-self: flex-end;
-				
+
 				line-height: 	1;
-				
+
 				@include xs {
 					padding: 20px 0;
 					font-size: 25px;
@@ -663,33 +663,33 @@ body.vote {
 					font-size: 40px;
 				}
 			}
-			
+
 			button {
 				min-height: 75px;
 				min-width: unset;
 				margin: 0;
 			}
-			
+
 		}
-		
+
 	}
-		
+
 }
 
 // App styles
 
 body.admin {
-	
+
 	main.admin {
-		
+
 		padding-bottom: 30px;
-		
+
 		fieldset#optionsNowPlaying {
 			ul {
 				display: grid;
 				padding: 0;
-				
-				
+
+
 				@include xs {
 					grid-template-columns: auto;
 				}
@@ -701,12 +701,12 @@ body.admin {
 				}
 			}
 		}
-		
+
 		fieldset#optionsMessageCenter {
-			
+
 			display: grid;
 			grid-gap: 30px;
-			
+
 			@include xs {
 				grid-template-columns: auto;
 				grid-template-rows: auto auto auto auto;
@@ -717,15 +717,15 @@ body.admin {
 				grid-template-rows: auto auto auto;
 				grid-template-areas: "title title" "ul1 ul2" "msg msg";
 			}
-			
+
 			ul {
 				display: grid;
 				padding: 0 0 30px 0;
-				
+
 				@include xs {
 					grid-template-columns: auto;
 				}
-				
+
 				&:nth-of-type(1) {
 					@include xs {
 						border-bottom: 1px solid;
@@ -733,11 +733,11 @@ body.admin {
 					}
 				}
 			}
-			
+
 			div.text-input {
 				display: grid;
 				grid-area: msg;
-				
+
 				@include sm-down {
 					grid-template-areas: "label" "hint" "textbox" "textarea" "btn";
 					grid-template-columns: auto;
@@ -750,7 +750,7 @@ body.admin {
 					grid-template-columns: 6fr 1fr;
 					grid-gap: 20px;
 				}
-				
+
 				label {
 					grid-area: label;
 				}
@@ -769,9 +769,9 @@ body.admin {
 					grid-area: btn;
 				}
 			}
-			
+
 		}
-		
+
 	}
-		
+
 }

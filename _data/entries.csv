@@ -1,13 +1,13 @@
 code,country,artist,song,language,semi-final-one,semi-final-one-running-order,semi-final-two,semi-final-two-running-order,grand-final,grand-final-running-order,faux-final,faux-final-running-order
-CYP,Cyprus,Elena Tsagrinou,El Diablo,English,TRUE,8,,,TRUE,01,,
-ALB,Albania,Anxhela Peristeri,Karma,Albanian,,,TRUE,11,TRUE,02,,
-ISR,Israel,Eden Alene,Set Me Free,English,TRUE,12,,,TRUE,03,,
-BEL,Belgium,Hooverphonic,The Wrong Place,English,TRUE,11,,,TRUE,04,TRUE,4
-RUS,Russia,Manizha,Russian Woman,"Russian, English",TRUE,3,,,TRUE,05,,
-MLT,Malta,Destiny,TBA,,TRUE,16,,,TRUE,06,TRUE,11
-POR,Portugal,The Black Mamba,Love Is on My Side,English,,,TRUE,12,TRUE,07,TRUE,19
-SRB,Serbia,Hurricane,Loco Loco,Serbian,,,TRUE,9,TRUE,08,TRUE,25
-GBR,United Kingdom,James Newman,Embers,English,,,,,TRUE,09,TRUE,26
+CYP,Cyprus,Elena Tsagrinou,El Diablo,English,TRUE,8,,,TRUE,1,,
+ALB,Albania,Anxhela Peristeri,Karma,Albanian,,,TRUE,11,TRUE,2,,
+ISR,Israel,Eden Alene,Set Me Free,English,TRUE,12,,,TRUE,3,,
+BEL,Belgium,Hooverphonic,The Wrong Place,English,TRUE,11,,,TRUE,4,TRUE,4
+RUS,Russia,Manizha,Russian Woman,"Russian, English",TRUE,3,,,TRUE,5,,
+MLT,Malta,Destiny,TBA,,TRUE,16,,,TRUE,6,TRUE,11
+POR,Portugal,The Black Mamba,Love Is on My Side,English,,,TRUE,12,TRUE,7,TRUE,19
+SRB,Serbia,Hurricane,Loco Loco,Serbian,,,TRUE,9,TRUE,8,TRUE,25
+GBR,United Kingdom,James Newman,Embers,English,,,,,TRUE,9,TRUE,26
 GRE,Greece,Stefania,Last Dance,English,,,TRUE,4,TRUE,10,,
 SUI,Switzerland,Gjon’s Tears,Tout l’Univers,French,,,TRUE,16,TRUE,11,TRUE,20
 ISL,Iceland,Daði og Gagnamagnið,10 Years,English,,,TRUE,8,TRUE,12,TRUE,10
