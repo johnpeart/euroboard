@@ -423,7 +423,7 @@ body.scoreboard {
 				margin: auto 10px auto auto;
 			}
 			@include xl {
-				max-width: 35%;
+				max-width: 45%;
 			}
 
 			@include toggleLightDark(background, $cyan, $cyan);
@@ -468,6 +468,9 @@ body.scoreboard {
 			h1 {
 				@extend h2;
 				padding: 0 0 10px 0;
+				@include xl {
+					font-size: 45px;
+				}
 			}
 
 			p {
@@ -487,7 +490,7 @@ body.scoreboard {
 					font-size: 20px;
 				}
 				@include xl {
-					font-size: 30px;
+					font-size: 35px;
 				}
 			}
 
