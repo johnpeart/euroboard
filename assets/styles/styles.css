@@ -1117,7 +1117,7 @@ body.scoreboard main.scoreboard aside#message-center { display: block; position:
 
 @media only screen and (min-width: 600px) { body.scoreboard main.scoreboard aside#message-center { max-width: calc(50% - 15px); box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); border-radius: 20px 20px 0 20px; margin: auto 10px auto auto; } }
 
-@media only screen and (min-width: 1900px) { body.scoreboard main.scoreboard aside#message-center { max-width: 35%; } }
+@media only screen and (min-width: 1900px) { body.scoreboard main.scoreboard aside#message-center { max-width: 45%; } }
 
 @media (prefers-color-scheme: dark) { body.scoreboard main.scoreboard aside#message-center { background: #009fe3; } }
 
@@ -1137,6 +1137,8 @@ body.scoreboard main.scoreboard aside#message-center { display: block; position:
 
 body.scoreboard main.scoreboard aside#message-center h1 { padding: 0 0 10px 0; }
 
+@media only screen and (min-width: 1900px) { body.scoreboard main.scoreboard aside#message-center h1 { font-size: 45px; } }
+
 body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.scoreboard aside#message-center .skip-link, body.scoreboard main.scoreboard aside#message-center button, body.scoreboard main.scoreboard aside#message-center a.button, body.scoreboard main.scoreboard aside#message-center .text-input, body.scoreboard main.scoreboard aside#message-center .radio-input, body.scoreboard main.scoreboard aside#message-center label, body.scoreboard main.scoreboard aside#message-center .label-hint, body.scoreboard main.scoreboard aside#message-center input[type="text"], body.scoreboard main.scoreboard aside#message-center textarea { padding: 0; line-height: 1.2; }
 
 @media only screen and (max-width: 599px) { body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.scoreboard aside#message-center .skip-link, body.scoreboard main.scoreboard aside#message-center button, body.scoreboard main.scoreboard aside#message-center a.button, body.scoreboard main.scoreboard aside#message-center .text-input, body.scoreboard main.scoreboard aside#message-center .radio-input, body.scoreboard main.scoreboard aside#message-center label, body.scoreboard main.scoreboard aside#message-center .label-hint, body.scoreboard main.scoreboard aside#message-center input[type="text"], body.scoreboard main.scoreboard aside#message-center textarea { font-size: 20px; } }
@@ -1147,7 +1149,7 @@ body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.sco
 
 @media only screen and (min-width: 1200px) and (max-width: 1899px) { body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.scoreboard aside#message-center .skip-link, body.scoreboard main.scoreboard aside#message-center button, body.scoreboard main.scoreboard aside#message-center a.button, body.scoreboard main.scoreboard aside#message-center .text-input, body.scoreboard main.scoreboard aside#message-center .radio-input, body.scoreboard main.scoreboard aside#message-center label, body.scoreboard main.scoreboard aside#message-center .label-hint, body.scoreboard main.scoreboard aside#message-center input[type="text"], body.scoreboard main.scoreboard aside#message-center textarea { font-size: 20px; } }
 
-@media only screen and (min-width: 1900px) { body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.scoreboard aside#message-center .skip-link, body.scoreboard main.scoreboard aside#message-center button, body.scoreboard main.scoreboard aside#message-center a.button, body.scoreboard main.scoreboard aside#message-center .text-input, body.scoreboard main.scoreboard aside#message-center .radio-input, body.scoreboard main.scoreboard aside#message-center label, body.scoreboard main.scoreboard aside#message-center .label-hint, body.scoreboard main.scoreboard aside#message-center input[type="text"], body.scoreboard main.scoreboard aside#message-center textarea { font-size: 30px; } }
+@media only screen and (min-width: 1900px) { body.scoreboard main.scoreboard aside#message-center p, body.scoreboard main.scoreboard aside#message-center .skip-link, body.scoreboard main.scoreboard aside#message-center button, body.scoreboard main.scoreboard aside#message-center a.button, body.scoreboard main.scoreboard aside#message-center .text-input, body.scoreboard main.scoreboard aside#message-center .radio-input, body.scoreboard main.scoreboard aside#message-center label, body.scoreboard main.scoreboard aside#message-center .label-hint, body.scoreboard main.scoreboard aside#message-center input[type="text"], body.scoreboard main.scoreboard aside#message-center textarea { font-size: 35px; } }
 
 body.scoreboard main.scoreboard aside#message-center[data-messagesshow='true'] { transition: all 1s; transition-timing-function: ease-out; }
 
