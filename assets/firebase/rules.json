@@ -62,7 +62,7 @@
 			".validate": true,
 			"settings": {
 				".read": true,
-				".write": "now < 1621551600000",
+				".write": false,
 				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": "newData.isString()" },
@@ -81,12 +81,12 @@
 			},
 			"null": {
 				".read": true,
-				".write": "now < 1621551600000",
+				".write": false,
 				".validate": true,
 			},
 			{% for entry in site.data.entries %}{% if entry.semi-final-two == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
-				".write": "now < 1621551600000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
