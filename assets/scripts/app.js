@@ -356,35 +356,43 @@ function setNowPlaying(event, order) {
 			if (event == "grand-final") {
 
 				if (order == 1) {
-
+					messagetitle = "First up: Cyprus!";
+					messagebody = "I've got to be honest with you, after 15 months of barely moving from my sofa thanks to Covid, just watching this dance routine is enough to make me exhausted.\n\nWill you give your douze point to Cyprus or is it nil point for El Diablo?"
 				}
 
 				if (order == 2) {
-
+					messagetitle = "20 years in the making.";
+					messagebody = "This is apparently Anxhela’s second attempt at getting to Eurovision – her first was in 2001. She got here. Good for her. After a 20 year wait though, all I can think is: what a waste of an opening!\n\nNo one has ever won the Contest performing in second place: will this be Anxhel’s night? Personally, I doubt it.";
 				}
 
 				if (order == 3) {
-
+					messagetitle = "The highest note in Eurovish history.";
+					messagebody = "Israel’s Eden Alene will attempt to hit the highest note ever sung in a Eurovision performance on stage tonight. A B6.\n\nThe previous record holder was Croatia’s 1996 entrant, Maja Blagdan, who hit a B♭6 in her song, “Sveta ljubav”";
 				}
 
 				if (order == 4) {
-
+					messagetitle = "This year‘s eldest entry.";
+					messagebody = "Hooverphonic are the eldest entrants to this year‘s Eurovision, but they don't come close to the all-time record.\n\nThe eldest was 95-year-old Emil Ramsauer from the Swiss 2013-band “Takasa”";
 				}
 
 				if (order == 5) {
-
+					messagetitle = "Russian Doll.";
+					messagebody = "For the fashionistas out there, this entry has some unusual costume design. Apparently the dress you see here was made from pieces of cloth sent to artist Manizha from women across Russia.";
 				}
 
 				if (order == 6) {
-
+					messagetitle = "“All right, I'm out of here.”";
+					messagebody = "That's the rough translation of the title of this blow-the-bloody-roof-off entry from 18 year old Maltese entrant, Destiny.\n\nI’m hoping for a 2022 Eurovision holiday to somewhere warm and refreshing: will it be to Valetta?";
 				}
 
 				if (order == 7) {
-
+					messagetitle = "Up next: Portugal";
+					messagebody = "Do not adjust your television set.\n\nIt's not broken. The black and white colour pallete and 4:3 aspect ratio is deliberate.";
 				}
 
 				if (order == 8) {
-
+					messagetitle = "12 on the Beaufort scale";
+					messagebody = "This is “Loco Loco” by Serbian girl group Hurricane.\n\nA hurricane is usually a 12 on the Beaufort wind speed scale; but is it a 12 on the Eurovision scale?";
 				}
 
 				if (order == 9) {
@@ -393,71 +401,88 @@ function setNowPlaying(event, order) {
 				}
 
 				if (order == 10) {
-
+					messagetitle = "Now you see me...";
+					messagebody = "... Now you don't!\n\nLook out for some inventive and abundant use of green screen in this entry from Greece.\n\nIf the semi-finals are anything to go by, those green screens will be coupled with a lack lustre performance.";
 				}
 
 				if (order == 11) {
-
+					messagetitle = "Throwing some shapes.";
+					messagebody = "The rehearsals for this track have triggered a wave of memes. \n\nI'm not sure anyone really knows what's going on with that wardrobe choice or the dance moves, but Gjon's voice is exceptional!";
 				}
 
 				if (order == 12) {
-
+					messagetitle = "Interuptted by Covid.";
+					messagebody = "Iceland's entry has been forced into isolation due to a positive Covid test result amongst their delegation. \n\nDespite that, they still qualified based on a recording of their rehearsal performance. \n\nWe'll be seeing the same pre-record now.";
 				}
 
 				if (order == 13) {
-
+					messagetitle = "That's a big moon.";
+					messagebody = "The Eurovision boffins reckon that the inflatable moon that appears during Spain's performance is the largest prop ever to feature on stage at the Contest.";
 				}
 
 				if (order == 14) {
-
+					messagetitle = "Got a sweet tooth?";
+					messagebody = "I hope so, because Moldova is bringing you some sugar.";
 				}
 
 				if (order == 15) {
-
+					messagetitle = "He doesn’t feel hate.";
+					messagebody = "Which is funny, because I personally feel a lot of hate for this song.\n\nIt is SO ANNOYING.";
 				}
 
 				if (order == 16) {
-
+					messagetitle = "Do not “put your middle fingers up” at Eurovish.";
+					messagebody = "Finland’s entry – one of two rock entries in the final – have been expressly told not to put their middle fingers up during tonight’s performance, despite their lyrics. This is a family friendly show kids; even if you're a rock band.";
 				}
 
 				if (order == 17) {
-
+					messagetitle = "Growing Up is Getting Old.";
+					messagebody = "I hear you, VICTORIA. After 3 minutes of listening to this, you might feel like you've aged a few decades too.";
 				}
 
 				if (order == 18) {
-
+					messagetitle = "The Roop is on fire!";
+					messagebody = "Sorry, couldn't resist that joke. I've been holding it back for 12 months.\n\nLithuania's entry is here to burn up the Discotheque dance floor.";
 				}
 
 				if (order == 19) {
-
+					messagetitle = "Grab some ear plugs, if I were you.";
+					messagebody = "Apparently this song has captured the imagination of the Eurovision fan base.\n\nTo me, it just sounds like a lot of noise.\n\nAnd yes, I'm fully aware that makes me sound like I'm an old aged pensioner – I don't care.";
 				}
 
 				if (order == 20) {
-
+					messagetitle = "The bookies’ favourite.";
+					messagebody = "To me, this looks and sounds like every other French entry for the past 65 years; but apparently the bookies think that this is going to win the Contest this year.";
 				}
 
 				if (order == 21) {
-
+					messagetitle = "Arianna? Is that you?";
+					messagebody = "Don't forget; for this digital scoreboard, you can vote for every song!\n\nGive every entry between 1 and 12 points.";
 				}
 
 				if (order == 22) {
-
+					messagetitle = "Now for some angels and demons roleplay!";
+					messagebody = "Returning to our earlier theme about my Covid laziness... I'm so out of shape there’s no way I can out run a demon.\n\nI really need to start exorcising.";
 				}
 
 				if (order == 23) {
-
+					messagetitle = "It’s the birth of a new age";
+					messagebody = "Here's the Netherlands with a few “on the nose” lyrics in the current climate, I think!";
 				}
 
 				if (order == 24) {
-
+					messagetitle = "Now for something a bit different...";
+					messagebody = "...different for the Italians, anyway.\n\nThe second rock entry of the night, and – for me – the better of the two.\n\nWhat do you think? 12 points?";
 				}
 
 				if (order == 25) {
-
+					messagetitle = "Lucky number 7 for Sweden?";
+					messagebody = "Sweden have been a powerhouse of Eurovision since ABBA. They've won the Contest 6 times already. Will tonight be number 7?";
 				}
 
 				if (order == 26) {
-
+					messagetitle = "Closing the show, it's San Marino";
+					messagebody = "Wait! Don't switch off. I know San Marino's entries are normally awful – but this one is anything but.\n\nIt's got Flo Rida. It's got funk. It's got pace. It's got... lead singer Senhit spinning around on a giant diamond that apparently represents the female reproductive system?!\n\nWhat more could you possibly want?";
 				}
 
 				updateSettings('messagesshow', false);
