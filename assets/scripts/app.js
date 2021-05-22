@@ -17,10 +17,10 @@ var database = firebase.database();
 var presence = database.ref(".info/connected");
 
 // Countries in each event
-const entriesSemiFinal1 = ["AUS","AZE","BEL","CRO","CYP","EIR","ISR","LTU","MLT","MKD","NOR","ROU","RUS","SVN","SWE","UKR",]
-const entriesSemiFinal2 = ["ALB","AUT","BGR","CZE","DEN","EST","FIN","GEO","GRE","ISL","LAT","MDA","POL","POR","SMR","SRB","SUI",]
-const entriesGrandFinal = ["ALB","AZE","BEL","BGR","CYP","FIN","FRA","GER","GRE","ISL","ISR","ITA","LTU","MLT","MDA","NED","NOR","POR","RUS","SMR","SRB","ESP","SWE","SUI","UKR","GBR",];
-const entriesFauxFinal = ["AUS","AZE","BEL","BGR","CRO","DEN","EST","FRA","GER","ISL","ITA","LAT","LTU","MLT","NED","MKD","NOR","POR","ROU","SMR","SRB","SVN","ESP","SWE","SUI","GBR",];
+const entriesSemiFinal1 = ["CYP","ISR","BEL","RUS","MLT","LTU","UKR","AZE","NOR","SWE","AUS","CRO","EIR","MKD","ROU","SVN",]
+const entriesSemiFinal2 = ["ALB","POR","SRB","GRE","SUI","ISL","MDA","FIN","BGR","SMR","AUT","CZE","DEN","EST","GEO","LAT","POL",]
+const entriesGrandFinal = ["CYP","ALB","ISR","BEL","RUS","MLT","POR","SRB","GBR","GRE","SUI","ISL","ESP","MDA","GER","FIN","BGR","LTU","UKR","FRA","AZE","NOR","NED","ITA","SWE","SMR",];
+const entriesFauxFinal = ["BEL","MLT","POR","SRB","GBR","SUI","ISL","ESP","GER","BGR","LTU","FRA","AZE","NOR","NED","ITA","SWE","SMR","AUS","CRO","DEN","EST","LAT","MKD","ROU","SVN",];
 
 // Variables to feed through to other functions
 if(window.location.pathname.indexOf("semi-final-one") != -1) {
