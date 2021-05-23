@@ -112,7 +112,7 @@
 			".validate": true,
 			"settings": {
 				".read": true,
-				".write": "now < 1621727940000",
+				".write": false,
 				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": "newData.isString()" },
@@ -131,12 +131,12 @@
 			},
 			"null": {
 				".read": true,
-				".write": "now < 1621727940000",
+				".write": false,
 				".validate": true,
 			},
 			{% for entry in site.data.entries %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
-				".write": "now < 1621727940000",
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
@@ -162,7 +162,7 @@
 			".validate": true,
 			"settings": {
 				".read": true,
-				".write": true,
+				".write": false,
 				".validate": true,
 				// Allowed fields
 				"calculation": { ".validate": "newData.isString()" },
@@ -181,12 +181,12 @@
 			},
 			"null": {
 				".read": true,
-				".write": true,
+				".write": false,
 				".validate": true,
 			},
 			{% for entry in site.data.entries %}{% if entry.faux-final == "TRUE" %}{{ entry.code | append: '"' | prepend: '"' }}: {
 				".read": true,
-				".write": true,
+				".write": false,
 				".validate": true,
 				"count": { ".validate": "newData.isNumber()" },
 				"vote": { ".validate": "newData.isNumber()" },
